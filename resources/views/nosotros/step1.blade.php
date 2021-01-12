@@ -38,7 +38,7 @@
                   <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8 offset-md-2">
-                          <h3 class="estilomytranding text-center font-weight-bold mb-4" style="color: #00C65B;">Academia de Tranding Online</h3 class="text-center">
+                          <h3 class="estilomytranding text-center font-weight-bold mb-4" style="color: #00C65B;">Academia de Trading Online</h3 class="text-center">
                           <h2 class="estilomytrandingthree text-center">Para emprendedores de Fintech</h2>
                         </div>
                   </div>
@@ -145,7 +145,8 @@
                     <div class="card">
                             <img src="{{ asset('images/nosotros/e1.png') }}" alt="conexión" class="img-fluid">
                             <div class="card-img-overlay d-flex flex-column">
-                            <h6 class="text-white my-auto text-center aumento">Logo</h6>
+                            <img src="{{ asset('images/mba.png') }}" alt="My business academy pro" class="img-fluid text-white my-auto text-center">
+                            <!--<h6 class="text-white my-auto text-center">Logo</h6>-->
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
                             </div>
                     </div>
@@ -154,7 +155,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/e2.png') }}" alt="innovación" class="img-fluid">
                         <div class="card-img-overlay d-flex flex-column">
-                                <h6 class="text-white my-auto text-center aumento">Logo</h6>
+                        <img src="{{ asset('images/no-work-1.png') }}" alt="No work money" class="img-fluid text-white my-auto text-center">
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
                         </div>
                 </div>
@@ -163,7 +164,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/e3.png') }}" alt="crecimiento" class="img-fluid">
                         <div class="card-img-overlay d-flex flex-column">
-                                <h6 class="text-white my-auto text-center aumento">Logo</h6>
+                        <img src="{{ asset('images/fentix-1.png') }}" alt="fenttix" class="img-fluid text-white my-auto text-center">
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
                         </div>
                 </div>
@@ -172,7 +173,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/e4.png') }}" alt="calidad" class="img-fluid">
                         <div class="card-img-overlay d-flex flex-column">
-                        <h6 class="text-white my-auto text-center aumento">Logo</h6>
+                        <img src="{{ asset('images/FTXlive-logo.png') }}" alt="ftxlive" class="img-fluid text-white my-auto text-center">
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
                         </div>
                 </div>

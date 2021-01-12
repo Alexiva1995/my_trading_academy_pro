@@ -32,7 +32,7 @@
                   <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8">
-                          <h3 class="tranding text-left font-weight-bold mb-4">TRANDING SOCIAL</h3 class="text-left">
+                          <h3 class="tranding text-left font-weight-bold mb-4">TRADING SOCIAL</h3 class="text-left">
                         </div>
                   </div>
               </div>
@@ -64,7 +64,7 @@
 <h3 class="text-center" style="color:#777777; margin-bottom:30px;">Comparte opiniones entre todos los integrantes <br> de la plataforma:</h3>
 <div class="row align-items-center justify-content-center">
   <div class="col-md-3">
-      <div class="card-no-background card">
+      <div class="card-no-background card mt-2">
               <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Gestores</a>
@@ -73,7 +73,7 @@
 
   </div>
   <div class="col-md-3">
-    <div class="card-no-background card">
+    <div class="card-no-background card mt-2">
               <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Inversores</a>
@@ -82,7 +82,7 @@
 
   </div>
   <div class="col-md-3">
-      <div class="card-no-background card">
+      <div class="card-no-background card mt-2">
               <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Seguidores</a>

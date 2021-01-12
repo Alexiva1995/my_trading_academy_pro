@@ -46,7 +46,7 @@
             
                 <div class="container-fluid py-5">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -95,7 +95,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 table-responsive">
                         <table class="table">
                                 <thead>
                                     <tr>

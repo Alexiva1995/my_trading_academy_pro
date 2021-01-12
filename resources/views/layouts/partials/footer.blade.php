@@ -13,7 +13,7 @@
                                     <!--<a href="" class="btn whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>-->
                             </div>
                             <div class="mb-2 text-center text-white" style="margin-top: 20px;">
-                                    <img src="{{ asset('images/logoverticalblanco.png') }}" style="" class="img-logo-footer"> <strong>2020 My Tranding Academy Pro</strong> All Rigth Reserved
+                                    <img src="{{ asset('images/logoverticalblanco.png') }}" style="" class="img-logo-footer"> <strong>2020 My Trading Academy Pro</strong> All Rigth Reserved
                             </div>
 
 

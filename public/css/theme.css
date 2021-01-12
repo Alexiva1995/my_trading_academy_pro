@@ -609,6 +609,14 @@ h5.title-level {
         margin-top: 25%!important;
     }
 
+    .btn-home{
+        margin-top:20px!important;
+    }
+
+    .text-nuestra-academia{
+        font-size: 20px!important;
+    }
+
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -873,6 +881,12 @@ h5.title-level {
         font-size:50px!important;
         line-height:50px!important;
         margin-top: 10%!important;
+    }
+    .btn-home{
+        margin-top:30px!important;
+    }
+    .text-nuestra-academia{
+        font-size: 16px!important;
     }
 }
 
@@ -2678,5 +2692,10 @@ opacity: 1;
 
 .card-share{
 border-radius: 27px!important;
+
+}
+
+.btn-home{
+    margin-top:70px;
 
 }

@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-12 pl-4 pr-4">
                     <div class="referrers-box">
-                        <i class="fa fa-user referrers-icon" style="color: #CF202F;"></i><br>
+                        <i class="fa fa-user referrers-icon" style="color: #1EC65B;"></i><br>
                         {{ $refeDirec }} Referidos
                     </div>
                     <a href="{{url('/admin')}}" style="color: white; text-decoration: none;">

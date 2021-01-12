@@ -19,7 +19,7 @@
                      <div class="estilomytrandingtwo">Academy Pro</div>
                      <div class="mt-2 d-none d-sm-none d-md-block"><h5>Aprende las mejores estrategias y conviértete en un experto en operaciones en el mercado de divisas.</h5></div>
                   </div>
-                  <div class="text-center" style="margin-top:70px;"> <a href="#" class="btn btn-danger font-weight-bold">QUIERO SER PARTE</a></div>
+                  <div class="text-center btn-home"> <a href="#" class="btn btn-danger font-weight-bold">QUIERO SER PARTE</a></div>
               </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
                   <img src="{{ asset('nosotros/nosotros/nosotros.png') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                      <div class="col-md-4 float-right  h-100 d-table" style="color:#00C65B">
-                        <h2 class="d-table-cell align-middle font-weight-bold">
+                        <h2 class="d-table-cell align-middle font-weight-bold text-nuestra-academia">
                            EN NUESTRA ACADEMIA APRENDERÁS A APROVECHAR LAS OPORTUNIDADES DEL MERCADO
                         </h2>
                           
@@ -74,7 +74,7 @@
                                     <img src="{{ asset('uploads/images/courses/lesson/5.jpg') }}" class="card-img-top" alt="...">
                                     <div class="card-img-overlay lesson-overlay h-100 d-table">
                                           <div class="d-table-cell align-middle font-weight-bold">
-                                             <h3 class="card-title text-white font-weight-bold">¿QUÉ ES TRANDING?</h3>
+                                             <h3 class="card-title text-white font-weight-bold">¿QUÉ ES TRADING?</h3>
                                              <h6 class="text-white">NOMBRE PROFESOR</h6>
                                              <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 5:31</h5>
                                           </div>
@@ -133,7 +133,7 @@
 <div class="col-md-12">
 <div class="row">
         <div class="col-md-6">
-            <h3 class="text-white">DESCUBRE LAS MEJORES <br> ESTRATEGIAS DE TRANDING PARA <br> REALIZAR OPERACIONES EXITOSAS</h3>
+            <h3 class="text-white">DESCUBRE LAS MEJORES <br> ESTRATEGIAS DE TRADING PARA <br> REALIZAR OPERACIONES EXITOSAS</h3>
          </div>
          <div class="col-md-6">
             <form action="">

@@ -77,7 +77,7 @@
                     </div>
 
                     <div class="col-md-12 progress progress-course-bar pl-0">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
+                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
                     </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="pl-0 pr-0 col-md-12 progress progress-course-bar">
-                                        <div class="progress-bar pl-0" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
+                                        <div class="progress-bar bg-success pl-0" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
                             </div>
                             </div>
                         </div>

@@ -55,20 +55,27 @@
 @endphp
 
 <!-- Sidebar -->
-<div class="bg-dark-gray" id="sidebar-wrapper">
-    <div class="sidebar-heading border-right" style="border-bottom: solid white 1px; height: 70px;">
+<div class="bg-dark-gray d-none d-sm-block d-md-none" id="sidebar-wrapper">
+    <div class="sidebar-heading border-right py-5" style="border-bottom: solid white 1px; height: 70px; background: #F5F5F5!important;">
         <div class="row">
-            <div class="col-4">
-                <img src="{{ asset('images/FTXlive-logo.png') }}" style="width: 150px; height: 50px;">
+            <div class="col-4 d-flex flex-column">
+                <img src="{{ asset('images/logoverticalnegro.png') }}" class="text-white my-auto text-center" style="width: 150px; height: 50px;">
             </div>
         </div>
     </div>
     <div class="list-group list-group-flush">
         <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Home</a>
+        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Nosotros</a>
+        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Academia</a>
+        @if(!Auth::user())
+        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Cursos</a>
+        @endif
+        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Inversiones</a>
+        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Trading social</a>
         @if(Auth::user())
         <a href="{{route('transmisiones')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-video"></i> Streaming</a>
         <a href="{{ route('schedule.calendar') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-calendar"></i> Mis Eventos</a>
-        <!--<a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-user-circle"></i> Mis Cursos</a>-->
+        <a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-user-circle"></i> Mis Cursos</a>
         <a href="{{url('/admin')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-user"></i> Backoffice</a>
         @endif
         <a href="{{route('shopping-cart.membership')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-shopping-bag"></i> Membresias</a>

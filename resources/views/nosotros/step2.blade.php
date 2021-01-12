@@ -56,7 +56,7 @@
                                     <img src="{{ asset('uploads/images/courses/lesson/5.jpg') }}" class="card-img-top" alt="...">
                                     <div class="card-img-overlay lesson-overlay h-100 d-table">
                                           <div class="d-table-cell align-middle font-weight-bold">
-                                             <h3 class="card-title text-white font-weight-bold">¿QUÉ ES TRANDING?</h3>
+                                             <h3 class="card-title text-white font-weight-bold">¿QUÉ ES TRADING?</h3>
                                              <h6 class="text-white">NOMBRE PROFESOR</h6>
                                              <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 5:31</h5>
                                           </div>
