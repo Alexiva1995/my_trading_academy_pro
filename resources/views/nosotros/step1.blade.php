@@ -85,6 +85,7 @@
                     <div class="card">
                             <img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">
                             <div class="card-img-overlay d-flex flex-column">
+                                    <img src="{{ asset('images/icons/network.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                     <h6 class="text-white my-auto text-center aumento">Conexión</h6>
                             </div>
                     </div>
@@ -93,6 +94,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/10-285x300.png') }}" alt="innovación">
                         <div class="card-img-overlay d-flex flex-column">
+                        <img src="{{ asset('images/icons/rocket-ship.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Innovación</h6>
                         </div>
                 </div>
@@ -101,6 +103,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/08-285x300.png') }}" alt="crecimiento">
                         <div class="card-img-overlay d-flex flex-column">
+                        <img src="{{ asset('images/icons/bar-chart.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Crecimiento</h6>
                         </div>
                 </div>
@@ -112,6 +115,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/11-285x300.png') }}" alt="calidad">
                         <div class="card-img-overlay d-flex flex-column">
+                        <img src="{{ asset('images/icons/medal.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Calidad</h6>
                         </div>
                 </div>
@@ -120,6 +124,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/12-285x300.png') }}" alt="eficacia">
                         <div class="card-img-overlay d-flex flex-column">
+                        <img src="{{ asset('images/icons/clockgreen.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Eficacia</h6>
                         </div>
                 </div>
@@ -128,6 +133,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/13-285x300.png') }}" alt="trascendencia">
                         <div class="card-img-overlay d-flex flex-column">
+                        <img src="{{ asset('images/icons/target.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Trascendencia</h6>
                         </div>
                 </div>

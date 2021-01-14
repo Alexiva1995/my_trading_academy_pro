@@ -27,16 +27,25 @@
   </div>
 </div>
 
-<div class="col-md-12" style="background-color: #FFFFFF;">
-<div class="row">
-        <div class="col-md-4" style="padding: 50px 50px; text-align: center;">
-            <h4>NUEVAS CLASES CADA SEMANA</h4>
+<div class="col-md-12 py-5" style="background-color: #FFFFFF;">
+<div class="row" style="padding-left:50px!important; padding-right:50px!important;">
+        <div class="col-md-1 text-center mt-2">
+         <img src="{{ asset('images/icons/movie-player.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
          </div>
-         <div class="col-md-4" style="padding: 50px 50px; text-align: center;">
-            <h4>MASTERCLASS EN VIVO</h4>
+         <div class="col-md-3 text-center mt-2">
+         <h4>NUEVAS CLASES CADA SEMANA</h4>  
          </div>
-         <div class="col-md-4" style="padding: 50px 50px; text-align: center;">
-          <h4>COMUNIDAD DE APOYO</h4>
+         <div class="col-md-1 text-center mt-2">
+         <img src="{{ asset('images/icons/elearning.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+         </div>
+         <div class="col-md-3 text-center mt-2">
+            <h4>MASTERCLASS <br> EN VIVO</h4>
+         </div>
+         <div class="col-md-1 text-center mt-2">
+         <img src="{{ asset('images/icons/group-chat.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+         </div>
+         <div class="col-md-3 text-center mt-2">
+          <h4>COMUNIDAD <br> DE APOYO</h4>
          </div>
    </div>
 </div>
