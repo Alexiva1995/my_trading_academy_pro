@@ -66,9 +66,9 @@
         </div>
     @endif
     <br><br><br>
-        <div class="col-md-12 ticket-box"><h4 class="white">Mis tickets</h4></div><br><br><br>
+        <div class="col-md-12"><h3 class="white">Mis tickets</h3></div><br><br><br>
         <div style="float:right;">
-                <a href="{{route('soporte.tickets')}}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Crear ticket</a>
+                <a href="{{route('soporte.tickets')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Crear ticket</a>
                 <a href="{{route('soporte.academy')}}" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i> Volver al menú</a>
         </div>
 
@@ -101,7 +101,7 @@
                                     <td class="text-center white">{{$ticket->soporte}}</td>
                                     <td class="text-center white">{{$ticket->status}}</td>
                                     <td class="text-center white">
-                                        <a href="javascript:void(0)" data-route="{{ route('admin.soporte.ticket.edit', $ticket->id) }}" id="{{$ticket->id}}" onclick="editarTicket(this.id);" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:void(0)" data-route="{{ route('admin.soporte.ticket.edit', $ticket->id) }}" id="{{$ticket->id}}" onclick="editarTicket(this.id);" class="btn btn-success"><i class="fa fa-edit"></i></a>
                                         <a href="javascript:void(0)" class="btn btn-success" data-route="{{ route('admin.soporte.ticket.edit', $ticket->id) }}" id="{{$ticket->id}}" onclick="showTicket(this.id);"><i class="fa fa-eye"></i></a>
                                         <a href="{{ route('admin.soporte.delete.ticket', $ticket->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                     </td>

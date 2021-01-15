@@ -143,7 +143,7 @@
 <div class="row ml-1 mb-1">
 
    <div class="col-md-8 kol">
-      <h3 style="color: #CF202F;margin-top: 20px;text-transform: uppercase;font-weight: 600;">{{$evento->title}}</h3>
+      <h3 style="color: #28a745;margin-top: 20px;text-transform: uppercase;font-weight: 600;">{{$evento->title}}</h3>
       <hr color="white" size=3>
       <p class="text-white">
          {!!$evento->description!!}
@@ -164,7 +164,7 @@
                      @if (is_null($checkEvento))
                         @if (Auth::user()->membership_status == 1)
                            @if (Auth::user()->streamings < Auth::user()->membership->streamings)
-                              <a href="{{ route('schedule.event',[$evento->id]) }}" class="btn btn-danger btn-block text-change">AGENDAR LIVE</a>
+                              <a href="{{ route('schedule.event',[$evento->id]) }}" class="btn btn-success btn-block text-change">AGENDAR LIVE</a>
                            @else
                               @if (Auth::user()->membership_id < 4)
                                  <a href="{{route('shopping-cart.store', [Auth::user()->membership_id+1, 'membresia', 'Mensual'])}}" class="btn btn-warning"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Aumentar Membresía</a>
@@ -173,7 +173,7 @@
                               @endif
                            @endif      
                         @else
-                           <a href="{{route('shopping-cart.membership')}}" class="btn btn-danger"><i class="fa fa-shopping-cart" aria-hidden="true"></i> RENOVAR MEMBRESÍA</a>
+                           <a href="{{route('shopping-cart.membership')}}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> RENOVAR MEMBRESÍA</a>
                         @endif
                      @else
                         {{-- EL USUARIO YA TIENE EL EVENTO AGENDADO--}}
@@ -198,13 +198,13 @@
                               </form>
                            @endif
                         @else
-                           <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-danger"><i class="fa fa-shopping-cart" aria-hidden="true"></i> RENOVAR MEMBRESÍA</a>
+                           <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> RENOVAR MEMBRESÍA</a>
                         @endif
                      @endif
                   @endif
                @endif
 
-               <!--<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#AgendarLiveModal">
+               <!--<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#AgendarLiveModal">
         AGENDAR LIVE
       </button>-->
             </div>
@@ -212,7 +212,7 @@
 
 
             <!--<div class="col-md-6" style="margin-bottom: 10px;">
-       <a href="{{route('oauthCallback', ['id' => $evento->id])}}" class="btn gris-boton btn-block"><i class="fas fa-calendar-alt" style="color:#CF202F"></i> Google Calendar</a>
+       <a href="{{route('oauthCallback', ['id' => $evento->id])}}" class="btn gris-boton btn-block"><i class="fas fa-calendar-alt" style="color:#28a745"></i> Google Calendar</a>
    </div>-->
             @if (!empty ($nextEvent))
             <div class="col-md-6" style="margin-bottom: 10px;">
@@ -247,7 +247,7 @@
          <img src="{{ asset('uploads/images/avatar/default.jpg') }}" class="card-img-top" alt="...">
          @endif
          <p style="color: white; padding-left: 10px;">Invitado</p>
-         <h5 style="color:#CF202F; margin-top: -20px; padding-left: 10px;">{{$evento->mentor->display_name}}</h5>
+         <h5 style="color:#28a745; margin-top: -20px; padding-left: 10px;">{{$evento->mentor->display_name}}</h5>
          <p style="color: white; padding-left: 10px;">{{$evento->mentor->profession}}
             <p>
                <p style="color:#FFFFFF; font-size: 18px; margin-top: 0px;padding-left: 10px"> {{$evento->mentor->about}}</p>
@@ -293,7 +293,7 @@
                         <form action="{{route('timelive')}}" method="GET">
                            @csrf
                            <input id="sigEvent" name="sigEvent" type="hidden" value="{{ $prox->id }}">
-                           <button class="btn text-left" type="submit" style=" color: #CF202F;">
+                           <button class="btn text-left" type="submit" style=" color: #28a745;">
                               <h2 class="streaming">{{$prox->title}}</h2>
                            </button>
                         </form>
@@ -313,7 +313,7 @@
                               @if (Auth::user()->membership_status == 1)
                                  @if (!in_array($prox->id, $misEventosArray))
                                     @if (Auth::user()->streamings < Auth::user()->membership->streamings)
-                                       <a href="{{ route('schedule.event',[$prox->id]) }}" class="btn btn-primary btn-block text-change">AGENDAR LIVE</a>
+                                       <a href="{{ route('schedule.event',[$prox->id]) }}" class="btn btn-success btn-block text-change">AGENDAR LIVE</a>
                                     @else
                                        @if (Auth::user()->membership_id < 4)
                                           <a href="{{route('shopping-cart.store', [Auth::user()->membership_id+1, 'membresia', 'Mensual'])}}" class="btn btn-warning"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Aumentar Membresía</a>
@@ -326,7 +326,7 @@
                                     <a href="{{route('timeliveEvent', $prox->id)}}" class="btn btn-success btn-block">Ir Al Evento</a>
                                  @endif
                               @else
-                                 <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-danger"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Renovar Membresía</a>
+                                 <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Renovar Membresía</a>
                               @endif
                            @endif
                         @endif
@@ -362,7 +362,7 @@
                      <form action="{{route('timelive')}}" method="GET">
                         @csrf
                         <input id="sigEvent" name="sigEvent" type="hidden" value="{{ $prox->id }}">
-                        <button class="btn text-left" type="submit" style=" color: #CF202F;">
+                        <button class="btn text-left" type="submit" style=" color: #28a745;">
                            <h2 class="streaming">{{$prox->title}}</h2>
                         </button>
                      </form>
@@ -382,7 +382,7 @@
                               @if (Auth::user()->membership_status == 1)
                                  @if (!in_array($prox->id, $misEventosArray))
                                     @if (Auth::user()->streamings < Auth::user()->membership->streamings)
-                                       <a href="{{ route('schedule.event',[$prox->id]) }}" class="btn btn-primary btn-block text-change">AGENDAR LIVE</a>
+                                       <a href="{{ route('schedule.event',[$prox->id]) }}" class="btn btn-success btn-block text-change">AGENDAR LIVE</a>
                                     @else
                                        @if (Auth::user()->membership_id < 4)
                                           <a href="{{route('shopping-cart.store', [Auth::user()->membership_id+1, 'membresia', 'Mensual'])}}" class="btn btn-warning"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Aumentar Membresía</a>
@@ -395,7 +395,7 @@
                                     <a href="{{route('timeliveEvent', $prox->id)}}" class="btn btn-success btn-block">Ir Al Evento</a>
                                  @endif
                               @else
-                                 <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-danger"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Renovar Membresía</a>
+                                 <a href="{{route('shopping-cart.store', [Auth::user()->membership_id, 'membresia', 'Mensual'])}}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Renovar Membresía</a>
                               @endif
                            @endif
                         @endif

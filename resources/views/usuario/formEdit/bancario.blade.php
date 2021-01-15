@@ -2,7 +2,7 @@
     <div class="box box-info" style="border-radius: 10px;">
       <div class="box-body">
        
-      <h3 class="box-title white" style="margin-top: -5px; margin-bottom: 20px; padding: 15px 20px;border-radius: 20px; background-color: #dc3545; color: white;">Informacion Bancaria
+      <h3 class="box-title white" style="margin-top: -5px; margin-bottom: 20px; padding: 15px 20px;border-radius: 20px; color: white;">Informacion Bancaria
          
          @if(Auth::user()->ID == $data['principal']->ID || Auth::user()->rol_id == 0)
     <button type="button" class="btn btn-success" onclick="activarBanco();"

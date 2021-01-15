@@ -10,27 +10,27 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item active">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                    <a class="nav-link active white" id="home-tab" data-toggle="tab" href="#home" role="tab"
                         aria-controls="home" aria-selected="true" aria-expanded="true">informacion Personal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    <a class="nav-link white" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
                         aria-controls="profile" aria-selected="false">Informacion de contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                    <a class="nav-link white" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
                         aria-controls="contact" aria-selected="false">Perfil Social</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="bancaria-tab" data-toggle="tab" href="#bancaria" role="tab"
+                    <a class="nav-link white" id="bancaria-tab" data-toggle="tab" href="#bancaria" role="tab"
                         aria-controls="bancaria" aria-selected="false">Informacion bancaria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="pagos-tab" data-toggle="tab" href="#pagos" role="tab" aria-controls="pagos"
+                    <a class="nav-link white" id="pagos-tab" data-toggle="tab" href="#pagos" role="tab" aria-controls="pagos"
                         aria-selected="false">Pagos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="anotaciones-tab" data-toggle="tab" href="#anotaciones" role="tab" aria-controls="anotaciones"
+                    <a class="nav-link white" id="anotaciones-tab" data-toggle="tab" href="#anotaciones" role="tab" aria-controls="anotaciones"
                         aria-selected="false">Mis notas</a>
                 </li>
             </ul>

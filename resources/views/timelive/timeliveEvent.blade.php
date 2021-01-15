@@ -124,7 +124,7 @@
 
     <div class="row ml-1 mb-1">
         <div class="col-md-8">
-            <h3 style="color: #CF202F;margin-top: 20px;text-transform: uppercase;font-weight: 600;">{{$evento->title}}</h3>
+            <h3 style="color: #28a745;margin-top: 20px;text-transform: uppercase;font-weight: 600;">{{$evento->title}}</h3>
             <hr color="white" size=3>
            
             @if (is_null($checkPais))
@@ -187,7 +187,7 @@
                     <img src="{{ asset('uploads/images/avatar/default.jpg') }}" class="card-img-top" alt="...">
                 @endif
                 <p style="color: white; padding-left: 10px;">Invitado</p>
-                <h5 style="color:#CF202F; margin-top: -20px; padding-left: 10px;">{{$evento->mentor->display_name}}</h5>
+                <h5 style="color:#28a745; margin-top: -20px; padding-left: 10px;">{{$evento->mentor->display_name}}</h5>
                 <p style="color: white; padding-left: 10px;">{{$evento->mentor->profession}}</p>
                 <p style="color:#FFFFFF; font-size: 18px; margin-top: 0px;padding-left: 10px"> {{$evento->mentor->about}}</p>
                 <a href="{{ url('courses/mentor/'.$evento->mentor->ID) }}" target="_blank" class="btn btn-success btn-block">NIVEL: {{$evento->subcategory->title}}</a>

@@ -5,7 +5,7 @@
 
 <div class="col-xs-12">
     <br><br><br>
-    <div><h1 class="text-center text-primary font-weight-bold">Base de Conocimiento</h1></div><br><br><br><br>
+    <div><h1 class="text-center text-success font-weight-bold">Base de Conocimiento</h1></div><br><br><br><br>
 
     <div class="col-md-offset-2">
             <div class="form-group col-md-9" style="background:#4b646f!imporntant; border:none;">
@@ -24,9 +24,9 @@
 
     <div class="col-md-offset-2">
                 <div class="row">
-                        <div class="col-md-3 cajita centroc"><a href="{{route('admin.soporte.search.frecuent_questions')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="far fa-comments text-primary"></i>Preguntas frecuentes</h3></a></div>
-                <div class="col-md-3 cajita centroc"><a href="{{route('soporte.academy')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-graduation-cap text-primary"></i>Academia</h3></a></div>
-                        <div class="col-md-3 cajita centroc"><a href="{{ route ('admin.soporte.affiliates')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-user-plus text-primary"></i>Afiliados</h3></a></div>
+                        <div class="col-md-3 cajita centroc"><a href="{{route('admin.soporte.search.frecuent_questions')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="far fa-comments text-success"></i>Preguntas frecuentes</h3></a></div>
+                <div class="col-md-3 cajita centroc"><a href="{{route('soporte.academy')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-graduation-cap text-success"></i>Academia</h3></a></div>
+                        <div class="col-md-3 cajita centroc"><a href="{{ route ('admin.soporte.affiliates')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-user-plus text-success"></i>Afiliados</h3></a></div>
 
                 </div>
     </div>

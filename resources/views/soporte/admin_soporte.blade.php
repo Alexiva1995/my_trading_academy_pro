@@ -43,14 +43,13 @@
         </div>
     @endif
 
-        <div class="col-md-12 ticket-box"><h4 class="white">Tickets/Soporte</h4></div>
-
+        <div class="col-md-12"><h3 class="white">Tickets/Soporte</h3></div>
+        <div style="float:right;">
+                    <a href="{{route('soporte.tickets.solved')}}" class="btn btn-success"><i class="fas fa-ticket-alt"></i> Ver tickets resueltos</a>
+                    <a href="{{route('soporte.academy')}}" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i> Menú de Soporte</a>
+        </div>
         <div class="box" style="margin-top: 100px; border-radius:10px!important; background:#2f343a!important;">
             <div class="box-body">
-                <div style="float:right;">
-                    <a href="{{route('soporte.tickets.solved')}}" class="btn btn-info"><i class="fas fa-ticket-alt"></i> Ver tickets resueltos</a>
-                    <a href="{{route('soporte.academy')}}" class="btn btn-success"><i class="fas fa-arrow-circle-left"></i> Menú de Soporte</a>
-                </div>
                 @if(!$tickets->isEmpty())
                 <table  id="mytable" class="table" style="width: 100%!important;">
                         <thead>

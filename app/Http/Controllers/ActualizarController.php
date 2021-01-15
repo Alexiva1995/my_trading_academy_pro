@@ -89,8 +89,8 @@ class ActualizarController extends Controller
         view()->share('title', 'Editar Perfil');
         $data = $this->infoUsuario($id);
         $yo = null;
-
-        return view('usuario.userEdit')->with(compact('data','yo'));
+        $notes = Note::where('user_id', Auth::user()->ID)->with('streaming')->get();
+        return view('usuario.userEdit')->with(compact('data','yo', 'notes'));
     }
 
 

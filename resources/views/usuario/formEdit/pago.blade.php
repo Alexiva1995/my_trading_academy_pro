@@ -3,7 +3,7 @@
       <div class="box-body">
 
 
-<h3 class="box-title white" style="margin-top: -5px; margin-bottom: 20px; padding: 15px 20px;border-radius: 20px; background-color: #d5d827; color: white;">Pagos
+<h3 class="box-title white" style="margin-top: -5px; margin-bottom: 20px; padding: 15px 20px;border-radius: 20px; color: white;">Pagos
 
 @if(Auth::user()->ID == $data['principal']->ID || Auth::user()->rol_id == 0)
     <button type="button" class="btn btn-success" onclick="activarPago();"
