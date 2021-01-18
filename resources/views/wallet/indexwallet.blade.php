@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="col-xs-12">
-  <div class="box box-info" style="background-color: #007bff; border-radius: 10px;">
+  <div class="box box-info" style="background-color: #00C65B; border-radius: 10px;">
     <div class="box-body">
 
       <h4 class="box-title white">
@@ -59,13 +59,12 @@
 </div>
 
 <div class="col-xs-12">
-    <div class="box box-info">
-        <div class="box-body">
             
             @if(Auth::user()->rol_id == 0)
-            <a href="#" class="btn btn-info btn-block" data-toggle="modal" data-target="#liquidacion"> Liquidacion</a>
+             <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#liquidacion" style="margin-bottom:10px;"> Liquidacion</a>
             @endif
-
+    <div class="box box-info">
+        <div class="box-body">
             <table id="mytable" class="table">
                 <thead>
                     <tr>

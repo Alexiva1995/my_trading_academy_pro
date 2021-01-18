@@ -207,10 +207,10 @@
                            <div class="row featurette">
                               <div class="col-md-9 order-md-2">
                                  <h5 class="featurette-heading text-white">Mentor</h5>
-                                 <h3 class="featurette-heading text-primary">{{ $curso->mentor->display_name }}</h3>
+                                 <h3 class="featurette-heading text-success">{{ $curso->mentor->display_name }}</h3>
                                  <h6 class="featurette-heading text-white">{{ $curso->mentor->profession }}</h6>
                                  <p class="lead about-course-text">{{ $curso->mentor->about }}</p>
-                                 <a href="{{route('show.perfil.mentor', $curso->mentor->ID)}}" class="text-primary">Ver perfil <i class=" fa fa-angle-right"> </i></a>
+                                 <a href="{{route('show.perfil.mentor', $curso->mentor->ID)}}" class="text-success">Ver perfil <i class=" fa fa-angle-right"> </i></a>
                               </div>
                               <div class="col-md-3 order-md-1">
                                  <img src="{{ asset('uploads/avatar/'.$curso->mentor->avatar) }}" alt="" class="featurette-image img-fluid mx-auto ml-2" width="409" height="370">
@@ -317,7 +317,7 @@
                                           @if ( (!Auth::guest()) && (!is_null($progresoCurso)) )
                                              @if (Auth::user()->membership_status == 1)
                                             @if($first_lesson->id == $leccion->id)
-                                             <a href="{{ route('lesson.show', [$leccion->slug, $leccion->id, $curso->id]) }}" class="about-course-text text-primary">
+                                             <a href="{{ route('lesson.show', [$leccion->slug, $leccion->id, $curso->id]) }}" class="about-course-text text-success">
                                                    {{ $leccion->title }}
                                                 </a>
                                               @else

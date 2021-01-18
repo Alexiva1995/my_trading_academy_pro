@@ -37,7 +37,7 @@
             <div class="box box-info">
                 <div class="box-body">
 					<div style="text-align: right;">
-						<a data-toggle="modal" data-target="#modal-create" class="btn btn-info descargar"><i class="fa fa-plus-circle"></i> Nueva Promoción</a>
+						<a data-toggle="modal" data-target="#modal-create" class="btn btn-success descargar"><i class="fa fa-plus-circle"></i> Nueva Promoción</a>
 					</div>
 
 					<br class="col-xs-12">
@@ -60,7 +60,7 @@
                                     <td class="text-center">{!! $promocion->description !!}</td>
                                     <td class="text-center"><img src="{{ asset('uploads/images/coursesPromotions/'.$promocion->banner) }}" style="width: 400px; height: 200px;"></td>
                                     <td class="text-center">
-                                        <a class="btn btn-info" onclick="editar({{$promocion}});"><i class="fa fa-edit"></i></a>
+                                        <a class="btn btn-success" onclick="editar({{$promocion}});"><i class="fa fa-edit"></i></a>
                                         @if ($promocion->status == 1)
                                             <a class="btn btn-danger" href="{{ route('admin.promotions.change-status', [$promocion->id, 0]) }}" title="Deshabilitar"><i class="fa fa-ban"></i></a>
                                         @else

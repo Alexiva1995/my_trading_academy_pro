@@ -40,7 +40,7 @@
 			<div class="box-body">
 				<div style="text-align: right;">
 				    <a href="{{ route ('admin.courses.index')}}" class="btn btn-danger descargar"><i class="fas fa-arrow-circle-left"></i> Atrás</a>
-				    <a data-toggle="modal" data-target="#modal-new" class="btn btn-info descargar"><i class="fa fa-plus-circle"></i> Nueva Lección</a>
+				    <a data-toggle="modal" data-target="#modal-new" class="btn btn-success descargar"><i class="fa fa-plus-circle"></i> Nueva Lección</a>
 
 
 				</div>
@@ -85,7 +85,7 @@
 								</td>
                                 <td class="text-center">{{ $leccion->course->materials->count() }}</td>
 								<td class="text-center">
-									<a class="btn btn-info btn-rounded" data-route="{{ route('admin.courses.lessons.edit', $leccion->id) }}" id="{{$leccion->id}}" onclick="editar(this.id);" title="Editar"><i class="fa fa-edit"></i></a>
+									<a class="btn btn-success btn-rounded" data-route="{{ route('admin.courses.lessons.edit', $leccion->id) }}" id="{{$leccion->id}}" onclick="editar(this.id);" title="Editar"><i class="fa fa-edit"></i></a>
 									<a class="btn btn-primary" href="{{ route('admin.courses.lessons.show', $leccion->id) }}" title="Ver Video"><i class="fa fa-video"></i></a>
 									<a class="btn btn-danger" href="{{ route('admin.courses.lessons.delete', $leccion->id) }}" title="Eliminar"><i class="fa fa-ban"></i></a>
 								</td>

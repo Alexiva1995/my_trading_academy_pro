@@ -191,7 +191,7 @@ Route::group(['prefix' => 'installer'], function (){
   Route::get('/blog/{id}', 'NosotrosController@articulo')->name('blog.articulo');
   Route::get('/afiliados', 'NosotrosController@afiliados')->name('blog.afiliados');
   Route::get('/inversiones', 'NosotrosController@inversiones')->name('inversiones');
-  Route::get('/tranding', 'NosotrosController@tranding_social')->name('tranding');
+  Route::get('/tranding', 'NosotrosController@tranding_social')->name('trading');
 
   /* Rutas de la Landing */
   Route::get('load-more-courses-new/{ultimoId}/{accion}', 'CourseController@load_more_courses_new')->name('landing.load-more-courses-new');

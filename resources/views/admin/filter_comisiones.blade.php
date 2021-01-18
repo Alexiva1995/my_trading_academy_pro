@@ -21,13 +21,13 @@
             
              <div class="col-sm-4">
                <label class="control-label " style="text-align: center; margin-top:4px;">Fecha desde</label>
-                <input class="form-control form-control-solid placeholder-no-fix" type="date" autocomplete="off" name="primero" required style="background-color:f7f7f7;"/>
+                <input class="form-control form-control-solid placeholder-no-fix" type="date" autocomplete="off" name="primero" required style="background-color:#28a745;"/>
            
             </div>
             
             <div class="col-sm-4">
                  <label class="control-label " style="text-align: center; margin-top:4px;">Fecha hasta</label>
-                <input class="form-control form-control-solid placeholder-no-fix" type="date" autocomplete="off" name="segundo" required style="background-color:f7f7f7;"/>
+                <input class="form-control form-control-solid placeholder-no-fix" type="date" autocomplete="off" name="segundo" required style="background-color:#28a745;"/>
                 </div>
             
             

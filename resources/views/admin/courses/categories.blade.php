@@ -43,7 +43,7 @@
 		<div class="box">
 			<div class="box-body">
 				<div style="text-align: right;">
-					<a data-toggle="modal" data-target="#modal-new" class="btn btn-info descargar"><i class="fa fa-plus-circle"></i> Nueva Categoría</a>
+					<a data-toggle="modal" data-target="#modal-new" class="btn btn-success descargar"><i class="fa fa-plus-circle"></i> Nueva Categoría</a>
 				</div>
 				
 				<br class="col-xs-12">
@@ -64,7 +64,7 @@
 								<td class="text-center"><i class="{{ $categoria->icon }}"></i></td>
 								<td class="text-center">{{ $categoria->courses_count }}</td>
 								<td class="text-center">
-									<a class="btn btn-info editar" data-route="{{ route('admin.courses.edit-category', $categoria->id) }}"><i class="fa fa-edit"></i></a>
+									<a class="btn btn-success editar" data-route="{{ route('admin.courses.edit-category', $categoria->id) }}"><i class="fa fa-edit"></i></a>
 									@if ($categoria->courses_count == 0)
 										<a class="btn btn-danger" href="{{ route('admin.courses.delete-category', $categoria->id) }}"><i class="fa fa-trash"></i></a>
 									@endif

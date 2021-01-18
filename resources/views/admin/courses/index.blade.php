@@ -68,7 +68,7 @@
 		<div class="box">
 			<div class="box-body">
 				<div style="text-align: right;">
-					<a data-toggle="modal" data-target="#modal-new" class="btn btn-info descargar"><i class="fa fa-plus-circle"></i> Nuevo Curso</a>
+					<a data-toggle="modal" data-target="#modal-new" class="btn btn-success descargar"><i class="fa fa-plus-circle"></i> Nuevo Curso</a>
 				</div>
 
 				<br class="col-xs-12">

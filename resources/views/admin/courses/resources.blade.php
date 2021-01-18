@@ -68,7 +68,7 @@
 				<div style="text-align: right;">
 				    
 				    <a href="{{ route ('admin.courses.index')}}" class="btn btn-danger descargar"><i class="fas fa-arrow-circle-left"></i> Regresar</a>
-					<a data-toggle="modal" data-target="#modal-new" class="btn btn-info"><i class="fa fa-plus-circle"></i> Nuevo Recurso</a>
+					<a data-toggle="modal" data-target="#modal-new" class="bsuccess"><i class="fa fa-plus-circle"></i> Nuevo Recurso</a>
 				</div>
 				
 				<br class="col-xs-12">
@@ -94,7 +94,7 @@
 									@else
 										<a class="btn btn-warning" href="{{ url('uploads/courses/lessons/materials/'.$material->material) }}" target="_blank"><i class="fa fa-search"></i></a>
 									@endif
-									<a class="btn btn-info" data-route="{{ route('admin.courses.lessons.resources.edit', $material->id) }}" id="{{$material->id}}" onclick="editar(this.id);"><i class="fa fa-edit"></i></a>
+									<a class="btn btn-success" data-route="{{ route('admin.courses.lessons.resources.edit', $material->id) }}" id="{{$material->id}}" onclick="editar(this.id);"><i class="fa fa-edit"></i></a>
 									<a class="btn btn-danger" href="{{ route('admin.courses.lessons.resources.delete',[$material->id,$course->id]) }}" title="Eliminar"><i class="fa fa-ban"></i></a>
 								</td>
 							</tr>

@@ -42,7 +42,7 @@
 		<div class="box">
 			<div class="box-body">
 				<div style="text-align: right;">
-					<a data-toggle="modal" data-target="#modal-new" class="btn btn-info"><i class="fa fa-plus-circle"></i> Nueva Etiqueta</a>
+					<a data-toggle="modal" data-target="#modal-new" class="btn btn-success"><i class="fa fa-plus-circle"></i> Nueva Etiqueta</a>
 				</div>
 				
 				<br class="col-xs-12">
@@ -61,7 +61,7 @@
 								<td class="text-center">{{ $etiqueta->tag }}</td>
 								<td class="text-center">{{ $etiqueta->courses_count }}</td>
 								<td class="text-center">
-									<a class="btn btn-info editar" data-route="{{ route('admin.courses.edit-tag', $etiqueta->id) }}"><i class="fa fa-edit"></i></a>
+									<a class="btn btn-success editar" data-route="{{ route('admin.courses.edit-tag', $etiqueta->id) }}"><i class="fa fa-edit"></i></a>
 									<a class="btn btn-danger" href="{{ route('admin.courses.delete-tag', $etiqueta->id) }}"><i class="fa fa-trash"></i></a>
 								</td>
 							</tr>

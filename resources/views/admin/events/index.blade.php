@@ -59,7 +59,7 @@
 		<div class="box">
 			<div class="box-body">
 				<div style="text-align: right;">
-					<a data-toggle="modal" data-target="#modal-new" class="btn btn-info descargar"><i class="fa fa-plus-circle"></i> Nuevo Evento</a>
+					<a data-toggle="modal" data-target="#modal-new" class="btn btn-success descargar"><i class="fa fa-plus-circle"></i> Nuevo Evento</a>
 				</div>
 
 				<br class="col-xs-12">
@@ -80,8 +80,8 @@
 								<td class="text-center">{{ $event->title }}</td>
 								<td class="text-center">{{ App\Models\Events::findID($event->user_id) }}</td>
 								<td class="text-center">
-									<a class="btn btn-info editar" data-route="{{ route('admin.events.edit', $event->id) }}" id="{{$event->id}}" onclick="editar(this.id);"><i class="fa fa-edit"></i></a>
-									<a class="btn btn-info" href="{{ route('transmitir', $event->id) }}"><i class="fa fa-video"></i></a>
+									<a class="btn btn-success editar" data-route="{{ route('admin.events.edit', $event->id) }}" id="{{$event->id}}" onclick="editar(this.id);"><i class="fa fa-edit"></i></a>
+									<a class="btn btn-success" href="{{ route('transmitir', $event->id) }}"><i class="fa fa-video"></i></a>
 									@if ($event->status == '1' )
 										<a class="btn btn-danger" href="{{ route('admin.events.change-status', [$event->id, 0]) }}" title="Deshabilitar"><i class="fa fa-ban"></i></a>
 									@endif

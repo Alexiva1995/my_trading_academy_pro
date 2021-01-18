@@ -7,7 +7,7 @@
   <div class="box box-info">
     <div class="box-body">
 
-      <a class="btn btn-info btn-block" data-toggle="modal" data-target="#anexar">Agregar Entrada</a>
+      <a class="btn btn-success btn-block" data-toggle="modal" data-target="#anexar">Agregar Entrada</a>
 
       <table id="mytable" class="table">
                 <thead>
@@ -49,8 +49,8 @@
                         </td>
 
                         <td class="text-center">
-                           <a class="btn btn-info" href="{{route('admin-actual-entrada', $ent->id)}}">Editar</a>
-                           <a class="btn btn-danger" href="{{route('admin-delet-entrada', $ent->id)}}">Eliminar</a>
+                           <a class="btn btn-success" href="{{route('admin-actual-entrada', $ent->id)}}">Editar</a>
+                           <a class="btn btn-success" href="{{route('admin-delet-entrada', $ent->id)}}">Eliminar</a>
                         </td>
 
                     </tr>
@@ -113,11 +113,11 @@
                 <input type="file" name="banner" accept="image/*">
         </div>
 
-               <button type="submit" class="btn btn-primary btn-block">Aceptar</button>
+               <button type="submit" class="btn btn-success btn-block">Aceptar</button>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

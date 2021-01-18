@@ -16,7 +16,7 @@
 		
 		
         <div class="col-xs-12">
-            <div class="box box-info" style="background-color: #007bff; border-radius: 10px;">
+            <div class="box box-info" style="background-color: #00C65B; border-radius: 10px;">
                 <div class="box-body">
                     <h4 class="box-title white">
                         <span class="info-box-icon-fecha-white">
@@ -47,7 +47,7 @@
         </div>    
 
         <div class="col-xs-6">
-            <div class="box box-info" style="background-color: #5743a7; border-radius: 10px;">
+            <div class="box box-info" style="background-color: #00C65B; border-radius: 10px;">
                 <div class="box-body">
                     <h4 class="box-title white">
                     <span class="info-box-icon-fecha-blue">
@@ -79,7 +79,7 @@
         </div>
 
         <div class="col-xs-6">
-            <div class="box box-info" style="background-color: #007bff; border-radius: 10px;">
+            <div class="box box-info" style="background-color: #00C65B; border-radius: 10px;">
                 <div class="box-body">
                     <h4 class="box-title white">
                     <span class="info-box-icon-fecha-blue">

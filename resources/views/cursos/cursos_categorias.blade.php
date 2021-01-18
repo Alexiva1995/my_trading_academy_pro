@@ -33,9 +33,9 @@
         <div class="col mb-4 mt-4">
             <div class="title-page-course col-md"><span class="text-white">
                 @if (!is_null ($category_name))
-                    <h2>Cursos Online de<span class="text-primary"> "{{$category_name->title}}"</span></h2>
+                    <h2>Cursos Online de<span class="text-success"> "{{$category_name->title}}"</span></h2>
                 @else
-                    <h2>Cursos Online <span class="text-primary">relacionados</span></h2>
+                    <h2>Cursos Online <span class="text-success">relacionados</span></h2>
                 @endif
             </div>
         </div>

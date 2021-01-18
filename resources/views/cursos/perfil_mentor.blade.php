@@ -5,7 +5,7 @@
 <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h5 class="featurette-heading text-white">Perfil</h5>
-        <h3 class="featurette-heading text-primary">{{$mentor_info->nombre}}</h3>
+        <h3 class="featurette-heading text-success">{{$mentor_info->nombre}}</h3>
         <h6 class="featurette-heading text-white">{{$mentor_info->profession}}</h6>
         <p class="lead about-course-text">{{$mentor_info->biography}}</p>
       </div>
@@ -42,7 +42,7 @@
                 <div class="card-body p-2">
                 <div class="row align-items-start">
                     <div class="col-9"><h6 class="text-course-mentor"><a class="text-secondary" href="{{ route('courses.show', [$course->slug, $course->id]) }}" style="color: white;">{{$course->course_title}}</a></h6></div>
-                     <div class="col-3"><i class="text-primary fa fa-play-circle"></i></div>
+                     <div class="col-3"><i class="text-success fa fa-play-circle"></i></div>
                 </div>
                 </div>
         </div>

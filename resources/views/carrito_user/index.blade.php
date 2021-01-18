@@ -9,6 +9,11 @@
     .btn-color-green{
         background: #6ab742;
     }
+    .card {
+            border: 0px solid rgba(0, 0, 0, .125) !important;
+            border-radius: 0px !important;
+            background: none!important;
+         }
 </style>
 
 @if (Session::has('msj-exitoso'))
@@ -37,7 +42,7 @@
     <div class="row">
         <div class="col-12 col-md-6">
              <div class="d-block d-sm-block d-md-none float-right">
-               <a class="btn btn-primary " href="{{route('shopping-cart.membership')}}"><i class="fas fa-chevron-circle-left"></i> Atrás</a> 
+               <a class="btn btn-success " href="{{route('shopping-cart.membership')}}"><i class="fas fa-chevron-circle-left"></i> Atrás</a> 
             </div><br>
             @auth
             @include('carrito_user.componente.logueado')

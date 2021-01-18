@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom py-5" style="height: 70px;flex-wrap: nowrap!important; background: #F5F5F5!important;">
+<button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
+
+<button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-9">
+            <div class="d-none d-sm-none d-md-block col-12 col-sm-6 col-md-9">
                 <img src="{{ asset('images/logoverticalnegro.png') }}" class="img-fluid logo-header">
             </div>
-            <div class="col-12 col-sm-6 col-md-3 pt-2 text-center">
+            <div class="col-12 col-sm-12 col-md-3 pt-2 text-center">
                 <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-facebook-f fa-1x" style="color:#111329;"></i></a>
                 <a href="#" class="btn social-icons" target="_blank"><i class="fa fa-twitter fa-1x" style="color:#111329;"></i></a>
                 <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-instagram fa-1x" style="color:#111329;"></i></a>
@@ -15,7 +20,6 @@
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom navbar-redes" style="height: 70px; border-color:#00C65B!important;">
-
     <div class="collapse navbar-collapse" id="navbarItems" style="z-index: 1000;">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 header-list">
             <li class="nav-item">
@@ -44,13 +48,13 @@
                 <a class="nav-link items-header text-center" href="{{route('inversiones')}}">INVERSIONES</a>
             </li>
            <li class="nav-item">
-                <a class="nav-link items-header text-center" href="{{route('tranding')}}">TRANDING SOCIAL</a>
+                <a class="nav-link items-header text-center" href="{{route('trading')}}">TRANDING SOCIAL</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="#">PRODUCTOS & HERRAMIENTAS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link items-header text-center" href="#">MEMBRESIAS</a>
+                <a class="nav-link items-header text-center" href="{{route ('shopping-cart.membership')}}">MEMBRESIAS</a>
             </li>
             @if (Auth::guest())
              <div class="ct-topbar">

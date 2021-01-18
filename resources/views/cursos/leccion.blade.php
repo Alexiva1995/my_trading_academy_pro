@@ -145,7 +145,7 @@
       <a class="btn-next text-white" href="#lessonsCarousel" role="button" data-slide="next">Siguiente</a>
     </div>-->
     <!--<div class="btn-play-video">
-      <i class="fa fa-play-circle text-primary"></i>
+      <i class="fa fa-play-circle text-success"></i>
     </div>-->
   </div>
 {{-- FIN DEL BANNER --}}
@@ -154,7 +154,7 @@
         <div class="row">
           <div class="col-md-12">
           <div class="progress ml-3 mr-3">
-            <div class="progress-bar progress-bar-striped progress-bar-animated font-weight-bold" role="progressbar" aria-valuenow="{{$progress_bar}}%" aria-valuemin="0" aria-valuemax="100" style="width: {{$progress_bar}}%">
+            <div class="progress-bar progress-bar-striped progress-bar-animated font-weight-bold bg-success" role="progressbar" aria-valuenow="{{$progress_bar}}%" aria-valuemin="0" aria-valuemax="100" style="width: {{$progress_bar}}%">
                 {{$progress_bar}}% COMPLETADO
             </div>
           </div>
@@ -290,7 +290,7 @@
             </div>
             <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
               @if ($progresoCurso->certificate == 1)
-                <a href="{{ route('client.courses.get-certificate', $progresoCurso->course_id) }}" class="btn btn-primary play-course-button btn-block"><i class="fas fa-certificate"></i> OBTENER CERTIFICADO</a>
+                <a href="{{ route('client.courses.get-certificate', $progresoCurso->course_id) }}" class="btn btn-success play-course-button btn-block"><i class="fas fa-certificate"></i> OBTENER CERTIFICADO</a>
               @else
                 Debe finalizar el curso para generar el certificado...
               @endif
@@ -319,7 +319,7 @@
                           @else
                            <a href="{{ route('lesson.show', [$lesson->slug, $lesson->id, $lesson->course_id]) }}">
                                         <h5 class="mb-0 font-weight-bold d-block position-relative py-2">
-                                         <i class="text-primary fa fa-play-circle"></i>  @if ($progresoCurso->language == 'es') {{$lesson->title}} @else {{$lesson->english_title}} @endif
+                                         <i class="text-success fa fa-play-circle"></i>  @if ($progresoCurso->language == 'es') {{$lesson->title}} @else {{$lesson->english_title}} @endif
                                         </h5>
                                 </a>
                           @endif
@@ -344,7 +344,7 @@
             </div>
             @if (!is_null($lesson->course->evaluation))
                 @if ($progresoCurso->certificate == 0)
-                    <div class="card mt-2 mb-2" style="background-color: #2A91FF;">
+                    <div class="card mt-2 mb-2" style="background-color:#28a745">
                         <div class="card-header text-center" >
                             <a href="{{ route('client.courses.take-evaluation', [$lesson->course->slug, $lesson->course_id]) }}">
                                 <h5 class="mb-0 font-weight-bold d-block position-relative py-2" style="color: white;">
@@ -354,7 +354,7 @@
                         </div>
                     </div>
                 @else
-                    <div class="card mt-2 mb-2" style="background-color: #2A91FF;">
+                    <div class="card mt-2 mb-2" style="background-color:#28a745">
                         <div class="card-header text-center" >
                             <h5 class="mb-0 font-weight-bold d-block position-relative py-2" style="color: white;">
                                 YA USTED APROBÓ LA EVALUACIÓN
@@ -363,7 +363,7 @@
                     </div>
                 @endif
             @else
-                <div class="card mt-2 mb-2" style="background-color: #2A91FF;">
+                <div class="card mt-2 mb-2" style="background-color:#28a745">
                     <div class="card-header text-center" >
                         <h5 class="mb-0 font-weight-bold d-block position-relative py-2" style="color: white;">
                             ESTE CURSO NO POSEE EVALUACIÓN
@@ -371,7 +371,7 @@
                     </div>
                 </div>
             @endif
-            <a href="{{route('courses.show.all')}}" class="btn btn-primary play-course-button btn-block mb-2" ><i class="fa fa-plus-circle" aria-hidden="true"></i> ADQUIRIR MÁS CURSOS</a>
+            <a href="{{route('courses.show.all')}}" class="btn btn-success play-course-button btn-block mb-2" ><i class="fa fa-plus-circle" aria-hidden="true"></i> ADQUIRIR MÁS CURSOS</a>
 
 
           <!--<div class="row">
@@ -385,7 +385,7 @@
                     <div class="card-header accordion-leccion-content" data-toggle="collapse" data-target="#collapse{{$lesson->id}}">
                       <a href="{{ route('lesson.show', [$lesson->slug, $lesson->id, $lesson->course_id]) }}">
                         <h5 class="mb-0 font-weight-bold d-block position-relative collapsible-link py-2">
-                          <i class="text-primary fa fa-play-circle"></i>{{$lesson->title}}
+                          <i class="text-success fa fa-play-circle"></i>{{$lesson->title}}
                         </h5>
                       </a>
                       <h6 class="mb-0 ml-4 d-block py-2"><i class="fa fa-clock-o" aria-hidden="true"></i> {{$lesson->duration}} m</h6>
@@ -399,7 +399,7 @@
                   @php $cont2++; @endphp
                 @endforeach
                 @if ($progresoCurso->certificate == 0)
-                  <div class="card mb-2" style="background-color: #2A91FF;">
+                  <div class="card mb-2" style="background-color:#28a745">
                     <div class="card-header text-center" >
                       <a href="{{ route('client.courses.take-evaluation', [$lesson->course->slug, $lesson->course_id]) }}">
                         <h5 class="mb-0 font-weight-bold d-block position-relative py-2" style="color: white;">

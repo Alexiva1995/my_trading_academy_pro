@@ -55,23 +55,23 @@
 @endphp
 
 <!-- Sidebar -->
-<div class="bg-dark-gray d-none d-sm-block d-md-none" id="sidebar-wrapper">
-    <div class="sidebar-heading border-right py-5" style="border-bottom: solid white 1px; height: 70px; background: #F5F5F5!important;">
+<div class="bg-dark-gray d-block d-sm-block d-md-none" id="sidebar-wrapper">
+    <div class="sidebar-heading border-right" style="border-bottom: solid white 1px; background: #F5F5F5!important; padding:25px;">
         <div class="row">
             <div class="col-4 d-flex flex-column">
-                <img src="{{ asset('images/logoverticalnegro.png') }}" class="text-white my-auto text-center" style="width: 150px; height: 50px;">
+                <img src="{{ asset('images/logoverticalnegro.png') }}" class="text-white my-auto text-center" style="width: 150px;">
             </div>
         </div>
     </div>
     <div class="list-group list-group-flush">
         <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Home</a>
-        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Nosotros</a>
-        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Academia</a>
+        <a href="{{ route('step1') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-chalkboard-teacher"></i> Nosotros</a>
+        <a href="{{ route('step2') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-graduation-cap"></i> Academia</a>
         @if(!Auth::user())
-        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Cursos</a>
+        <a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Cursos</a>
         @endif
-        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Inversiones</a>
-        <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Trading social</a>
+        <a href="{{ route('inversiones') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-chart-line"></i> Inversiones</a>
+        <a href="{{ route('trading') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-hand-holding-usd"></i> Trading social</a>
         @if(Auth::user())
         <a href="{{route('transmisiones')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-video"></i> Streaming</a>
         <a href="{{ route('schedule.calendar') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-calendar"></i> Mis Eventos</a>

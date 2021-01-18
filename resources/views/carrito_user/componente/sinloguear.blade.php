@@ -57,11 +57,11 @@
 
 <div class="col-md-12 mostrar" style="margin-top: 30px;">
     <h3 class="text-white">Inicia Sesión para disfrutar de tu compra</h3>
-    <h4 class="text-white pr-2 pt-2">Si no estás registrado puedes hacerlo <a href="#" onclick="toggle()">aquí</a></h4>
+    <h4 class="text-white pr-2 pt-2">Si no estás registrado puedes hacerlo <a class="text-success" href="#" onclick="toggle()">aquí</a></h4>
     @if($items[0]->period == 'Anual')
-    <h5 class="text-white pt-2">Al <a href="#" onclick="toggle()">registrarte</a> obtendrás precio preferencial de <b class="text-danger">${{$membresia->discount_annual}} </b></h5>
+    <h5 class="text-white pt-2">Al <a href="#" onclick="toggle()" class="text-success">registrarte</a> obtendrás precio preferencial de <b class="text-danger">${{$membresia->discount_annual}} </b></h5>
     @else
-    <h5 class="text-white pt-2">Al <a href="#" onclick="toggle()">registrarte</a> obtendrás precio preferencial de <b class="text-danger">${{$membresia->descuento}}</b></h5>
+    <h5 class="text-white pt-2">Al <a href="#" onclick="toggle()" class="text-success">registrarte</a> obtendrás precio preferencial de <b class="text-danger">${{$membresia->descuento}}</b></h5>
     @endif
     
 <form class="login-form pt-2" method="POST" action="{{ route('aut-shoping') }}" name="formulario">

@@ -13,6 +13,12 @@
         .bg-grey-alt {
             background: #313335;
         }
+
+        .card {
+            border: 0px solid rgba(0, 0, 0, .125) !important;
+            border-radius: 0px !important;
+            background: none!important;
+         }
     </style>
 @endpush
 
@@ -24,7 +30,7 @@
 
     @if (!Auth::guest())
     <div class="title-page-course col-md"><span class="text-white">
-            <h3 class="mb-2"><span class="text-white">Hola</span><span class="text-primary"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
+            <h3 class="mb-2"><span class="text-white">Hola</span><span class="text-success"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
     </div>
     @endif
 
