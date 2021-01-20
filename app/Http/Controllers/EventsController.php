@@ -111,7 +111,7 @@ class EventsController extends Controller
         $evento = new Events($request->all());
         $evento->uuid = $meetingUuid;
         $evento->subcategory_id = 2;
-        $evento->url_streaming = 'https://streaming.mybusinessacademypro.com/app/live/meetings/' . $evento->uuid;
+        $evento->url_streaming = 'https://streaming.mytradingacademypro.com/app/live/meetings/' . $evento->uuid;
         $evento->status = 1;
         $evento->save();
 

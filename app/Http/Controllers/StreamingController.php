@@ -13,13 +13,13 @@ use Auth; use Carbon\Carbon; use DB;
 class StreamingController extends Controller{
 
     public function setToken(){
-        $client = new Client(['base_uri' => 'https://streaming.mybusinessacademypro.com']);
+        $client = new Client(['base_uri' => 'https://streaming.mytradingacademypro.com']);
 
         $response = $client->request('POST', 'api/auth/login', [
             'headers' => ['Accept' => 'application/json', 'Content-Type' => 'application/x-www-form-urlencoded'],
             'form_params' => [
-                'email' => 'mbapro',
-                'password' => 'mbapro2020',
+                'email' => 'trading',
+                'password' => 'mytrady2020',
                 'device_name' => 'admin-device',
             ]
         ]);
@@ -32,7 +32,7 @@ class StreamingController extends Controller{
     }
 
     public function newMeeting(Request $request, $userId){
-        $client = new Client(['base_uri' => 'https://streaming.mybusinessacademypro.com']);
+        $client = new Client(['base_uri' => 'https://streaming.mytradingacademypro.com']);
 
         $headers = [
             'Accept'        => 'application/json',
@@ -68,7 +68,7 @@ class StreamingController extends Controller{
     }
 
     public function updateMeeting(Request $request, $uuid){
-        $client = new Client(['base_uri' => 'https://streaming.mybusinessacademypro.com']);
+        $client = new Client(['base_uri' => 'https://streaming.mytradingacademypro.com']);
 
         $headers = [
             'Accept'        => 'application/json',
@@ -100,7 +100,7 @@ class StreamingController extends Controller{
     }
     
     public function getStatus($uuid){
-        $client = new Client(['base_uri' => 'https://streaming.mybusinessacademypro.com']);
+        $client = new Client(['base_uri' => 'https://streaming.mytradingacademypro.com']);
 
         $headers = [
             'Accept'        => 'application/json',
@@ -127,10 +127,10 @@ class StreamingController extends Controller{
         $usuario->uuid = Str::uuid();
         $usuario->status = 'activated';
         $usuario->save();
-
+        
         $extension = explode('.', $request->avatar);
         $nombreImg = $usuario->id.".".$extension[1];
-        copy('/home/mbapro/public_html/academia/uploads/avatar/'.$request->avatar, '/home/mbapro/public_html/streaming/storage/app/public/avatar/'.$nombreImg);
+        copy('/home/mytrady/public_html/office/uploads/avatar/'.$request->avatar, '/home/mytrady/public_html/streaming/storage/app/public/avatar/'.$nombreImg);
         $usuario->avatar = '/storage/avatar/'.$nombreImg;
         $usuario->save();
 
@@ -139,6 +139,7 @@ class StreamingController extends Controller{
         $role->model_type = 'App\Models\User';
         $role->model_id = $usuario->id;
         $role->save();
+
 
         return $usuario->id;
     }
