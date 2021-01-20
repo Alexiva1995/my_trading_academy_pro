@@ -66,16 +66,12 @@
     <div class="list-group list-group-flush">
         <a href="{{ route('index') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Home</a>
         <a href="{{ route('step1') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-chalkboard-teacher"></i> Nosotros</a>
-        <a href="{{ route('step2') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-graduation-cap"></i> Academia</a>
-        @if(!Auth::user())
-        <a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-home"></i> Cursos</a>
-        @endif
+        <a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-graduation-cap"></i> Academia</a>
         <a href="{{ route('inversiones') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-chart-line"></i> Inversiones</a>
         <a href="{{ route('trading') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-hand-holding-usd"></i> Trading social</a>
         @if(Auth::user())
         <a href="{{route('transmisiones')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-video"></i> Streaming</a>
         <a href="{{ route('schedule.calendar') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-calendar"></i> Mis Eventos</a>
-        <a href="{{ route('courses') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-user-circle"></i> Mis Cursos</a>
         <a href="{{url('/admin')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-user"></i> Backoffice</a>
         @endif
         <a href="{{route('shopping-cart.membership')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-shopping-bag"></i> Membresias</a>

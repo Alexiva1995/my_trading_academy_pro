@@ -1,354 +1,154 @@
 @extends('layouts.landing')
 
-@push('scripts')
-    <script>
-        function loadMoreCoursesNew($accion) {
-            if ($accion == 'next') {
-                var route = $(".btn-arrow-next").attr('data-route');
-            } else {
-                var route = $(".btn-arrow-previous").attr('data-route');
-            }
-            $.ajax({
-                url: route,
-                type: 'GET',
-                success: function(ans) {
-                    $("#new-courses-section").html(ans);
-                }
-            });
-        }
-        function showMentorCourses($mentor){
-            $("#card-mentor-"+$mentor).css('display', 'none');
-            $("#courses-mentor-"+$mentor).slideToggle();
-        }
-        
-        function hideMentorCourses($mentor){
-            $("#courses-mentor-"+$mentor).css('display', 'none');
-            $("#card-mentor-"+$mentor).slideToggle();
-        }
-    </script>
-@endpush
-
 @push('styles')
     <style>
-        #new-courses-section .card-img-overlay:hover{
-            text-decoration: underline;
-        }
-        
-        .imagen:hover {-webkit-filter: none; filter: none; color: #6EC1E4 0.2em 0.2em 0.6em 0.1em;
-        }
-        
-        .imagen {filter: grayscale(80%);}
-        
-        
-        .containerscale:hover img {
-        transform: scale(1.1, 1.1);
+    .containerscale:hover{
+        transform: scale(1.1);
         z-index: 9;
        }
+    
+    .aumento{
+       font-weight: 700;
+       font-size: 18px;
+    }
+    .carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #696969!important;
+    border-radius: 50%;
+   }
 
     </style>
 @endpush
 
 @section('content')
-    @if (Session::has('msj-exitoso'))
-        <div class="alert alert-success" style="margin: 5px 15px;">
-            {{ Session::get('msj-exitoso') }}
-        </div>
-    @endif
 
-    @if (Session::has('msj-erroneo'))
-        <div class="alert alert-danger" style="margin: 5px 15px;">
-            {{ Session::get('msj-erroneo') }}
-        </div>
-    @endif
-
-    @if (!Auth::guest())
-        <div class="title-page-course col-md"><span class="text-white">
-            <h3><span class="text-white">Hola</span><span class="text-success"> {{$username}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
-        </div>
-        @if(!empty($last_course))
-        <div class="container-fluid d-sm-none">
-            <div class="row">
-                <div class="col-md-12">
-                    <h5 class="text-white text-uppercase ml-4 text-center" style="font-size: 12px;">
-                                {{$last_course->title}}
-                    </h5>
-                     <div class="col-md-12">
-                        <a href="{{ route('lesson.show', [$leccion_info->slug, $leccion_info->id, $last_course->course_id]) }}"  class="btn btn-success float-right text-uppercase btn-block m-2" style="font-size: 12px;"><i class="fa fa-play"></i> Continuar curso</a>
-                    </div>
-
-                    <div class="col-md-12 progress progress-course-bar pl-0">
-                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @else
-
-        @endif
-    @endif
-
-    {{-- BANNER --}}
-    @if (!Auth::guest())
-        @if(!empty($last_course))
-
-            <div class="container-fluid col-md-12 p-0">
-                <img src="{{ asset('uploads/images/courses/covers/'.$last_course->cover) }}" class="course-banner-img img-fluid" alt="..."/>
-                <div class="container-fluid pl-0 pr-0 course-banner-caption  d-none d-sm-block d-md-block clearfix">
-                    <div class="">
-                        <div class="row p-0">
-                            <h4 class=" col-md-10 text-white text-uppercase  font-weight-bold" >
-                                        {{$last_course->title}}
-                            </h4>
-                            
-                            <div class="col-md-2 float-right mb-2">
-                                <div class="row">
-                                     <a href="{{ route('lesson.show', [$leccion_info->slug, $leccion_info->id, $last_course->course_id]) }}"  class="btn btn-success float-right text-uppercase mr-4"><i class="fa fa-play"></i> Continuar curso</a>
-                                </div>
-
-                            </div>
-
-                            <div class="pl-0 pr-0 col-md-12 progress progress-course-bar">
-                                        <div class="progress-bar bg-success pl-0" role="progressbar" aria-valuenow="{{$progress_bar}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$progress_bar}}%">
-                            </div>
-                            </div>
+<div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
+    <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
+      <div id="mainSlider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item  active ">
+              <div class="overlay"></div>
+                  <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
+                   <div class="carousel-caption">
+                        <div class="col-md-8">
+                          <h3 class="estiloacademia text-left font-weight-bold mb-4">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3 class="text-left">
+                          <div class="" style="margin-top:70px;">
+                             @if(Auth::user())
+                            <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg">VER TODOS LOS CURSOS</a>
+                                @else
+                                <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg">REGISTRARSE</a>
+                            @endif
+                          </div>
                         </div>
-                    </div>
-                </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
-            </div>
-            <!--<div class="banner-course">
-                <div class="button-container">
-                    <img src="{{ asset('uploads/images/courses/covers/'.$last_course->cover) }}" class="course-banner-img" alt="..." height="550px" width="1600px" class="img-fluid" />
-                </div>
-                <div class="pl-0 pr-0 course-banner-caption">
-                    <div class="row">
-                        <div class="col-md-10">
-                            <h4 class="text-white text-uppercase ml-4">
-                                <a href="{{ route('courses.show', [$last_course->slug, $last_course->id]) }}" class="text-secondary text-sm">{{$last_course->title}}</a>
-                            </h4>
-                            {{-- <p class="col-md-6 description-course text-justify pl-0 ml-4">
-                                {{$last_course->description}}
-                            </p> --}}
-                            <div class="row">
-                                <div class="col-md-12 mb-2">
-                                    <a href="{{ route('courses.show', [$last_course->slug, $last_course->course_id]) }}" class="btn btn-danger float-right text-uppercase mr-2"><i class="fa fa-play"></i> Ver Curso</a>
-                                </div>
-                            </div>
-                            {{-- <div class="progress col-xs progress-course-bar">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$last_course->progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{$last_course->progress}}%">
-                                </div>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endif
-    @endif-->
-    {{-- FIN DEL BANNER --}}
-    {{-- SECCIÓN TUS CURSOS--}}
-    @if (!Auth::guest())
-        @if($cursos->isNotEmpty())
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title-courses ml-2">
-                        <h3 class="">Mis Cursos</h3>
-                        <hr style="margin-top:0px; border: 1px solid #707070;opacity: 1;" />
-                        <span>Estás tomando estos cursos actualmente...</span>
-                    </div>
-                </div>
-                <div class="container-fluid m-2">
-                    <div class="wrapper">
-                            @foreach ($cursos as $curso)
-                            <div class="containerscale">
+<!--ULTIMAS LECCIONES-->
+@if(Auth::user())
+<div class="col-md-12 py-5" style="background-color: #FFFFFF;">
+      <h2 style="color:#ED254E">LECCIONES RECOMENDADAS</h2>
 
-                            <div class="card m-2 mb-4 card-courses">
-
-                                <p>
-                                   <a href="{{ route('courses.show', [$curso->slug, $curso->id]) }}">
-                                    <img class="card-img-top" src="{{ asset('uploads/images/courses/covers/'.$curso->thumbnail_cover) }}" alt="card-image-cap">
-                                    </a>
-                                </p>
-                                <div class="card-body p-2">
-                                <div class="row d-flex align-items-center body-miscursos">
-                                    <h6 class="col-9 d-flex align-items-center text-title-miscursos" style="font-size:16px;"><a href="{{ route('courses.show', [$curso->slug, $curso->id]) }}" class="text-secondary">{{$curso->title}}</a>
-                                    </h6>
-
-                                    <div class="col-3 p-2 d-flex align-items-center d-none d-sm-none d-md-block icon-miscursos"><img src="{{ asset('images/icons/play.svg') }}" alt="" height="15px" width="15px"></div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    
-                        <div class="">
-                                <div class="row h-100">
-                                        <div class="card-block w-50 text-danger align-self-center">
-                                            <a href="{{ route('client.my-courses') }}" class="text-success font-weight-bold">Ver todos mis cursos</a>
-                                            <i class="text-success fa fa-arrow-right"></i>
-                                        </div>
-
-                                </div>
-                        </div>
-                    
-                    </div>
-
-                 </div>
-            </div>
-        @else
-            <div class="title-page-course col-md">
-                <span class="text-white">
-                    <h4 class=""> {{$username}} <span class="text-white"> ¡No has agregado cursos!</span></h4>
-                </span>
-            </div>
-        @endif
-    @endif
-    {{-- FIN SECCIÓN TUS CURSOS--}}
-
-    {{-- SECCIÓN RECOMENDACIONES--}}
-@if (!Auth::guest())
-@if($cursos->isNotEmpty())
-@if(!Empty($cursosRecomendados))
-<div class="section-landing mt-3" style="background-color: #121317;">
-
-    <div class="col">
-            @if (Auth::guest())
-                <h3><span class="text-success">Recomendados</span></h3>
-            @else
-                <h3><span class="text-success">Recomendados</span><span class="text-white"> según tus intereses.</span></h3>
-            @endif
-        </div>
-
-<!--Carrusel-->
-
-@if($total > 0)
+@if($cursosRecomendados->count() > 0)
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
  <div class="carousel-inner">
 
   <div class="carousel-item active">
-    <div class="row">
+    <div class="row align-items-center justify-content-center">
 
-@php
-$contador=0;
-@endphp
-@foreach($cursosRecomendados as $recommended)
-@php
-$contador++;
-@endphp
-
-@if($contador <= 3)
-
-<div class="col-md-4" style="margin-top: 20px;">
-  @if (!empty($recommended->thumbnail_cover))
- <img src="{{ asset('uploads/images/courses/covers/'.$recommended->thumbnail_cover) }}" class="card-img-top" alt="...">
- @else
- <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
-  @endif
- <div class="card-img-overlay clearfix">
-<div>
-    <h6 class="card-title" style="font-size: 12px">{{$recommended->mentor->display_name}}</h6>
-</div>
-<div class="row ml-0 d-flex h-100">
-    <div class="col-md-10 my-auto  recomendados-title text-center" style="margin-bottom: 7px !important">
-       <p class="col-sm w-100 pl-1 pr-1 text-center" style="font-size: 20px;"> <a href="{{ route('courses.show', [$recommended->slug, $recommended->id]) }}" class="text-white"> {{$recommended->title}}</a></p>
-    </div>
-    <div class="col-md-1 my-auto" style="margin-bottom: 7px !important">
-        <h6 class="text-white w-100">
-            <i class="far fa-user-circle text-center">
-                <p style="font-size: 10px;">{{ $recommended->users->count() }}</p>
-            </i>
-            
-        </h6>
-    </div>
-</div>
-</div>
- </div>
-@endif
-@endforeach
-</div>
+         @php
+         $contador=0;
+         @endphp
+         @foreach($cursosRecomendados as $course)
+         @php
+         $contador++;
+         @endphp
+         @if($contador <= 3)
+         <div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
+               </div>
+         </div>
+         @endif
+         @endforeach
+      </div><!--END ROW-->
 </div>
 
-@if($total >= 4)
+@if($cursosRecomendados->count() >= 4)
 <div class="carousel-item">
-    <div class="row">
+    <div class="row align-items-center justify-content-center">
 
 @php
 $segundo =0;
 @endphp
-@foreach($cursosRecomendados as $recommended)
+@foreach($cursosRecomendados as $course)
 @php
 $segundo++;
 @endphp
 
 @if($segundo >= 4 && $segundo <= 6)
-
-<div class="col-md-4" style="margin-top: 20px;">
-  @if (!empty($recommended->thumbnail_cover))
- <img src="{{ asset('uploads/images/courses/covers/'.$recommended->thumbnail_cover) }}" class="card-img-top" alt="...">
- @else
- <img src="{{ asset('uploads/images/avatar/default.jpg') }}" class="card-img-top" alt="...">
-  @endif
-<div class="card-img-overlay clearfix">
-<div>
-    <h6 class="card-title" style="font-size: 14px">{{$recommended->mentor->display_name}}</h6>
+<div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
+               </div>
 </div>
-<div class="row ml-0 d-flex h-100">
-<div class="col-md-10 my-auto recomendados-title" style="margin-bottom: 7px !important">
-        <p class="col-sm w-100 pl-1 pr-1 text-center" style="font-size: 20px;"> <a href="{{ route('courses.show', [$recommended->slug, $recommended->id]) }}" class="text-white"> {{$recommended->title}}</a></p>
-    </div>
-    <div class="col-md-2 my-auto" style="margin-bottom: 7px !important">
-        <h6 class="text-white w-100">
-            <i class="far fa-user-circle text-center">
-                <p style="font-size: 10px;">{{ $recommended->users->count() }}</p>
-            </i>
-            
-        </h6>
-    </div>
-</div>
-</div>
- </div>
 @endif
 @endforeach
 </div>
 </div>
 <div class="carousel-item">
-    <div class="row">
+    <div class="row align-items-center justify-content-center">
 
 @php
 $tercero =0;
 @endphp
-@foreach($cursosRecomendados as $recommended)
+@foreach($cursosRecomendados as $course)
 @php
 $tercero++;
 @endphp
 
-@if($tercero >= 7 && $tercero <= 9)
-
-<div class="col-md-4" style="margin-top: 20px;">
-  @if (!empty($recommended->thumbnail_cover))
- <img src="{{ asset('uploads/images/courses/covers/'.$recommended->thumbnail_cover) }}" class="card-img-top" alt="...">
- @else
- <img src="{{ asset('uploads/images/avatar/default.jpg') }}" class="card-img-top" alt="...">
-  @endif
-<div class="card-img-overlay clearfix">
-<div>
-    <h6 class="card-title" style="font-size: 14px">{{$recommended->mentor->display_name}}</h6>
+@if($tercero >= 7 && $tercero < 9)
+<div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
+               </div>
 </div>
-<div class="row ml-0 d-flex h-100">
-    <div class="col-md-10 my-auto recomendados-title" style="margin-bottom: 7px !important">
-        <h6 class="col-sm w-100 pl-1 pr-1 text-center" style="font-size: 20px"><a href="{{ route('courses.show', [$recommended->slug, $recommended->id]) }}" class="text-white text-center"> {{$recommended->title}}</a></h6>
-    </div>
-    <div class="col-md-2 my-auto" style="margin-bottom: 7px !important">
-        <h6 class="text-white w-100">
-            <i class="far fa-user-circle text-center">
-                <p style="font-size: 10px;">{{ $recommended->users->count() }}</p>
-            </i>
-        </h6>
-    </div>
-</div>
-</div>
- </div>
 @endif
 @endforeach
 </div>
@@ -357,13 +157,13 @@ $tercero++;
 
 </div>
 
-@if($total >= 3)
+@if($cursosRecomendados->count() >= 3)
 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-<i class="fas fa-chevron-circle-left"></i>
+<i class="fas fa-chevron-left fa-2x" style="color:black; font-weight: bold"></i>
 <span class="sr-only">Previous</span>
 </a>
 <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-<i class="fas fa-chevron-circle-right"></i>
+<i class="fas fa-chevron-right fa-2x" style="color:black; font-weight: bold"></i>
 <span class="sr-only">Next</span>
 </a>
 @endif
@@ -372,202 +172,189 @@ $tercero++;
 
 @endif
 <!--Carrusel-->
+
+<!--CARRUSEL END-->
 </div>
-<hr style="margin-top: 40px;border: 1px solid #707070;opacity: 1;margin-bottom: 45px;">
-
-@endif
-@endif
 @endif
 
-    {{--FIN SECCIÓN RECOMENDACIONES--}}
-    
-   {{-- SECCIÓN CURSOS MAS NUEVOS --}}
-    @if ($cursosNuevos->count() > 0)
-        <div class="section-landing new-courses-section" id="new-courses-section">
-            <div class="row">
-                <div class="col">
-                    <div class="section-title-landing new-courses-section-title">LOS MÁS NUEVOS</div>
-                </div>
-                <div class="col text-right">
-                    <button type="button" class="btn btn-outline-light btn-arrow btn-arrow-previous" @if ($previous == 0) disabled @endif data-route="{{ route('landing.load-more-courses-new', [$idStart, 'previous'] ) }}"  onclick="loadMoreCoursesNew('previous');"><i class="fas fa-chevron-left"></i></button>
-                    <button type="button" class="btn btn-outline-success btn-arrow btn-arrow-next" @if ($next == 0) disabled @endif data-route="{{ route('landing.load-more-courses-new', [$idEnd, 'next'] ) }}"  onclick="loadMoreCoursesNew('next');"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
 
-            <div id="newers" class="row" style="padding: 10px 30px;">
-                @foreach ($cursosNuevos as $cursoNuevo)
-                    <div class="col-xl-4 col-lg-4 col-12 box-courses" style="padding-bottom: 10px;">
-                        <div class="card">
-                            <a href="{{ route('courses.show', [$cursoNuevo->slug, $cursoNuevo->id]) }}" style="color: white;">
-
-                            @if (!is_null($cursoNuevo->thumbnail_cover))
-                                <!-- <img src="{{ asset('uploads/avatar/'.$cursoNuevo->mentor->avatar) }}" class="card-img-top new-course-img" alt="..."> -->
-                                <img src="{{ asset('uploads/images/courses/covers/'.$cursoNuevo->thumbnail_cover) }}" class="card-img-top new-course-img" alt="...">
+<!--LOS MÁS NUEVO-->
+@if ($cursosNuevos->count() > 0)
+<div class="container-fluid bg-ecosistema py-5">
+<div class="new-courses-section-title mb-2">
+                <h3 style="font-weight: 800;color:#00C65B;">LOS MÁS NUEVOS</h3>
+        </div>
+        <div class="row align-items-center justify-content-center">
+        @foreach($cursosNuevos as $cursoNuevo)
+            <div class="col-md-3 mb-2">
+                    <div class="card card-no-background">
+                    <a href="{{ route('courses.show', [$cursoNuevo->slug, $cursoNuevo->id]) }}" class="text-white">
+                    @if (!is_null($cursoNuevo->thumbnail_cover))
+                            <img src="{{ asset('uploads/images/courses/covers/'.$cursoNuevo->thumbnail_cover) }}" class="img-fluid img-lo-nuevo">
                             @else
                                 <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top new-course-img" alt="...">
-                            @endif
-                            <div class="card-img-overlay d-flex flex-column course-overlay">
-                                <div class="mt-auto">
-                                    <div class="section-title-landing text-white text-center" style="line-height:1;">{{ $cursoNuevo->title }}</div>
-                                    <div class="row">
-                                       <div class="col-md-12">
-                                           <p class="ico" style="float: right;"> <i class="far fa-user-circle"> {{ $cursoNuevo->users->count()}}</i></p>
-                                       </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    @endif
-    {{-- FIN DE SECCIÓN CURSOS MÁS NUEVOS--}}
-
-    {{-- PROMOCIONES PUBLICITARIAS --}}
-    @if ($promociones->count() > 0)
-        <div class="section-landing mt-3" style="background-color: #121317;">
-            <div class="col">
-                <h3><span class="text-danger">Promociones Publicitarias</span></h3>
-            </div>
-
-            <!--Carrusel-->
-            <div id="carouselPromotions" class="carousel slide" data-bs-ride="carousel">
-                @if ($promociones->count() > 1)
-                    @php $p1 = 0; @endphp
-                    <ol class="carousel-indicators">
-                        @foreach ($promociones as $pro)
-                            <li data-target="#carouselPromotions" data-slide-to="{{ $p1 }}" @if ($p1 == 0) class="active" @endif></li>
-                            @php $p1++; @endphp
-                        @endforeach
-                    </ol>
-                @endif
-                <div class="carousel-inner">
-                    @php $p2 = 0; @endphp
-                    @foreach ($promociones as $promocion)
-                        @php $p2++; @endphp
-                        <div class="carousel-item @if ($p2 == 1) active @endif">
-                            <h5 >{{ $promocion->title }}</h5>
-                            <p >{!! $promocion->description !!}</p>
-                            <img src="{{ asset('uploads/images/coursesPromotions/'.$promocion->banner) }}" class="d-block w-100" alt="...">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    @endif
-    {{-- FIN DE PROMOCIONES PUBLICITARIAS --}}
-
-    {{-- SECCIÓN CURSOS POR CATEGORÍA --}}
-    @if(!empty($courses))
-    <div class="">
-        <div class="container-fluid">
-            <div class="col section-title-category">
-                <h3>
-                    CURSOS POR CONTENIDO
-                </h3>
-            </div>
-            <div class="row">
-                @foreach ($courses as $course)
-                    @if ($course->course_count > 0)
-                        <div class="col-sm-4 d-inline-flex p-2">
-                            @if (!is_null($course->cover))
-                                <img src="{{ asset('uploads/images/categories/covers/'.$course->cover) }}" class="card-img-top img-fluid course-category1" alt="...">
-                            @else
-                                <img src="{{ asset('uploads/images/categories/covers/default.jpg') }}" class="card-img-top img-fluid course-category1" alt="...">
-                            @endif
-                            <div class="course-category-caption ml-1 mr-1">
-                                <div class="col-sm-lg text-sm-left font-weight-bold">
-                                    <a href="{{ url('courses/category/'.$course->id) }}" class="col-sm-lg text-sm-left  text-success">{{$course->title}}</a>
-                                </div>
-                                <div class="col-lg">
-                                    <p class="text-white font-weight-bold">{{$course->course_count}} Cursos</p>
-                                </div>
-                            </div>
-                        </div>
                     @endif
-                @endforeach
-            </div>
-        </div>
-    </div>
-    @else
-    <div class="row">
-      No se encontraron mentores...
-    </div>
-
-    @endif
-    {{-- FIN SECCIÓN CURSOS POR CATEGORÍA--}}
-
-    {{-- SECCIÓN TUS MENTORES--}}
-    @if (!Auth::guest())
-       {{-- SECCIÓN MENTORES --}}
-    <div class="section-landing">
-            <div class="row">
-                <div class="col">
-                    <div class="section-title-landing new-courses-section-title">
-                        <h1>MENTORES</h1>
-                    </div>
-                </div>
-            </div>
-        
-            <div id="newers" class="row" style="padding: 10px 30px;">
-                @foreach ($mentores as $mentor)
-                    <div class="col-xl-3 col-lg-3 col-12" style="padding-bottom: 10px;">
-                        <div class="card-no-background card" id="card-mentor-{{$mentor->mentor_id}}">
-                            <a href="" style="color: white;">
-                            
-                            @if (!is_null($mentor->avatar))
-                                <!-- <img src="{{ asset('uploads/avatar/'.$mentor->avatar) }}" class="card-img-top new-course-img" alt="..."> -->
-                                <img src="{{ asset('uploads/avatar/'.$mentor->avatar) }}" class="card-img-top new-course-img" alt="...">
-                            @else
-                                <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top new-course-img" alt="...">
-                            @endif
-                            <div class="card-img-overlay d-flex flex-column mentor-overlay">
-                                <div class="mt-auto">
-                                    <div class="text-sm text-white" style="line-height:1;">
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <a  href="{{ url('courses/mentor/'.$mentor->mentor_id) }}" style="color:#fff"> {{ $mentor->nombre }}</a>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a href="javascript:;" onclick="showMentorCourses({{$mentor->mentor_id}});"><i class="fa fa-search text-success" style="font-size: 18px;"></i></a>
-                                            </div>
-                                        </div>    
-                                    </div>
-                                    
-                                   
-                                </div>
+                            <div class="card-img-overlay lo-nuevo-text">
+                              <h3 class="text-white"> <a href="{{ route('courses.show', [$cursoNuevo->slug, $cursoNuevo->id]) }}" class="text-white">{{$cursoNuevo->title}}</a></h3>
+                                <h5 class="text-white"> <a href="{{ url('courses/mentor/'.$cursoNuevo->mentor->ID) }}" class="text-white">{{$cursoNuevo->mentor->display_name}}</a> </h5>
+                                <h5 class="text-white"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$cursoNuevo->duration}}</h5>
                             </div>
-                          </a>
-                        </div>
-                        <div class="card-no-background card" style="display: none;" id="courses-mentor-{{$mentor->mentor_id}}">
-                            <a href="" style="color: white;">
-                                @if (!is_null($mentor->avatar))
-                                    <img src="{{ asset('uploads/avatar/'.$mentor->avatar) }}" class="card-img-top new-course-img" alt="..." style="opacity: 0.1 !important;">
-                                @else
-                                    <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top new-course-img" alt="...">
-                                @endif
-                                <div class="card-img-overlay d-flex flex-column">
-                                    @foreach ($mentor->courses as $cursoMentor)
-                                        <a hreF="{{ route('courses.show', [$cursoMentor->slug, $cursoMentor->id]) }}" style="font-size: 19px;" class="text-success"><i class="fas fa-graduation-cap text-success"></i> {{ $cursoMentor->title }}</a>
-                                    @endforeach
-                                    <div class="mt-auto">
-                                        <div class="text-sm text-white text-right" style="line-height:1;">
-                                            <a href="javascript:;" onclick="hideMentorCourses({{$mentor->mentor_id}});"><i class="fas fa-chevron-circle-left"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
-                @endforeach
             </div>
+        @endforeach
         </div>
-    
-    
-    
-    {{-- FIN SECCIÓN MENTORES --}}
-    @endif
-    {{-- FIN SECCIÓN TUS MENTORES--}}
+
+        <div class="col-md-3 offset-md-5 mt-4 mb-4">
+        @if(Auth::user())
+           <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg">VER TODOS LOS CURSOS</a>
+        @else
+        <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg">REGISTRARSE</a>
+        @endif
+        </div>
+
+</div>
+@endif
+
+<!--END LOS MÁS NUEVO-->
+
+<!--CATEGORIAS-->
+@if($courses->count() > 0)
+<div class="container-fluid bg-ecosistema py-5" style="background:#EFEFEF;">
+<div class="new-courses-section-title mb-2">
+                <h3 class="font-weight-bold" style="color:#00C65B;">CATEGORÍAS</h3>
+        </div>
+        <div class="row align-items-center justify-content-center">
+        @foreach($courses as $course)
+            <div class="col-md-3 mb-2">
+                    <div class="card card-no-background">
+                    @if (!empty($course->cover))
+                            <img src="{{ asset('uploads/images/categories/covers/'.$course->cover) }}" class="img-fluid img-lo-nuevo categoria-card">
+                    @else
+                    <img src="{{ asset('uploads/images/categories/covers/default.png') }}" alt="conexión" class="img-fluid img-lo-nuevo categoria-card">
+                    @endif        
+                            <div class="card-img-overlay categoria-text text-center">
+                                 <h5 class="text-white">{{$course->title}}</h5>
+                                 <a href="{{ url('courses/category/'.$course->id) }}" class="btn btn-danger">VER MÁS</a>
+                            </div>
+                    </div>
+            </div>
+        @endforeach
+
+        </div>
+
+</div>
+@endif
+
+<!--END CATEGORIAS-->
+
+<!--TESTIMONIOS-->
+
+<div class="container-fluid py-5" style="background:#ED254E;">
+      <div class="new-courses-section-title mb-2">
+                <h1 class="text-center font-weight-bold">TESTIMONIOS</h1>
+        </div>
+            <!--Carousel Wrapper-->
+            <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+               <!--Indicators-->
+               <ol class="carousel-indicators">
+               <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+               <li data-target="#multi-item-example" data-slide-to="1"></li>
+               
+               </ol>
+               <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+               <div class="row align-items-center justify-content-center" style="margin-bottom:50px!important;">
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                  </div><!--END ROW-->
+        </div><!--/.First slide-->
+
+                    <!--Second slide-->
+                    <div class="carousel-item">
+               <div class="row align-items-center justify-content-center" style="margin-bottom:50px!important;">
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                     <div class="col-md-3 mb-2">
+                           <div class="card card-testimonios">
+                              <div class="card-body text-center">
+                                 <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
+                                 <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                 <img class="mx-auto"
+                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                                 <h5 class="text-center">Nombre Estudiante</h5>
+                              </div>
+                              </div>
+                     </div>
+                  </div><!--END ROW-->
+        </div><!--/.Second slide-->
+          
+        </div>
+
+
+        </div>
+
+
+
+
+</div>
+
+
+<!--END TESTIMONIOS-->
+
 @endsection

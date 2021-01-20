@@ -12,7 +12,7 @@ use Hash; use Mail;
 use Carbon\Carbon;
 // modelo
 use App\Models\User; use App\Models\Settings; use App\Models\Formulario; use App\Models\SettingCliente;
-use App\Models\Course; use App\Models\Category; use App\Models\Events;
+use App\Models\Course; use App\Models\Category; use App\Models\Events; use App\Models\Entradas;
 use App\Models\Pop;
 
 // llamando a los controladores
@@ -115,7 +115,11 @@ class HomeController extends Controller{
                         ->take(9)
                         ->get();
 
-         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category'));
+         $articulos = Entradas::take(3)->get();
+         $cursosArray = [];
+
+        $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
+         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
  
      }else{
          $proximos = Events::where('date', '>', date('Y-m-d'))
@@ -148,8 +152,10 @@ class HomeController extends Controller{
         $events_category = Category::withCount('events')
         ->take(9)
         ->get();
- 
-       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category'));
+        $articulos = Entradas::take(3)->get();
+        $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
+      //  dd($ultimos_cursos);
+       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
      }
    }
 

@@ -95,9 +95,6 @@ class CourseController extends Controller{
                                     ->get();
 
             $misCursos = DB::table('courses_users')->where('user_id', Auth::user()->ID)->select('course_id')->get();
-
-            // dd($misCursos);
-
             $cursosRecomendados = collect();
 
             foreach ($cursosMasComprados as $cursoComprado){
@@ -179,6 +176,7 @@ class CourseController extends Controller{
 
         $cursosNuevos = Course::where('status', '=', 1)
                             ->orderBy('id', 'DESC')
+                            ->with('mentor')
                             ->take(3)
                             ->get();
 
@@ -216,7 +214,7 @@ class CourseController extends Controller{
 
         /*Cursos por categoria con el numero de cursos asociados*/
         $courses = Category::withCount('course')
-                        ->take(9)
+                        ->take(4)
                         ->get();
 
         if (!Auth::guest()){
@@ -255,24 +253,12 @@ class CourseController extends Controller{
                     }
                     $cont++;
                 }
-                // $categoriastmp2 = array_unique($categoriastmp);
-                // dump($categoriastmp, $categoriastmp2);
-                // for ($i=0; $i < count($categoriastmp2); $i++) {
-                //     if ($i == 0){
-                //         $string = $categoriastmp2[$i];
-                //     }else{
-                //         $string = $string.', '.$categoriastmp2[$i];
-                //     }
-                // }
                 $mentor->categoria = $string;
                 $mentor->courses = $cursostmp;
             }
         }
 
-        /*Datos del progress bar*/
-
         $promociones = Promotion::where('status', '=', 1)->orderBy('id', 'DESC')->get();
-
         return view('cursos.cursos')->with(compact('username','cursosDestacados', 'cursosNuevos', 'idStart', 'idEnd', 'previous', 'next', 'courses', 'mentores', 'cursos', 'cursosRecomendados', 'total', 'last_course', 'progress_bar', 'leccion_info', 'promociones'));
     }
 

@@ -190,7 +190,7 @@
 						            </div>
 								</div>
 								<div class="col-md-12 text-center">
-									<label>Dimensiones para la miniatura <br><span style="color: red;">350px  x  450px</span></label>
+									<label>Dimensiones para la miniatura <br><span style="color: red;">520px x 350px</span></label>
 								</div>
 						        <div class="col-md-12">
 						            <div class="form-group">

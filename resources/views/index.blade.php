@@ -19,7 +19,7 @@
                      <div class="estilomytrandingtwo">Academy Pro</div>
                      <div class="mt-2 d-none d-sm-none d-md-block"><h5>Aprende las mejores estrategias y conviértete en un experto en operaciones en el mercado de divisas.</h5></div>
                   </div>
-                  <div class="text-center btn-home"> <a href="#" class="btn btn-danger font-weight-bold">QUIERO SER PARTE</a></div>
+                  <div class="text-center btn-home"> <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg font-weight-bold">QUIERO SER PARTE</a></div>
               </div>
           </div>
         </div>
@@ -75,67 +75,149 @@
 <!--ULTIMAS LECCIONES-->
 <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
       <h2 class="text-center">ÚLTIMAS LECCIONES</h2>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="row">
-                           <div class="col-md-4 pr-1" style="margin-top: 20px;">
-                                    <img src="{{ asset('uploads/images/courses/lesson/5.jpg') }}" class="card-img-top" alt="...">
-                                    <div class="card-img-overlay lesson-overlay h-100 d-table">
-                                          <div class="d-table-cell align-middle font-weight-bold">
-                                             <h3 class="card-title text-white font-weight-bold">¿QUÉ ES TRADING?</h3>
-                                             <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                             <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 5:31</h5>
-                                          </div>
-                                    </div>
-                           </div>
+      @if($ultimos_cursos->isNotEmpty())
+@if(!Empty($ultimos_cursos))
+<!--Carrusel-->
 
-                           
-                           <div class="col-md-4 pr-1" style="margin-top: 20px;">
-                           <img src="{{ asset('uploads/images/courses/lesson/5.jpg') }}" class="card-img-top" alt="...">
-                           <div class="card-img-overlay lesson-overlay h-100 d-table">
-                                 <div class="d-table-cell align-middle font-weight-bold">
-                                    <h3 class="card-title text-white font-weight-bold">ÚLTIMAS TENDENCIAS</h3>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 3:27</h5>
-                                 </div>
-                           </div>
-                           </div>
+@if($ultimos_cursos->count() > 0)
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
-                           <div class="col-md-4 pr-1" style="margin-top: 20px;">
-                           <img src="{{ asset('uploads/images/courses/lesson/5.jpg') }}" class="card-img-top" alt="...">
-                           <div class="card-img-overlay lesson-overlay h-100 d-table">
-                                 <div class="d-table-cell align-middle font-weight-bold">
-                                    <h3 class="card-title text-white font-weight-bold">MENTALIDAD DE INVERSOR</h3>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    
-                                    <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h5>
-                                 </div>
-                                 
-                           </div>
-                           </div>
+ <div class="carousel-inner">
 
-                  </div>
+  <div class="carousel-item active">
+    <div class="row align-items-center justify-content-center">
+
+         @php
+         $contador=0;
+         @endphp
+         @foreach($ultimos_cursos as $course)
+         @php
+         $contador++;
+         @endphp
+         @if($contador <= 3)
+         <div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
                </div>
-
-            </div>
-               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true" style=""></span>
-                  <span class="sr-only">Previous</span>
-               </a>
-               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-               </a>
          </div>
+         @endif
+         @endforeach
+      </div><!--END ROW-->
+</div>
+
+@if($ultimos_cursos->count() >= 4)
+<div class="carousel-item">
+    <div class="row align-items-center justify-content-center">
+
+@php
+$segundo =0;
+@endphp
+@foreach($ultimos_cursos as $course)
+@php
+$segundo++;
+@endphp
+
+@if($segundo >= 4 && $segundo <= 6)
+<div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase">{{$course->mentor->display_name}}</h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
+               </div>
+</div>
+@endif
+@endforeach
+</div>
+</div>
+<div class="carousel-item">
+    <div class="row align-items-center justify-content-center">
+
+@php
+$tercero =0;
+@endphp
+@foreach($ultimos_cursos as $course)
+@php
+$tercero++;
+@endphp
+
+@if($tercero >= 7 && $tercero <= 9)
+<div class="col-md-3 mb-2">
+               @if (!empty($course->thumbnail_cover))
+               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
+               @else
+               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+               @endif
+               <div class="card-img-overlay lesson-overlay h-100 d-table">
+                     <div class="d-table-cell align-middle font-weight-bold">
+                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                        <h6 class="text-white text-uppercase">{{$course->mentor->display_name}}</h6>
+                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                     </div>
+               </div>
+</div>
+@endif
+@endforeach
+</div>
+</div>
+@endif
+
+</div>
+
+@if($ultimos_cursos->count() >= 3)
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+<i class="fas fa-chevron-left fa-2x" style="color:black; font-weight: bold"></i>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+<i class="fas fa-chevron-right fa-2x" style="color:black; font-weight: bold"></i>
+<span class="sr-only">Next</span>
+</a>
+@endif
+
+</div>
+
+@endif
+<!--Carrusel-->
+@endif
+@endif
 
       <!--CARRUSEL END-->
 
       <div class="text-center pt-5">
-         <a href="" class="btn btn-lg btn-success">ACCEDER A LA ACADEMIA</a>
+      @if(Auth::user())
+         <a href="{{route('step2')}}" class="btn btn-lg btn-success">ACCEDER A LA ACADEMIA</a>
+      @else
+      <a href="{{ route('log').'?act=0' }}" class="btn btn-lg btn-success">ACCEDER A LA ACADEMIA</a>
+      @endif
       </div>
 </div>
 <!--ULTIMAS LECCIONES END-->
+
+{{-- SECCIÓN RECOMENDACIONES--}}
+
+
+{{--FIN SECCIÓN RECOMENDACIONES--}}
+
+
 
 <!--SUSCRIBIRSE-->
 <div class="container-fluid img-background-suscribe py-5">
@@ -161,39 +243,25 @@
 <!--SUSCRIBIRSE END-->
 
 <!--NOTICIAS-->
+@if($articulos->count() > 0)
 <div class="container-fluid py-5"  style="background-color: #FFFFFF;">
 <h2 class="text-center">NOTICIAS</h2>
 <div class="row offset-md-2">
+   @foreach($articulos as $articulo)
     <div class="col-md-3 mt-4">
             <div class="card card-noticias">
-                  <img class="card-img-top" src="{{ asset('images/grupo422.png') }}" alt="Card image cap">
+                  <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap">
                   <div class="card-body text-center">
-                     <h5 class="card-title text-center">Nombre del artículo</h5>
+                     <h5 class="card-title text-center" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{$articulo->titulo}}</h5>
                      <a href="#" class="text-danger font-weight-bold">Ver más</a>
                   </div>
             </div>
     </div>
-    <div class="col-md-3 mt-4">
-            <div class="card card-noticias">
-                  <img class="card-img-top" src="{{ asset('images/grupo422.png') }}" alt="Card image cap">
-                  <div class="card-body text-center">
-                     <h5 class="card-title text-center">Nombre del artículo</h5>
-                     <a href="#" class="text-danger font-weight-bold">Ver más</a>
-                  </div>
-            </div>
-    </div>
-    <div class="col-md-3 mt-4">
-            <div class="card card-noticias">
-                  <img class="card-img-top" src="{{ asset('images/grupo422.png') }}" alt="Card image cap">
-                  <div class="card-body text-center">
-                     <h5 class="card-title text-center">Nombre del artículo</h5>
-                     <a href="#" class="text-danger font-weight-bold">Ver más</a>
-                  </div>
-            </div>
-    </div>
-  </div>
+    @endforeach
+  </div><!--END ROW-->
 
 </div>
+@endif
 <!--NOTICIAS END-->
 
 <!--HERRAMIENTAS-->

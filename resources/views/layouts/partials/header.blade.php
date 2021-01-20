@@ -9,9 +9,9 @@
                 <img src="{{ asset('images/logoverticalnegro.png') }}" class="img-fluid logo-header">
             </div>
             <div class="col-12 col-sm-12 col-md-3 pt-2 text-center">
-                <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-facebook-f fa-1x" style="color:#111329;"></i></a>
-                <a href="#" class="btn social-icons" target="_blank"><i class="fa fa-twitter fa-1x" style="color:#111329;"></i></a>
-                <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-instagram fa-1x" style="color:#111329;"></i></a>
+                <a href="https://www.facebook.com/mytradingacademypro" target="_blank" class="btn social-icons"><i class="fa fa-facebook-f fa-1x" style="color:#111329;"></i></a>
+                <a href="https://twitter.com/MyTradingAcade1" class="btn social-icons" target="_blank"><i class="fa fa-twitter fa-1x" style="color:#111329;"></i></a>
+                <a href="https://www.instagram.com/mytradingacademy.pro/?igshid=1autauadtj9sb" target="_blank" class="btn social-icons"><i class="fa fa-instagram fa-1x" style="color:#111329;"></i></a>
                 <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-youtube fa-1x" style="color:#111329;"></i></a>
                 <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-linkedin fa-1x" style="color:#111329;"></i></a>
             </div>
@@ -29,17 +29,8 @@
                 <a class="nav-link items-header text-center" href="{{route('step1')}}">NOSOTROS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link items-header text-center" href="{{route('step2')}}">ACADEMIA</a>
+                <a class="nav-link items-header text-center" href="{{route('courses')}}">ACADEMIA</a>
             </li>
-            @if (Auth::guest())
-                <li class="nav-item">
-                    <a class="nav-link items-header text-center" href="{{ route('courses') }}">CURSOS</a>
-                </li>
-            @else
-                <li class="nav-item">
-                    <a class="nav-link items-header text-center" href="{{ route('courses') }}">MIS CURSOS</a>
-                </li>
-            @endif
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('transmisiones')}}">STREAMING</a>
             </li>
@@ -49,9 +40,6 @@
             </li>
            <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('trading')}}">TRANDING SOCIAL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link items-header text-center" href="#">PRODUCTOS & HERRAMIENTAS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route ('shopping-cart.membership')}}">MEMBRESIAS</a>
