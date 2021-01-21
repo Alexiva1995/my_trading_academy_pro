@@ -10,15 +10,17 @@ use Auth;
 use DB; 
 use Hash; use Mail;
 use Carbon\Carbon;
+use App\Mail\Suscripcion;
 // modelo
 use App\Models\User; use App\Models\Settings; use App\Models\Formulario; use App\Models\SettingCliente;
 use App\Models\Course; use App\Models\Category; use App\Models\Events; use App\Models\Entradas;
-use App\Models\Pop;
+use App\Models\Pop; use App\Models\Subscription;
 
 // llamando a los controladores
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InsigniaController;
 use Modules\ReferralTree\Http\Controllers\ReferralTreeController;
+
 
 use PDF;
 
@@ -324,5 +326,24 @@ class HomeController extends Controller{
             $category_name = Category::where('id', '=', $category_id)->first();
  
              return view('events.events_by_category', compact('events','category_name'));
+         }
+
+         public function subscriptions(Request $request){
+               $msg = request()->validate([
+                  'email' => 'required|email',
+            ]);
+            $registrado = Subscription::where('email', $request->email)->first();
+            if(is_null($registrado)){
+               Subscription::create($request->all());
+               Mail::to($request->email)->queue(new Suscripcion($msg));
+               return back()->with('msj-exitoso', '¡Suscripción exitosa!');
+            }
+            else{
+               return back()->with('msj-erroneo', 'Usted ya se encuentra suscrito');
+
+            }
+           
+
+            
          }
 }

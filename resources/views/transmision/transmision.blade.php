@@ -343,76 +343,37 @@
    </div>-->
 
    <!--RECIENTES-->
+   @if($finalizados->count() > 0)
    <div class="col-md-12 py-5" style="background-color: #EFEFEF;">
         <div class="section-title-landing new-courses-section-title mb-2" style="text-align: center;">
                 <h3 style="font-weight: 800; color:#111329;">TRANSMISIONES RECIENTES</h3>
         </div>
-        <div class="row align-items-center justify-content-center">
-            <div class="containerscale">
+        <div class="row align-items-center justify-content-center no-gutters">
+            @php $contador=0; @endphp
+            @foreach($finalizados as $finalizado)
+               @php $contador++; @endphp
+            <div class="containerscale col-md-3">
                     <div class="card">
-                            <img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">
+                              @if ($finalizado->miniatura == null)
+                                 <img src="{{ asset('uploads/avatar/'.$finalizado->mentor->avatar) }}" class="card-img-top img-prox-events" alt="...">
+                              @else
+                                 <img src="{{ asset('uploads/images/miniatura/'.$finalizado->miniatura) }}" class="card-img-top img-prox-events" alt="...">
+                              @endif
+                            <!--<img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">-->
                             <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
+                                    <h5 class="text-white text-uppercase">{{$finalizado->title}}</h5>
+                                    <h6 class="text-white text-uppercase">{{$finalizado->mentor->display_name}}</h6>
+                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$finalizado->duration}}</h6>
                             </div>
                     </div>
             </div>
-            <div class="containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/10-285x300.png') }}" alt="innovación">
-                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
-                        </div>
-                </div>
-            </div>
-            <div class="containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/08-285x300.png') }}" alt="crecimiento">
-                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
-                        </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row align-items-center justify-content-center">
-            <div class="containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/11-285x300.png') }}" alt="calidad">
-                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
-                        </div>
-                </div>
-            </div>
-            <div class="containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/12-285x300.png') }}" alt="eficacia">
-                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
-                        </div>
-                </div>
-            </div>
-            <div class="containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/13-285x300.png') }}" alt="trascendencia">
-                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white">NOMBRE TRANSMISIÓN</h5>
-                                    <h6 class="text-white">NOMBRE PROFESOR</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp 1:37</h6>
-                        </div>
-                </div>
-            </div>
+            @if($contador == 3 || $contador == 6 || $contador == 9)
+            <div class="w-100"></div>
+            @endif
+            @endforeach
         </div>
 </div>
+@endif
 
    <!--END RECIENTES-->
 

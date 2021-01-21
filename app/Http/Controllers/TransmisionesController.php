@@ -30,51 +30,6 @@ class TransmisionesController extends Controller
         Carbon::setLocale('es');
     }
 
-   //vista de transmisiones
-   /* public function transmisiones(){
-
-        $anuncio =[];
-         $finalizados = Events::where('status', '3')->orderBy('id', 'DESC')->take(9)->get();
-         $banner = Events::where('status', '1')->where('image','!=',null)->take(1)->first();
-        if($banner == null){
-         $banner = Events::where('status', '1')->where('image', null)->take(1)->first();
-        }
-        $proximas = Events::where('status', '1')->where('id', '!=', ($banner == null) ? 0 : $banner->id)->take(6)->get();
-        $total = count($proximas);
-         if($banner != null){
-           $dia = $this->dias($banner->date);
-           $mes = $this->meses($banner->date);
-           $fech = $dia.' '.date('d', strtotime($banner->dia)).' '.$mes;
-           $anuncio =[
-            'id' => $banner->id,
-            'imagen' => ($banner->image == null) ? '3.png' : $banner->image,
-            'title' => $banner->title,
-            'fechacompleta' => $fech,
-            'fecha' => $banner->date,
-           ];
-         }
-        foreach($proximas as $proxima){
-          $user = User::find($proxima->user_id);
-          $proxima->avatar = $user->avatar;
-          $dia = $this->dias($proxima->date);
-          $mes = $this->meses($proxima->date);
-          $proxima->fecha = $dia.' '.date('d', strtotime($proxima->date)).' '.$mes;
-        }
-        foreach($finalizados as $fin){
-         $user = User::find($fin->user_id);
-         $cursos = Course::find($fin->course_id);
-         $categoria = Category::find($cursos->category_id);
-         $fin->avatar = $user->avatar;
-         $fin->nombre = $user->display_name;
-         $fin->title_cate = $categoria->title;
-         //
-         $fin->views = $cursos->views;
-         $fin->likes = $cursos->likes;
-         $fin->shares = $cursos->shares;
-        }
-        return view('transmision.transmision',compact('proximas','total','anuncio','finalizados'));
-    }*/
-
    public function transmisiones(){
       setlocale(LC_TIME, 'es_ES.UTF-8'); //Para el server
      // setlocale(LC_TIME, 'es');//Local

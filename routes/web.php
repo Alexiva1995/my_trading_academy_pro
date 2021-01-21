@@ -41,7 +41,7 @@ Route::get('search-by-category/{category_slug}/{category_id}/{subcategory_slug}/
 Auth::routes();
 Route::post('recover-password', 'HomeController@recover_password')->name('recover-password');
 Route::post('contact-us', 'HomeController@contact_us')->name('contact-us');
-
+Route::post('subscription', 'HomeController@subscriptions')->name('subscriptions');
 // configuracion inicial
 Route::group(['prefix' => 'installer'], function (){
     Route::get('/step1', 'InstallController@index')->name('install-step1');

@@ -222,16 +222,34 @@ $tercero++;
 <!--SUSCRIBIRSE-->
 <div class="container-fluid img-background-suscribe py-5">
 <div class="col-md-12">
+      @if (Session::has('msj-exitoso'))
+			<div class="alert alert-success">
+				<strong>{{ Session::get('msj-exitoso') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+			</div>
+		@endif
+
+		@if (Session::has('msj-erroneo'))
+			<div class="alert alert-danger">
+				<strong>{{ Session::get('msj-erroneo') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+            </button>
+			</div>
+		@endif
 <div class="row">
         <div class="col-md-6">
             <h3 class="text-white">DESCUBRE LAS MEJORES <br> ESTRATEGIAS DE TRADING PARA <br> REALIZAR OPERACIONES EXITOSAS</h3>
          </div>
          <div class="col-md-6">
-            <form action="">
+            <form action="{{ route ('subscriptions') }}" method="POST">
+            {{ csrf_field() }}
                <div class="form-group">
-                  <input class="form-control input-sm" id="inputsm" type="text" placeholder="Tu Email">
+                  <input class="form-control input-sm" id="email" type="email" name="email" placeholder="Tu Email" required>
                </div>
-               <a type="submit" href="" class="btn btn-lg btn-danger float-right font-weight-bold">SUSCRIBIRME</a>
+               <button type="submit" href="" class="btn btn-lg btn-danger float-right font-weight-bold">SUSCRIBIRME</button>
             </form>
          </div>
 
