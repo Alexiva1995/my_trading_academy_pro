@@ -17,8 +17,8 @@ use App\Models\OffersLive;
 use App\Models\SetEvent;
 use App\Models\SurveyOptions;
 use App\Models\SurveyResponse;
-use App\Models\Streaming\Meeting;
 use App\Models\EventUser;
+use App\Models\Streaming\Meeting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -32,38 +32,37 @@ use App\Http\Controllers\Notificaciones\CorreoController;
 class EventsController extends Controller
 {
 
-    function __construct()
-    {
+    function __construct(){
         // TITLE
         view()->share('title', 'Eventos');
         Carbon::setLocale('es');
         $this->middleware('auth');
+
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $events = Events::orderBy('id', 'DESC')->get();
 
         $mentores = DB::table('wp98_users')
-            ->select('ID', 'user_email')
-            ->where('rol_id', '=', 2)
-            ->orderBy('user_email', 'ASC')
-            ->get();
+                        ->select('ID', 'user_email')
+                        ->where('rol_id', '=', 2)
+                        ->orderBy('user_email', 'ASC')
+                        ->get();
 
         $categorias = DB::table('categories')
-            ->select('id', 'title')
-            ->orderBy('id', 'ASC')
-            ->get();
+                        ->select('id', 'title')
+                        ->orderBy('id', 'ASC')
+                        ->get();
 
         $paises = DB::table('paises')
-            ->select('id', 'nombre')
-            ->where('event', '=', 1)
-            ->get();
-
+                    ->select('id', 'nombre')
+                    ->where('event', '=', 1)
+                    ->get();
+        
         $dateNow = Carbon::now()->timezone("Africa/Accra");
 
         return view('admin.events.index')->with(compact('events', 'mentores', 'categorias', 'paises', 'dateNow'));
@@ -75,26 +74,26 @@ class EventsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $streamingConnect = new StreamingController();
 
+
         $datosMentor = DB::table('wp98_users')
-            ->select('display_name', 'user_email', 'password', 'avatar')
-            ->where('ID', '=', $request->user_id)
-            ->first();
+                        ->select('display_name', 'user_email', 'password', 'avatar')
+                        ->where('ID', '=', $request->user_id)
+                        ->first();
         $userStreaming = $streamingConnect->verifyUser($datosMentor->user_email);
-        if (!is_null($userStreaming)) {
+        if (!is_null($userStreaming)){
             $userId = $userStreaming->id;
             $contactStreaming = $streamingConnect->verifyContact($userId);
 
-            if (!is_null($contactStreaming)) {
+            if (!is_null($contactStreaming)){
                 $contactId = $contactStreaming->id;
-            } else {
+            }else{
                 $requestContact = new Request(array('name' => $datosMentor->user_email, 'email' => $datosMentor->user_email, 'user_id' => $userId));
                 $contactId = $streamingConnect->newContact($requestContact);
             }
-        }else {
+        }else{
             $requestUser = new Request(array('role_id' => 4, 'name' => $datosMentor->display_name, 'email' => $datosMentor->user_email, 'username' => $datosMentor->user_email, 'password' => $datosMentor->password, 'avatar' => $datosMentor->avatar));
             $userId = $streamingConnect->newUser($requestUser);
 
@@ -102,30 +101,27 @@ class EventsController extends Controller
             $contactId = $streamingConnect->newContact($requestContact);
         }
 
-        if (is_null(Auth::user()->streaming_token)) {
-            $streamingConnect->setToken();
-        }
+        $streamingConnect->setToken();
 
         $meetingUuid = $streamingConnect->newMeeting($request, $userId);
 
         $evento = new Events($request->all());
         $evento->uuid = $meetingUuid;
-        $evento->subcategory_id = 2;
-        $evento->url_streaming = 'https://streaming.mytradingacademypro.com/app/live/meetings/' . $evento->uuid;
+        $evento->url_streaming = 'https://streaming.mytradingacademypro.com/app/live/meetings/'.$evento->uuid;
         $evento->status = 1;
         $evento->save();
-
-        if (!is_null($request->countries)) {
-            foreach ($request->countries as $country) {
+        
+        if (!is_null($request->countries)){
+            foreach ($request->countries as $country){
                 $datosPais = DB::table('paises')
-                    ->where('id', '=', $country)
-                    ->first();
-
-                $fechaEvento = $evento->date . "T" . $evento->time;
+                                ->where('id', '=', $country)
+                                ->first();
+                
+                $fechaEvento = $evento->date."T".$evento->time;
                 $carbon = new Carbon($fechaEvento);
-                if ($datosPais->operation == 'add') {
+                if ($datosPais->operation == 'add'){
                     $fecha = $carbon->addHours($datosPais->quantity);
-                } else {
+                }else{
                     $fecha = $carbon->subHours($datosPais->quantity);
                 }
                 $fechaFinal = $carbon->format('Y-m-d');
@@ -151,14 +147,14 @@ class EventsController extends Controller
         $calendario->event_id = $evento->id;
         $calendario->save();
 
-        if ($request->hasFile('banner')) {
+        if ($request->hasFile('banner')){
             $file = $request->file('banner');
-            $name = $evento->id . "." . $file->getClientOriginalExtension();
-            $file->move(public_path() . '/uploads/images/banner', $name);
+            $name = $evento->id.".".$file->getClientOriginalExtension();
+            $file->move(public_path().'/uploads/images/banner', $name);
             $evento->image = $name;
             $evento->save();
         }
-
+        
         if ($request->hasFile('miniatura')){
             $file = $request->file('miniatura');
             $mini = $evento->id.".".$file->getClientOriginalExtension();
@@ -166,6 +162,7 @@ class EventsController extends Controller
             $evento->miniatura = $mini;
             $evento->save();
         }
+        
         /*Habilitar recursos por defecto: Configuracion y Participantes*/
 
         $resourceOne = EventResources::create([
@@ -178,7 +175,7 @@ class EventsController extends Controller
             'event_id' => $evento->id,
             'status' => 1,
         ]);
-        $resourceThree = EventResources::create([
+        $resourceThree= EventResources::create([
             'resources_id' => 3,
             'event_id' => $evento->id,
             'status' => 1,
@@ -186,7 +183,7 @@ class EventsController extends Controller
 
         //return dd ($resourceOne, $resourceTwo);
 
-        return redirect('admin/events')->with('msj-exitoso', 'El evento ' . $evento->title . ' ha sido creado con éxito.');
+        return redirect('admin/events')->with('msj-exitoso', 'El evento '.$evento->title.' ha sido creado con éxito.');
     }
 
     /**
@@ -203,7 +200,7 @@ class EventsController extends Controller
         $resources_survey = SetEvent::where('event_id', $event_id)->where('type', 'survey')->with('pregunta')->get();
         $resources_video = SetEvent::where('event_id', $event_id)->where('type', 'video')->orderBy('id', 'DESC')->first();
         $resources_offer = OffersLive::all()->where('event_id', $event_id);
-
+        
         $surveysCount = $resources_survey->count();
         $surveysUser = 0;
         if (Auth::user()->rol_id == 3){
@@ -214,7 +211,7 @@ class EventsController extends Controller
                 }
             }
         }
-
+        
         /*Files*/
         $files = SetEvent::where('event_id', $event_id)
                     ->where('type', 'file')
@@ -223,17 +220,31 @@ class EventsController extends Controller
         $presentations = SetEvent::where('event_id', $event_id)
                             ->where('type', 'presentation')
                             ->get();
-
-        return view('live.live', compact('event','notes', 'menuResource', 'resources_survey', 'resources_video', 'files', 'presentations', 'resources_offer', 'surveysCount', 'surveysUser'));
+        
+        return view('live.live', compact ('event','notes', 'menuResource', 'resources_survey', 'resources_video', 'files', 'presentations', 'resources_offer', 'surveysCount', 'surveysUser'));
     }
+    
+     public function change_meeting_status($event_id){
+        $evento = Events::where('id', '=', $event_id)->first();
 
+        $meeting = Meeting::where('uuid', '=', $evento->uuid)->first();
+        $info = json_decode($meeting->meta);
+        $info->status = 'live';
+        $meeting->meta = json_encode($info);
+        $meeting->save();
+
+        return response()->json(
+            true
+        );
+    }
+    
     public function timeliveEvent($event_id){
         $evento = Events::where('id', '=', $event_id)->with('countries')->first();
 
         $meeting = Meeting::where('uuid', '=', $evento->uuid)->first();
         $info = json_decode($meeting->meta);
         $statusLive =  $info->status;
-
+        
         $p = $evento->date."T".$evento->time;
         $countdownLimit = date('M j\, Y H:i:s', strtotime($p));
         $checkPais = NULL;
@@ -248,7 +259,7 @@ class EventsController extends Controller
                         ->select('id')
                         ->where('nombre', '=', $paisUsuario->pais)
                         ->first();
-
+            
             if (!is_null($paisID)){
                 $checkPais = DB::table('event_countries')
                                 ->where('event_id', '=', $evento->id)
@@ -261,33 +272,17 @@ class EventsController extends Controller
                 }
             }
         }
-
-
+        
+        
         if ($statusLive != 'scheduled'){
             $countdownLimit = 0;
         }
-
+        
 
         return view('timelive.timeliveEvent')->with(compact('evento', 'statusLive', 'checkPais', 'countdownLimit'));
     }
 
-    public function change_meeting_status($event_id){
-        $evento = Events::where('id', '=', $event_id)->first();
-
-        $meeting = Meeting::where('uuid', '=', $evento->uuid)->first();
-        $info = json_decode($meeting->meta);
-        $info->status = 'live';
-        $meeting->meta = json_encode($info);
-        $meeting->save();
-
-        return response()->json(
-            true
-        );
-    }
-
-
-    public function edit($id)
-    {
+    public function edit($id){
         $evento = Events::find($id);
 
         return response()->json(
@@ -295,34 +290,33 @@ class EventsController extends Controller
         );
     }
 
-    public function update(Request $request)
-    {
+    public function update(Request $request){
         $streamingConnect = new StreamingController();
 
         $evento = Events::find($request->event_id);
 
-        if (is_null(Auth::user()->streaming_token)) {
+        if (is_null(Auth::user()->streaming_token)){
             $streamingConnect->setToken();
         }
 
-        if ($evento->user_id != $request->user_id) {
+        if ($evento->user_id != $request->user_id){
             $datosMentor = DB::table('wp98_users')
-                ->select('display_name', 'user_email', 'password')
-                ->where('id', '=', $request->user_id)
-                ->first();
+                                ->select('display_name', 'user_email', 'password')
+                                ->where('id', '=', $request->user_id)
+                                ->first();
 
             $userStreaming = $streamingConnect->verifyUser($datosMentor->user_email);
-            if (!is_null($userStreaming)) {
+            if (!is_null($userStreaming)){
                 $userId = $userStreaming->id;
                 $contactStreaming = $streamingConnect->verifyContact($userId);
 
-                if (!is_null($contactStreaming)) {
+                if (!is_null($contactStreaming)){
                     $contactId = $contactStreaming->id;
-                } else {
+                }else{
                     $requestContact = new Request(array('name' => $datosMentor->user_email, 'email' => $datosMentor->user_email, 'user_id' => $userId));
                     $contactId = $streamingConnect->newContact($requestContact);
                 }
-            } else {
+            }else{
                 $requestUser = new Request(array('role_id' => 4, 'name' => $datosMentor->display_name, 'email' => $datosMentor->user_email, 'username' => $datosMentor->user_email, 'password' => $datosMentor->password));
                 $userId = $streamingConnect->newUser($requestUser);
 
@@ -336,13 +330,13 @@ class EventsController extends Controller
         $streamingConnect->updateMeeting($request, $evento->uuid);
 
         $evento->fill($request->all());
-        if ($request->hasFile('banner')) {
+        if ($request->hasFile('banner')){
             $file = $request->file('banner');
-            $name = $evento->id . "." . $file->getClientOriginalExtension();
-            $file->move(public_path() . '/uploads/images/banner', $name);
+            $name = $evento->id.".".$file->getClientOriginalExtension();
+            $file->move(public_path().'/uploads/images/banner', $name);
             $evento->image = $name;
         }
-
+        
         if ($request->hasFile('miniatura')){
             $file = $request->file('miniatura');
             $mini = $evento->id.".".$file->getClientOriginalExtension();
@@ -350,8 +344,8 @@ class EventsController extends Controller
             $evento->miniatura = $mini;
         }
         $evento->save();
-
-        //Actualizar datos en el calendario
+        
+         //Actualizar datos en el calendario
         $update_calendar = Calendario::where('event_id', $evento->id)->get();
         foreach ($update_calendar as $calendar) {
             $calendar->inicio = $evento->date;
@@ -368,7 +362,8 @@ class EventsController extends Controller
             $events->time = $evento->time;
             $events->save();
         }
-        return redirect('admin/events')->with('msj-exitoso', 'El evento ' . $evento->title . ' ha sido modificado con éxito.');
+
+        return redirect('admin/events')->with('msj-exitoso', 'El evento '.$evento->title.' ha sido modificado con éxito.');
     }
 
     /**
@@ -385,45 +380,45 @@ class EventsController extends Controller
 
     /* Reservar Evento */
     /* Añadirlo a la agenda de eventos del usuario*/
-    public function book($evento)
-    {
+    public function book($evento){
         $check = DB::table('events_users')
-            ->where('user_id', '=', Auth::user()->ID)
-            ->where('event_id', '=', $evento)
-            ->first();
+                    ->where('user_id', '=', Auth::user()->ID)
+                    ->where('event_id', '=', $evento)
+                    ->first();
 
-        if (is_null($check)) {
+        if (is_null($check)){
             $datosEvento = DB::table('events')
-                ->select('date')
-                ->where('id', '=', $evento)
-                ->first();
+                            ->select('date')
+                            ->where('id', '=', $evento)
+                            ->first();
 
             $fechaEvento = date('Y-m-d', strtotime($datosEvento->date));
             $horaEvento = date('H:i:s', strtotime($datosEvento->date));
 
             $disponibilidad = DB::table('events_users')
-                ->where('user_id', '=', Auth::user()->ID)
-                ->where('date', '=', $fechaEvento)
-                ->where('time', '=', $horaEvento)
-                ->first();
+                                ->where('user_id', '=', Auth::user()->ID)
+                                ->where('date', '=', $fechaEvento)
+                                ->where('time', '=', $horaEvento)
+                                ->first();
 
-            if (is_null($disponibilidad)) {
+            if (is_null($disponibilidad)){
                 Auth::user()->events()->attach($evento, ['date' => $fechaEvento, 'time' => $horaEvento]);
-
+                
                 $this->correoAgenda($evento);
-
+                
                 return redirect('/')->with('msj-exitoso', 'El evento ha sido reservado en su agenda con éxito.');
-            } else {
+            }else{
                 return redirect('/')->with('msj-erroneo', 'No se puede agendar este evento porque ya posee en su agenda otro evento en la misma fecha y hora.');
             }
-        } else {
+        }else{
             return redirect('/')->with('msj-erroneo', 'Ya este evento se encuentra registrado en su agenda.');
+
         }
     }
-
-
-     public function correoAgenda($evento){
-
+    
+    
+    public function correoAgenda($evento){
+        
         $plantilla = SettingCorreo::find(8);
         $event = Events::find($evento);
         $p = $event->date."T".$event->time;
@@ -432,7 +427,7 @@ class EventsController extends Controller
         $horaLimite->addHours(5);
         $mentor = User::find($event->user_id);
         $user = User::find(Auth::user()->ID);
-
+        
         if($event->correos == 0){
              if (!empty($plantilla->contenido)) {
             $mensaje = str_replace('@titulo', ' '.$event->title.' ', $plantilla->contenido);
@@ -444,252 +439,253 @@ class EventsController extends Controller
              });
            }
         }
-
-
+        
         //agendar notificacion
         $notifiacion = new CorreoController;
         $notifiacion->notificar(Auth::user()->ID, 'Nuevo Evento Agendado', 'calendar', 'fas fa-calendar', 'Eventos agendados');
     }
 
+
     /**
-     * Admin / Cursos / Listado de Cursos / Eliminar Curso (Lógico)
-     */
-    public function change_status($id, $status)
-    {
+    * Admin / Cursos / Listado de Cursos / Eliminar Curso (Lógico)
+    */
+    public function change_status($id, $status){
         $event = Events::find($id);
         $event->status = $status;
         $event->save();
 
-        if ($status == 0) {
-            return redirect('admin/events')->with('msj-exitoso', 'El evento ' . $event->title . ' ha sido deshabilitado con éxito.');
-        } else {
-            return redirect('admin/events')->with('msj-exitoso', 'El evento ' . $event->title . ' ha sido habilitado con éxito.');
+        if ($status == 0){
+            return redirect('admin/events')->with('msj-exitoso', 'El evento '.$event->title.' ha sido deshabilitado con éxito.');
+        }else{
+            return redirect('admin/events')->with('msj-exitoso', 'El evento '.$event->title.' ha sido habilitado con éxito.');
         }
     }
 
 
-    /*Vista con la información del streaming Time/timelive*/
-    public function timelive(Request $request)
-    {
-        setlocale(LC_TIME, 'es_ES.UTF-8');
-        //setlocale(LC_TIME, 'es');//Local
-        // Carbon::setLocale('es');
-        //$total_eventos = count(Events::all());
-        $total_eventos = Events::where('date', '>', Carbon::now()->format('Y-m-d'))
-            ->orwhere('date', '=', date('Y-m-d'))
-            ->where('time', '>=', date('H:i:s'))
-            ->where('status', '1')->count();
+   /*Vista con la información del streaming Time/timelive*/
+   public function timelive(Request $request){
+      setlocale(LC_TIME, 'es_ES.UTF-8');
+      //setlocale(LC_TIME, 'es');//Local
+     // Carbon::setLocale('es');
+      //$total_eventos = count(Events::all());
+      $total_eventos = Events::where('date', '>', Carbon::now()->format('Y-m-d'))
+                      ->orwhere('date', '=', date('Y-m-d'))
+                      ->where('time', '>=', date('H:i:s'))
+                           ->where('status','1')->count();
         //return dd( $total_eventos, date('H:i:s'));
-        $evento = Events::where('date', '>=', date('Y-m-d'))
-            ->where('time', '>=', date('H:i:s'))
-            ->where('status', '=', 1)
-            ->get()
-            ->first();
+      $evento = Events::where('date', '>=', date('Y-m-d'))
+                  ->where('time', '>=', date('H:i:s'))
+                  ->where('status', '=',1)
+                  ->get()
+                  ->first();
+                  
+                  //dd($evento);
 
-        //dd($evento);
-
-        if (!empty($evento)) {
-            //dd($evento, $total_eventos);
-            if ($request->sigEvent == '' or $request->sigEvent == null) {
-
-                if ($total_eventos > 1) {
-                    $prox = true;
-                    $i = 1;
-                    $id = $evento->id;
-                    while ($prox) {
-                        $id = $id + 1;
-                        $nextEvent = Events::where('id', $id)->get()->first();
-                        if ($nextEvent != null)
-                            $prox = false;
-                    }
-                } else {
-                    $nextEvent = null;
-                }
-            } else {
-                $lastEvent = Events::all()->last();
-                $evento = Events::find($request->sigEvent);
-
-                if ($lastEvent->id == $evento->id) {
-                    $nextEvent = Events::where('date', '>=', Carbon::now())->first();
-                    //return dd($lastEvent, $total_eventos, $nextEvent);
-                } else {
-                    if ($total_eventos > 1) {
-                        $prox = true;
-                        $i = 1;
-                        $id = $evento->id;
-                        while ($prox) {
-                            $id = $id + 1;
-                            $nextEvent = Events::where('id', $id)->get()->first();
-                            //return dd($lastEvent, $evento, $id, $total_eventos, $nextEvent);
-                            if ($nextEvent != null)
-                                $prox = false;
-                        }
-                    } else {
-                        $nextEvent = null;
-                    }
-                }
+      if(!empty($evento)){
+          //dd($evento, $total_eventos);
+         if ($request->sigEvent == '' or $request->sigEvent == null) {
+             
+            if($total_eventos > 1){
+               $prox = true;
+               $i = 1;
+               $id = $evento->id;
+               while($prox){
+                  $id = $id+1;
+                  $nextEvent = Events::where('id', $id)->get()->first();
+                  if($nextEvent != null)
+                     $prox = false;
+               }
+            }else{
+               $nextEvent = null;
+               
             }
-        } else {
-            $evento = '';
-            $nextEvent = '';
-            $proximos = '';
-            $total = $total_eventos;
-            $fechaActual = Carbon::now()->format('Y-m-d');
-            return view('timelive/timelive', compact('evento', 'nextEvent', 'proximos', 'total', 'total_eventos', 'fechaActual'));
-        }
+         }else {
+            $lastEvent = Events::all()->last();
+            $evento = Events::find($request->sigEvent);
 
-        /*PROXIMOS EVENTOS*/
-        if ($total_eventos > 0) {
-            $proximos = Events::where('date', '>', date('Y-m-d'))
-                ->where('id', '!=', $evento->id)
-                ->orwhere('date', '=', date('Y-m-d'))
-                ->where('time', '>=', date('H:i:s'))
-                ->get();
-            //dd(date_default_timezone_get(),Carbon::now()->format('H:i:s') , date('Y-m-d'), date('H:i:s'));
-            $total = count($proximos);
-        } else {
-            $proximos = '';
-            $total = 0;
-        }
-
-        $fechaActual = Carbon::now()->format('Y-m-d');
-        $checkEvento = NULL;
-        if (!Auth::guest()) {
-            $checkEvento = DB::table('events_users')
-                ->where('event_id', '=', $evento->id)
-                ->where('user_id', '=', Auth::user()->ID)
-                ->first();
-        }
-
-
-        $misEventosArray = [];
-        if (!Auth::guest()) {
-            $misEventos = DB::table('events_users')
-                ->select('event_id')
-                ->where('user_id', '=', Auth::user()->ID)
-                ->get();
-
-            foreach ($misEventos as $miEvento) {
-                array_push($misEventosArray, $miEvento->event_id);
+            if ($lastEvent->id == $evento->id) {
+               $nextEvent = Events::where('date', '>=', Carbon::now())->first();
+               //return dd($lastEvent, $total_eventos, $nextEvent);
+            }else {
+               if($total_eventos > 1){
+                  $prox = true;
+                  $i = 1;
+                  $id = $evento->id;
+                  while($prox){
+                     $id = $id+1;
+                     $nextEvent = Events::where('id', $id)->get()->first();
+                     //return dd($lastEvent, $evento, $id, $total_eventos, $nextEvent);
+                     if ($nextEvent != null)
+                        $prox = false;
+                  }
+               }else{
+                  $nextEvent = null;
+               }
             }
-        }
+         }
+      }else{
+         $evento= '';
+         $nextEvent = '';
+         $proximos = '';
+         $total= $total_eventos;
+         $fechaActual = Carbon::now()->format('Y-m-d');
+         return view('timelive/timelive', compact('evento', 'nextEvent', 'proximos', 'total', 'total_eventos', 'fechaActual'));
+      }
 
-        if ((!is_null($evento)) && ($evento != '')) {
+      /*PROXIMOS EVENTOS*/
+      if($total_eventos>0){
+         $proximos = Events::where('date', '>', date('Y-m-d'))
+                      ->where('id', '!=', $evento->id)
+                      ->orwhere('date', '=', date('Y-m-d'))
+                      ->where('time', '>=', date('H:i:s'))
+                      ->get();
+                      //dd(date_default_timezone_get(),Carbon::now()->format('H:i:s') , date('Y-m-d'), date('H:i:s'));
+         $total = count($proximos);
+      }else{
+         $proximos ='';
+         $total =0;
+      }
+
+      $fechaActual = Carbon::now()->format('Y-m-d');
+      $checkEvento = NULL;
+      if (!Auth::guest()){
+        $checkEvento = DB::table('events_users')
+                        ->where('event_id', '=', $evento->id)
+                        ->where('user_id', '=', Auth::user()->ID)
+                        ->first();
+                        
+        
+        
+      }
+      
+      
+      $misEventosArray = [];
+      if (!Auth::guest()){
+         $misEventos = DB::table('events_users')
+                        ->select('event_id')
+                        ->where('user_id', '=', Auth::user()->ID)
+                        ->get();
+
+         foreach ($misEventos as $miEvento){
+            array_push($misEventosArray, $miEvento->event_id);
+         }
+      }
+      
+        if ((!is_null($evento)) && ($evento != '') ){
             $meeting = Meeting::where('uuid', '=', $evento->uuid)->first();
             $info = json_decode($meeting->meta);
             $statusLive =  $info->status;
         }
+        
+        
 
-        //dd($evento, $proximos);
-        return view('timelive/timelive', compact('evento', 'nextEvent', 'proximos', 'total', 'total_eventos', 'fechaActual', 'checkEvento', 'misEventosArray', 'statusLive'));
+      //dd($evento, $proximos);
+      return view('timelive/timelive', compact('evento', 'nextEvent', 'proximos', 'total', 'total_eventos', 'fechaActual', 'checkEvento' , 'misEventosArray', 'statusLive'));
     }
 
 
-    public function dias($fecha)
-    {
+     public function dias($fecha){
 
-        $dia = '';
-        $fech = Carbon::parse($fecha)->format('l');
+       $dia ='';
+       $fech = Carbon::parse($fecha)->format('l');
 
-        if ($fech == 'Saturday') {
-            $dia = 'Sábado';
-        } elseif ($fech == 'Sunday') {
-            $dia = 'Domingo';
-        } elseif ($fech == 'Monday') {
-            $dia = 'Lunes';
-        } elseif ($fech == 'Tuesday') {
-            $dia = 'Martes';
-        } elseif ($fech == 'Wednesday') {
-            $dia = 'Miércoles';
-        } elseif ($fech == 'Thursday') {
-            $dia = 'Jueves';
-        } elseif ($fech == 'Friday') {
-            $dia = 'Viernes';
-        }
+       if($fech == 'Saturday'){
+         $dia='Sábado';
+       }elseif($fech == 'Sunday'){
+           $dia='Domingo';
+       }elseif($fech == 'Monday'){
+           $dia='Lunes';
+       }elseif($fech == 'Tuesday'){
+            $dia='Martes';
+       }elseif($fech == 'Wednesday'){
+           $dia='Miércoles';
+       }elseif($fech == 'Thursday'){
+           $dia='Jueves';
+       }elseif($fech == 'Friday'){
+           $dia='Viernes';
+       }
 
 
-        return $dia;
+       return $dia;
     }
 
-    public function meses($fecha)
-    {
+    public function meses($fecha){
 
-        $mes = '';
-        $fech = Carbon::parse($fecha)->format('F');
+       $mes ='';
+       $fech = Carbon::parse($fecha)->format('F');
 
-        if ($fech == 'January') {
-            $mes = 'Enero';
-        } elseif ($fech == 'February') {
-            $mes = 'Febrero';
-        } elseif ($fech == 'March') {
-            $mes = 'Marzo';
-        } elseif ($fech == 'April') {
-            $mes = 'Abril';
-        } elseif ($fech == 'May') {
-            $mes = 'Mayo';
-        } elseif ($fech == 'June') {
-            $mes = 'Junio';
-        } elseif ($fech == 'July') {
-            $mes = 'Julio';
-        } elseif ($fech == 'August') {
-            $mes = 'Agosto';
-        } elseif ($fech == 'September') {
-            $mes = 'Septiembre';
-        } elseif ($fech == 'October') {
-            $mes = 'Octubre';
-        } elseif ($fech == 'November') {
-            $mes = 'Noviembre';
-        } elseif ($fech == 'December') {
-            $mes = 'Diciembre';
-        }
+       if($fech == 'January'){
+         $mes='Enero';
+       }elseif($fech == 'February'){
+           $mes='Febrero';
+       }elseif($fech == 'March'){
+            $mes='Marzo';
+       }elseif($fech == 'April'){
+           $mes='Abril';
+       }elseif($fech == 'May'){
+           $mes='Mayo';
+       }elseif($fech == 'June'){
+           $mes='Junio';
+       }elseif($fech == 'July'){
+           $mes='Julio';
+       }elseif($fech == 'August'){
+           $mes='Agosto';
+       }elseif($fech == 'September'){
+           $mes='Septiembre';
+       }elseif($fech == 'October'){
+           $mes='Octubre';
+       }elseif($fech == 'November'){
+           $mes='Noviembre';
+       }elseif($fech == 'December'){
+           $mes='Diciembre';
+       }
 
 
-        return $mes;
+       return $mes;
     }
 
     /*EVENTO FAVORITO*/
-    public function event_favorite($event_id)
-    {
+    public function event_favorite($event_id){
 
         $user_id = Auth::user()->ID;
 
         $favorite = DB::table('events_users')
-            ->where('event_id', '=', $event_id)
-            ->where('user_id', '=', $user_id)
-            ->update(['favorite' => 1]);
+        ->where('event_id', '=',$event_id)
+        ->where('user_id', '=', $user_id)
+        ->update(['favorite' => 1]);
         date_default_timezone_set('Europe/Madrid');
-        setlocale(LC_TIME, 'spanish');
+            setlocale(LC_TIME, 'spanish');
 
         //Eventos favoritos de un usuario
         $eventos_favoritos = DB::table('events')
-            ->join('events_users', 'events_users.event_id', '=', 'events.id')
-            ->where('events_users.user_id', '=', $user_id)
-            ->where('events_users.favorite', '=', 1)
-            ->get();
+        ->join('events_users', 'events_users.event_id', '=', 'events.id')
+        ->where('events_users.user_id', '=',$user_id )
+        ->where('events_users.favorite', '=',1 )
+        ->get();
         return redirect()->action('CourseController@favorites');
+
     }
 
 
 
     /*LISTADO DE EVENTOS AGENDADOS POR EL USUARIO*/
 
-    /*MOSTRAR CALENDARIO DE EVENTOS DEL USUARIO*/
     public function calendar(){
-
-         //eliminarNotificaciones
+        
+        //eliminarNotificaciones
         $notifiacion = new CorreoController;
         $notifiacion->eliminarNotificacion(Auth::user()->ID, 'Eventos agendados');
-
+        
         /*DATOS PARA PINTAR EL CALENDARIO*/
         $user_calendar = Calendario::where('iduser', Auth::user()->ID)->get();
         $usuario = Auth::user()->ID;
-        $eventos_agendados = Auth::user()->events->sortBy('id');;
+        $eventos_agendados = Auth::user()->events->sortByDesc('id');
 
         $paisUsuario = DB::table('user_campo')
                         ->select('pais')
                         ->where('ID', '=', Auth::user()->ID)
                         ->first();
-
+        
         $paisID = NULL;
         if ((!is_null($paisUsuario)) && (!is_null($paisUsuario->pais))) {
             $paisID = DB::table('paises')
@@ -697,20 +693,20 @@ class EventsController extends Controller
                         ->where('nombre', '=', $paisUsuario->pais)
                         ->first();
         }
-
+        
         foreach ($eventos_agendados as $evento){
             $evento->countries_count = DB::table('event_countries')
                                         ->where('event_id', '=', $evento->id)
                                         ->count();
-
+                                        
             $evento->checkCountry = NULL;
-
+            
             if (!is_null($paisID)) {
                 $checkPais = DB::table('event_countries')
                                 ->where('event_id', '=', $evento->id)
                                 ->where('country_id', '=', $paisID->id)
                                 ->first();
-
+                                        
                 if (!is_null($checkPais)) {
                     $evento->checkCountry = 1;
                     $evento->date_country = $checkPais->date;
@@ -718,54 +714,55 @@ class EventsController extends Controller
                 }
             }
         }
-
-
+        
+        
         $refeDirec = 0;
         if (Auth::user()) {
             $refeDirec = User::where('referred_id', Auth::user()->ID)->count('ID');
         }
+        
+        
         return view('agendar/calendar', compact('usuario', 'eventos_agendados', 'user_calendar', 'refeDirec', 'paisID'));
     }
 
 
-    /*AGENDAR EVENTOS DEL USUARIO*/
-    public function schedule($event_id)
-    {
+  /*AGENDAR EVENTOS DEL USUARIO*/
+    public function schedule($event_id){
         $check = DB::table('events_users')
-            ->where('user_id', '=', Auth::user()->ID)
-            ->where('event_id', '=', $event_id)
-            ->first();
+                    ->where('user_id', '=', Auth::user()->ID)
+                    ->where('event_id', '=', $event_id)
+                    ->first();
 
-        if (is_null($check)) {
+        if (is_null($check)){
             $events = DB::table('events')
-                ->select('date', 'time')
-                ->where('id', '=', $event_id)
-                ->first();
+                        ->select('date', 'time')
+                        ->where('id', '=', $event_id)
+                        ->first();
 
             $date_event = date('Y-m-d', strtotime($events->date));
             $time_event = date('H:i:s', strtotime($events->time));
 
             $disponibilidad = DB::table('events_users')
-                ->where('user_id', '=', Auth::user()->ID)
-                ->where('date', '=', $date_event)
-                ->where('time', '=', $time_event)
-                ->first();
-
-            if (is_null($disponibilidad)) {
+                                ->where('user_id', '=', Auth::user()->ID)
+                                ->where('date', '=', $date_event)
+                                ->where('time', '=', $time_event)
+                                ->first();
+        
+            if (is_null($disponibilidad)){
                 $streamingConnect = new StreamingController();
 
                 $userStreaming = $streamingConnect->verifyUser(Auth::user()->user_email);
-                if (!is_null($userStreaming)) {
+                if (!is_null($userStreaming)){
                     $userId = $userStreaming->id;
                     $contactStreaming = $streamingConnect->verifyContact($userId);
 
-                    if (!is_null($contactStreaming)) {
+                    if (!is_null($contactStreaming)){
                         $contactId = $contactStreaming->id;
-                    } else {
+                    }else{
                         $requestContact = new Request(array('name' => Auth::user()->user_email, 'email' => Auth::user()->user_email, 'user_id' => $userId));
                         $contactId = $streamingConnect->newContact($requestContact);
                     }
-                } else {
+                }else{
                     $requestUser = new Request(array('role_id' => 3, 'name' => Auth::user()->display_name, 'email' => Auth::user()->user_email, 'username' => Auth::user()->user_email, 'password' => Auth::user()->password, 'avatar' => Auth::user()->avatar));
                     $userId = $streamingConnect->newUser($requestUser);
 
@@ -796,57 +793,54 @@ class EventsController extends Controller
                 //return redirect('agendar/calendar');
 
                 return redirect()->action('EventsController@calendar');
-            } else {
+            }else{
                 return redirect()->back()->with('msj-erroneo', 'No se puede agendar este evento porque ya posee en su agenda otro evento en la misma fecha y hora.');
             }
-        } else {
+        }else{
             return redirect()->back()->with('msj-erroneo', 'Este evento se encuentra registrado en su agenda.');
         }
     }
 
     //modificamos algun dato del calendario
-    public function modificar(Request $request)
-    {
+    public function modificar(Request $request){
 
         $funciones = new IndexController;
 
-        if ($request->inicio > $request->vence) {
-            $funciones->msjSistema('La fecha de inicio debe ser mayor a la fecha final', 'danger');
-            return redirect()->back();
+    if($request->inicio > $request->vence){
+          $funciones->msjSistema('La fecha de inicio debe ser mayor a la fecha final', 'danger');
+          return redirect()->back();
         }
 
-        $calendar = Calendario::find($request->ID);
-        $calendar->titulo = $request->titulo;
-        $calendar->contenido = $request->contenido;
-        $calendar->inicio = $request->inicio;
-        $calendar->vence = $request->vence;
-        $calendar->color = $request->color;
-        $calendar->lugar = $request->lugar;
-        $calendar->tipo = $request->detalle;
-        $calendar->especifico = $request->usuario;
-        $calendar->save();
+     $calendar = Calendario::find($request->ID);
+     $calendar->titulo = $request->titulo;
+     $calendar->contenido = $request->contenido;
+     $calendar->inicio = $request->inicio;
+     $calendar->vence = $request->vence;
+     $calendar->color = $request->color;
+     $calendar->lugar = $request->lugar;
+     $calendar->tipo = $request->detalle;
+     $calendar->especifico = $request->usuario;
+     $calendar->save();
 
-        $funciones->msjSistema('Modificado con exito', 'success');
-        return redirect()->back();
+     $funciones->msjSistema('Modificado con exito', 'success');
+     return redirect()->back();
     }
 
     //eliminamos datos del calendario
-    public function eliminar(Request $request)
-    {
+    public function eliminar(Request $request){
 
         $funciones = new IndexController;
 
-        $calendar = Calendario::find($request->ID);
-        $calendar->delete();
+     $calendar = Calendario::find($request->ID);
+     $calendar->delete();
 
-        $funciones->msjSistema('Eliminado con exito', 'success');
-        return redirect()->back();
+     $funciones->msjSistema('Eliminado con exito', 'success');
+     return redirect()->back();
     }
 
-    public function transmitir($id)
-    {
+    public function transmitir($id){
         $evento = Events::find($id);
-        $fecha = $evento->date . "T" . $evento->time;
+        $fecha = $evento->date."T".$evento->time;
         $fecha2 = "2020-09-27T18:55:00";
         $fechaEvento = new Carbon($fecha);
         $fechaActual = new Carbon($fecha2);
