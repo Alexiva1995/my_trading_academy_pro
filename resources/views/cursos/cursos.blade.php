@@ -51,6 +51,7 @@
 
 <!--ULTIMAS LECCIONES-->
 @if(Auth::user())
+@if($cursosRecomendados->count() > 0)
 <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
       <h2 style="color:#ED254E">LECCIONES RECOMENDADAS</h2>
 
@@ -175,6 +176,7 @@ $tercero++;
 
 <!--CARRUSEL END-->
 </div>
+@endif
 @endif
 
 

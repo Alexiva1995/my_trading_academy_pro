@@ -35,6 +35,9 @@
                 <a class="nav-link items-header text-center" href="{{route('transmisiones')}}">STREAMING</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link items-header text-center" href="{{ route('schedule.calendar') }}">MIS EVENTOS</a>
+            </li>
+            <li class="nav-item">
                 
                 <a class="nav-link items-header text-center" href="{{route('inversiones')}}">INVERSIONES</a>
             </li>

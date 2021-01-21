@@ -73,9 +73,9 @@
   </div>
 </div>
 <!--ULTIMAS LECCIONES-->
+@if($ultimos_cursos->isNotEmpty())
 <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
       <h2 class="text-center">ÚLTIMAS LECCIONES</h2>
-      @if($ultimos_cursos->isNotEmpty())
 @if(!Empty($ultimos_cursos))
 <!--Carrusel-->
 
@@ -198,7 +198,7 @@ $tercero++;
 @endif
 <!--Carrusel-->
 @endif
-@endif
+
 
       <!--CARRUSEL END-->
 
@@ -210,6 +210,7 @@ $tercero++;
       @endif
       </div>
 </div>
+@endif
 <!--ULTIMAS LECCIONES END-->
 
 {{-- SECCIÓN RECOMENDACIONES--}}
