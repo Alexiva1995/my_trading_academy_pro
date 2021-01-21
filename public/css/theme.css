@@ -2167,7 +2167,7 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .card-header-orange-price {
-    background-color: #fbb62c;
+    background-color: #2d8a58;
     border-radius: 1rem;
     letter-spacing: .1rem;
     font-weight: bold;
@@ -2178,7 +2178,7 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .card-header-purple-price {
-    background-color: #717bd5;
+    background-color: #88bfa6;
     border-radius: 1rem;
     letter-spacing: .1rem;
     font-weight: bold;
@@ -2227,11 +2227,11 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .text-orange {
-    color: #fbb62c;
+    color: #2d8a58;
 }
 
 .text-purple {
-    color: #717bd5;
+    color: #88bfa6;
 }
 
 .text-azul-claro {

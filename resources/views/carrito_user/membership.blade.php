@@ -43,7 +43,7 @@
                             @switch($membresia->id)
                                 @case(1)
                                     <!-- Free Tier -->
-                                    <div class="col-lg-4 mt-4 mb-5 offset-md-1">
+                                    <div class="col-lg-3 mt-4 mb-5">
                                         <div class="card mb-5 mb-lg-0">
                                             <div class="card-header-azul-price" style="position: absolute;">
                                                 <h1 class="card-title text-white text-uppercase text-center">{{$membresia->name}}</h1>
@@ -58,7 +58,7 @@
                                                         <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px;">${{$membresia->price}}</del> ${{$membresia->descuento}}<span class="period">/Mensual</span></h4>
                                                     @endif
                                                     </div>
-                                                    <h1 class="text-center text-white">. . . . . . . . . . . . . .</h1><br><br>
+                                                    <h1 class="text-center text-white">. . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="p-2 text-white text-center">¡Podrás dar el primer paso a SER lo que deseas SER aquí!</h5><br>
                                                 <h5 class="p-2 text-white text-center"><strong class="text-azul-claro">En este primer nivel podrás acceder a:</strong></h5><br>
@@ -88,7 +88,7 @@
                                 @break
 
                                 @case(2)
-                                    <div class="col-lg-4 mt-4 mb-5">
+                                    <div class="col-lg-3 mt-4 mb-5">
                                         <div class="card mb-5 mb-lg-0">
                                             <div class="card-header-orange-price" style="position: absolute;">
                                                 <h1 class="card-title text-white text-uppercase text-center">{{$membresia->name}}</h1>
@@ -103,7 +103,7 @@
                                                         <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px;">${{$membresia->price}}</del> ${{$membresia->descuento}}<span class="period">/Mensual</span></h4>
                                                     @endif
                                                     </div>
-                                                    <h1 class="text-center text-white">. . . . . . . . . . . . . .</h1><br><br>
+                                                    <h1 class="text-center text-white">. . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="p-2 text-white text-center"> ¡Nos alegra que estés pasando al segundo escalón!</h5><br><br>
                                                 <h5 class="p-2 text-orange text-center">Aquí encontrarás todo lo que necesitas saber para HACER y lograr.</h5><br>
@@ -134,7 +134,7 @@
                                 @break
 
                                 @case(3)
-                                    <div class="col-lg-4 mt-4 mb-5 offset-md-1">
+                                    <div class="col-lg-3 mt-4 mb-5">
                                         <div class="card mb-5 mb-lg-0">
                                             <div class="card-header-verde-price" style="position: absolute;">
                                                 <h1 class="card-title text-white text-uppercase text-center" >{{$membresia->name}}</h1>
@@ -149,7 +149,7 @@
                                                         <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px;">${{$membresia->price}}</del> ${{$membresia->descuento}}<span class="period">/Mensual</span></h4>
                                                     @endif
                                                     </div>
-                                                    <h1 class="text-center text-white">. . . . . . . . . . . . . .</h1><br><br>
+                                                    <h1 class="text-center text-white">. . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="p-2 text-white text-center"> ¡WOW! Siéntete orgullos de ti si creces a este nivel en tu formación, lo mejor está por venir.</h5><br>
                                                 <h5 class="p-2 text-verde-claro text-center">Accederás:</h5>
@@ -178,7 +178,7 @@
                                     </div>
                                 @break
                                 @case(4)
-                                    <div class="col-lg-4 mt-4 mb-5" style="margin:10px;">
+                                    <div class="col-lg-3 mt-4 mb-5">
                                         <div class="card mb-5 mb-lg-0">
                                             <div class="card-header-purple-price" style="position: absolute;"><h1 class="card-title text-white text-uppercase text-center">{{$membresia->name}}</h1></div>
                                             <div class="card-body" style="position: relative; top:55px; z-index: 1;">
@@ -191,7 +191,7 @@
                                                         <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px;">${{$membresia->price}}</del> ${{$membresia->descuento}}<span class="period">/Mensual</span></h4>
                                                     @endif
                                                     </div>
-                                                    <h1 class="text-center text-white">. . . . . . . . . . . . . .</h1><br><br>
+                                                    <h1 class="text-center text-white">. . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="p-2 text-white text-center"> ¡FELICIDADES!</h5><br>
                                                 <h5 class="p-2 text-white text-center">¡Estas a punto de convertirte en un PRO de los Negocios!</h5><br>
