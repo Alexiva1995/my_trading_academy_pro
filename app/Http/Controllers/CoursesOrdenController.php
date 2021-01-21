@@ -245,7 +245,7 @@ class CoursesOrdenController extends Controller
                 'nombre' => (!is_null($item->membership_id)) ? $membresia->name : $oferta->title,
                 'precio' => $monto/100,
                 'tipo' => (!is_null($item->membership_id)) ? $item->period : '',
-                'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->resource_url),
+                'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->url_resource),
                 'links' => Auth::user()->sponsor_id,
             ];
             
@@ -295,7 +295,7 @@ class CoursesOrdenController extends Controller
             'nombre' => (!is_null($item->membership_id)) ? $membresia->name : $oferta->title,
             'precio' => $total,
             'tipo' => (!is_null($item->membership_id)) ? $item->period : '',
-            'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->resource_url),
+            'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->url_resource),
             'links' => Auth::user()->sponsor_id,
         ];
             
@@ -356,7 +356,7 @@ class CoursesOrdenController extends Controller
             'nombre' => (!is_null($item->membership_id)) ? $membresia->name : $oferta->title,
             'precio' => $total,
             'tipo' => (!is_null($item->membership_id)) ? $item->period : '',
-            'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->resource_url),
+            'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->url_resource),
             'links' => Auth::user()->sponsor_id,
         ];
         
@@ -372,7 +372,11 @@ class CoursesOrdenController extends Controller
         // eliminar la direccion ip y el id de la persona que me dio el link
         //Addresip::where('ip', request()->ip())->delete();
         
-        return \Redirect::route('pago-pay',['pagina' => $membresia->name, 'total' => $total, 'descripcion' => $membresia->name, 'idcompra' => $orden->id]);
+        if (!is_null($item->membership_id)){
+            return \Redirect::route('pago-pay',['pagina' => $membresia->name, 'total' => $total, 'descripcion' => $membresia->name, 'idcompra' => $orden->id]);
+        }else{
+            return \Redirect::route('pago-pay',['pagina' => $oferta->title, 'total' => $total, 'descripcion' => $oferta->title, 'idcompra' => $orden->id]);
+        }
     }
     
 
@@ -397,7 +401,7 @@ class CoursesOrdenController extends Controller
                 'nombre' => (!is_null($item->membership_id)) ? $membresia->name : $oferta->title,
                 'precio' => $monto,
                 'tipo' => (!is_null($item->membership_id)) ? $item->period : '',
-                'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->resource_url),
+                'img' => (!is_null($item->membership_id)) ? asset('uploads/images/memberships/'.$membresia->image) : asset('uploads/images/offers/'.$oferta->url_resource),
                 'links' => Auth::user()->sponsor_id,
             ];
             
