@@ -34,9 +34,11 @@
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('transmisiones')}}">STREAMING</a>
             </li>
+            @if(Auth::user())
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{ route('schedule.calendar') }}">MIS EVENTOS</a>
             </li>
+            @endif
             <li class="nav-item">
                 
                 <a class="nav-link items-header text-center" href="{{route('inversiones')}}">INVERSIONES</a>
