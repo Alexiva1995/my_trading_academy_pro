@@ -18,6 +18,18 @@
     background-color: #696969!important;
     border-radius: 50%;
    }
+
+   .overlay-trader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    cursor: pointer;
+}
     </style>
 @endpush
 
@@ -29,7 +41,7 @@
         <div class="carousel-inner">
             <div class="carousel-item  active ">
               <div class="overlay"></div>
-                  <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
+                  <img src="{{ asset('images/Trading/01.jpg') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8">
                           <h3 class="tranding text-left font-weight-bold mb-4">TRADING SOCIAL</h3 class="text-left">
@@ -45,7 +57,7 @@
 <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
 <div class="row align-items-center justify-content-center">
   <div class="col-md-4">
-
+  <img src="{{ asset('images/Trading/02.jpg') }}" class="img-fluid" alt="...">
   </div>
   <div class="col-md-6 text-right">
     <h4 style="color:#111329;">Copia Traders más Experimentados y Genera ingresos automáticamente</h4>
@@ -65,7 +77,7 @@
 <div class="row align-items-center justify-content-center">
   <div class="col-md-3">
       <div class="card-no-background card mt-2">
-              <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
+              <img src="{{ asset('images/Trading/gestores.jpg') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Gestores</a>
               </div>
@@ -74,7 +86,7 @@
   </div>
   <div class="col-md-3">
     <div class="card-no-background card mt-2">
-              <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
+              <img src="{{ asset('images/Trading/inversores.jpg') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Inversores</a>
               </div>
@@ -83,7 +95,7 @@
   </div>
   <div class="col-md-3">
       <div class="card-no-background card mt-2">
-              <img src="{{ asset('images/nosotros/13-285x300.png') }}" class="card-share">
+              <img src="{{ asset('images/Trading/seguidores.jpg') }}" class="card-share">
               <div class="col-md-7 card-img-overlay d-flex flex-column offset-md-2">
                 <a href="#" class="btn btn-success my-auto text-center" style="border: 2px solid #00C65B;border-radius: 11px; background:none!important; color:#00C65B; font-size:20px!important;">Seguidores</a>
               </div>
@@ -102,11 +114,11 @@
 <div class="container-fluid bg-ecosistema py-5" style="background:#FFFFFF;">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-6">
-              <h4 class="mb-4">¡Mantente conectado, sigue a los mejores y accede a grandes oportunidades!</h4>
-              <h5 style="color:#777777;">Descubre las estrategias de los expertos para generar renta con tus activos preferidos.</h5>
+              <h4 class="mb-4 pl-5">¡Mantente conectado, sigue a los mejores y accede a grandes oportunidades!</h4>
+              <h5 class="pl-5" style="color:#777777;">Descubre las estrategias de los expertos para generar renta con tus activos preferidos.</h5>
           </div>
-          <div class="col-md-4">
-
+          <div class="col-md-6">
+          <img src="{{ asset('images/Trading/03.jpg') }}" class="img-fluid" alt="...">
           </div>
 
         </div>
@@ -115,20 +127,18 @@
 
 <!--END CONECTADO-->
 
-<!--LOS MÁS NUEVO-->
-<div class="container-fluid bg-ecosistema py-5">
-        <div class="row align-items-center justify-content-center">
+<!--TRADER-->
+<div class="container-fluid bg-trader py-5">
+        <div class="row align-items-center justify-content-center py-5">
             <div class="col-md-4">
               <h1 class="text-white">HACERTE INVERSOR EN TRADER AHORA ES MUY SIMPLE</h1>
             </div>
-            <div class="col-md-6">
-
-            </div>
+            <div class="col-md-6"></div>
         </div>
 
 </div>
 
-<!--END LOS MÁS NUEVO-->
+<!--END TRADER-->
 
 
 <!--TESTIMONIOS-->
@@ -159,7 +169,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante1.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -170,7 +180,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante2.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -181,7 +191,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante3.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -198,7 +208,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante1.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -209,7 +219,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante2.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -220,7 +230,7 @@
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Trading/estudiante3.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center font-weight-bold" style="color:#00C65B;">Nombre Estudiante</h5>
                               </div>
                               </div>

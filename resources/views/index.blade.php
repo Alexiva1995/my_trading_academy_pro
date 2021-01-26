@@ -12,7 +12,7 @@
         <div class="carousel-inner">
             <div class="carousel-item  active ">
               <div class="overlay"></div>
-                  <img src="{{ asset('images/home2.png') }}" class="image-fluid d-block w-100" alt="...">
+                  <img src="{{ asset('images/Home/header.jpg') }}" class="image-fluid d-block w-100" alt="...">
                    <div class="carousel-caption">
                      <div class="col-12 col-md-5">
                      <div class="estilomytranding">My Trading</div>
@@ -30,19 +30,19 @@
 <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
 <div class="row" style="padding-left:50px!important; padding-right:50px!important;">
         <div class="col-md-1 text-center mt-2">
-         <img src="{{ asset('images/icons/movie-player.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+         <img src="{{ asset('images/Home/icon1.png') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
          </div>
          <div class="col-md-3 text-center mt-2">
          <h4>NUEVAS CLASES CADA SEMANA</h4>  
          </div>
          <div class="col-md-1 text-center mt-2">
-         <img src="{{ asset('images/icons/elearning.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+         <img src="{{ asset('images/Home/icon2.png') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
          </div>
          <div class="col-md-3 text-center mt-2">
             <h4>MASTERCLASS <br> EN VIVO</h4>
          </div>
          <div class="col-md-1 text-center mt-2">
-         <img src="{{ asset('images/icons/group-chat.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+         <img src="{{ asset('images/Home/icon3.png') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
          </div>
          <div class="col-md-3 text-center mt-2">
           <h4>COMUNIDAD <br> DE APOYO</h4>
@@ -56,7 +56,7 @@
         <div class="carousel-inner">
             <div class="carousel-item  active ">
               <div class="overlay"></div>
-                  <img src="{{ asset('nosotros/nosotros/nosotros.png') }}" class="d-block w-100" alt="...">
+                  <img src="{{ asset('images/Home/02.jpg') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                      <div class="col-md-4 float-right  h-100 d-table" style="color:#00C65B">
                         <h2 class="d-table-cell align-middle font-weight-bold text-nuestra-academia">
@@ -284,7 +284,7 @@ $tercero++;
 <!--NOTICIAS END-->
 
 <!--HERRAMIENTAS-->
-<div class="container-fluid img-background-suscribe py-5">
+<div class="container-fluid img-background-herramientas py-5">
       <div class="col-md-8 offset-md-2">
          <h3 class="text-center font-weight-bold" style="color: #00C65B;">CON NUESTROS PRODUCTOS Y HERRAMIENTAS PODRÁS DOMINAR LOS MERCADOS FINANCIEROS Y ALCANZAR TU LIBERTAD FINANCIERA</h3 class="text-center">
       </div>

@@ -24,6 +24,13 @@
     border: none!important;
 }
 
+.card{
+  background-color: none!important;
+  border: none!important;
+    border-radius: 0px !important;
+
+}
+
     </style>
 @endpush
 
@@ -35,10 +42,10 @@
         <div class="carousel-inner">
             <div class="carousel-item  active ">
               <div class="overlay"></div>
-                  <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
+                  <img src="{{ asset('images/nosotros/01.jpg') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8 offset-md-2">
-                          <h3 class="estilomytranding text-center font-weight-bold mb-4" style="color: #00C65B;">Academia de Trading Online</h3 class="text-center">
+                          <h3 class="estilomytranding text-center font-weight-bold" style="color: #00C65B;">Academia de Trading Online</h3 class="text-center">
                           <h2 class="estilomytrandingthree text-center">Para emprendedores de Fintech</h2>
                         </div>
                   </div>
@@ -58,14 +65,14 @@
 <h1 class="text-center font-weight-bold" style="color:#292D30; margin-bottom:50px!important;">Metodología</h1>
   <div class="row mt-4 no-gutters">
     <div class="col-md-1">
-    <img src="{{ asset('images/nosotros/3d-modeling.svg') }}" alt="" style="max-height: 60px;">
+    <img src="{{ asset('images/nosotros/icon1.png') }}" alt="" style="max-height: 60px;">
     </div>
     <div class="col-md-5 text-white">
       <h5>El modelo académico cuenta con flexibilidad de aprendizaje, información de primer nivel y herramientas de aplicación sencilla e inmediata.</h5>
     
     </div>
     <div class="col-md-1">
-    <img src="{{ asset('images/nosotros/paper.svg') }}" alt="" style="max-height: 60px;">
+    <img src="{{ asset('images/nosotros/icon2.png') }}" alt="" style="max-height: 60px;">
     </div>
     <div class="col-md-5 text-white">
       <h5>Se cuenta con <b>  múltiples módulos y varias lecciones</b> que cubren el concepto y contexto total del fascinante mundo Fintech, incluyendo sus diferentes campos de acción, como el forex, real estate y muchos otros.</h5>
@@ -85,7 +92,7 @@
                     <div class="card">
                             <img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">
                             <div class="card-img-overlay d-flex flex-column">
-                                    <img src="{{ asset('images/icons/network.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                                    <img src="{{ asset('images/nosotros/icon3.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center img-fluid " width="70px">
                                     <h6 class="text-white my-auto text-center aumento">Conexión</h6>
                             </div>
                     </div>
@@ -94,7 +101,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/10-285x300.png') }}" alt="innovación">
                         <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/icons/rocket-ship.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                        <img src="{{ asset('images/nosotros/icon4.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center" width="70px">
                                 <h6 class="text-white my-auto text-center aumento">Innovación</h6>
                         </div>
                 </div>
@@ -103,7 +110,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/08-285x300.png') }}" alt="crecimiento">
                         <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/icons/bar-chart.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                        <img src="{{ asset('images/nosotros/icon5.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center" width="70px">
                                 <h6 class="text-white my-auto text-center aumento">Crecimiento</h6>
                         </div>
                 </div>
@@ -115,7 +122,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/11-285x300.png') }}" alt="calidad">
                         <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/icons/medal.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                        <img src="{{ asset('images/nosotros/icon6.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center" width="70px">
                                 <h6 class="text-white my-auto text-center aumento">Calidad</h6>
                         </div>
                 </div>
@@ -124,7 +131,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/12-285x300.png') }}" alt="eficacia">
                         <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/icons/clockgreen.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                        <img src="{{ asset('images/nosotros/icon7.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center" width="70px">
                                 <h6 class="text-white my-auto text-center aumento">Eficacia</h6>
                         </div>
                 </div>
@@ -133,7 +140,7 @@
                 <div class="card">
                         <img src="{{ asset('images/nosotros/13-285x300.png') }}" alt="trascendencia">
                         <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/icons/target.svg') }}" alt="conexión" class="text-white my-auto text-center" height="70px">
+                        <img src="{{ asset('images/nosotros/icon8.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center" height="70px">
                                 <h6 class="text-white my-auto text-center aumento">Trascendencia</h6>
                         </div>
                 </div>
@@ -168,7 +175,7 @@
             </div>
             <div class="col-md-3 containerscale">
                 <div class="card">
-                        <img src="{{ asset('images/nosotros/e3.png') }}" alt="crecimiento" class="img-fluid">
+                        <img src="{{ asset('images/nosotros/fentix.jpg') }}" alt="crecimiento" class="img-fluid">
                         <div class="card-img-overlay d-flex flex-column">
                         <img src="{{ asset('images/fentix-1.png') }}" alt="fenttix" class="img-fluid text-white my-auto text-center">
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
@@ -177,7 +184,7 @@
             </div>
             <div class="col-md-3 containerscale">
                 <div class="card">
-                        <img src="{{ asset('images/nosotros/e4.png') }}" alt="calidad" class="img-fluid">
+                        <img src="{{ asset('images/nosotros/ftx.jpg') }}" alt="calidad" class="img-fluid">
                         <div class="card-img-overlay d-flex flex-column">
                         <img src="{{ asset('images/FTXlive-logo.png') }}" alt="ftxlive" class="img-fluid text-white my-auto text-center">
                                 <a href="" class="btn btn-danger btn-more">Saber más</a>
@@ -238,7 +245,7 @@
     <div class="col-md-3" style="float:left">
      <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
           <p class="card-text text-center">Lic. en administración Financiera, apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
@@ -249,7 +256,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; border-radius:50%;" class="img-fluid">
+          src="{{ asset('images/nosotros/instructor2.png') }}" alt="Card image cap" style="max-width:70px; border-radius:50%;" class="img-fluid">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Tania Tostado</h4>
           <p class="card-text text-center">Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.</p>
@@ -260,7 +267,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor3.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Erick Reynaga</h4>
           <p class="card-text text-center">Especialista con 6 años de experiencia en el mundo del Trading, Forex y las Criptodivisas, así como de fondos de inversión con marcas de reconocimiento internacional. Cuenta con una maestría en administración y negocios, es líder de proyectos educativos financieros para diferentes cúpulas de negocios de jóvenes empresarios en México.</p>
@@ -271,7 +278,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor4.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Mirela Vuckovic</h4>
           <p class="card-text text-center">Lic. en Economía por la University of Split de Croacia. Colaboró en Londres para importantes marcas de offshore banking. En México tiene 12 años como consultora directiva de reconocidas empresas Fintech en todo Latam.</p>
@@ -289,7 +296,7 @@
   <div class="col-md-3" style="float:left">
      <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
           <p class="card-text text-center">Lic. en administración Financiera, apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
@@ -300,7 +307,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor2.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Tania Tostado</h4>
           <p class="card-text text-center">Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.</p>
@@ -311,7 +318,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor3.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Erick Reynaga</h4>
           <p class="card-text text-center">Especialista con 6 años de experiencia en el mundo del Trading, Forex y las Criptodivisas, así como de fondos de inversión con marcas de reconocimiento internacional. Cuenta con una maestría en administración y negocios, es líder de proyectos educativos financieros para diferentes cúpulas de negocios de jóvenes empresarios en México.</p>
@@ -322,7 +329,7 @@
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
         <img class="mx-auto"
-          src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px;">
+          src="{{ asset('images/nosotros/instructor4.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Mirela Vuckovic</h4>
           <p class="card-text text-center">Lic. en Economía por la University of Split de Croacia. Colaboró en Londres para importantes marcas de offshore banking. En México tiene 12 años como consultora directiva de reconocidas empresas Fintech en todo Latam.</p>

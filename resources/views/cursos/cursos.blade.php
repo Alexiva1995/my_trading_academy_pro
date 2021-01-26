@@ -30,11 +30,18 @@
         <div class="carousel-inner">
             <div class="carousel-item  active ">
               <div class="overlay"></div>
-                  <img src="{{ asset('images/home2.png') }}" class="d-block w-100" alt="...">
+                  <img src="{{ asset('images/Academia/01.jpg') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8">
-                          <h3 class="estiloacademia text-left font-weight-bold mb-4">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3 class="text-left">
-                          <div class="" style="margin-top:70px;">
+                          <h3 class="estiloacademia text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
+                          <div class="d-block d-sm-none d-md-none">
+                             @if(Auth::user())
+                            <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-sm">VER TODOS LOS CURSOS</a>
+                                @else
+                                <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-sm">REGISTRARSE</a>
+                            @endif
+                          </div>
+                          <div class="d-none d-sm-block">
                              @if(Auth::user())
                             <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg">VER TODOS LOS CURSOS</a>
                                 @else
@@ -277,7 +284,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante1.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -288,7 +295,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante2.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -299,7 +306,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante3.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -316,7 +323,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante1.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -327,7 +334,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante2.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>
@@ -338,7 +345,7 @@ $tercero++;
                                  <h5 class="card-title text-center text-secondary fontweight-bold"><i class="fa fa-quote-left" aria-hidden="true"></i></h5>
                                  <p class="card-text text-center">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                  <img class="mx-auto"
-                        src="{{ asset('images/user.png') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
+                        src="{{ asset('images/Academia/estudiante3.jpg') }}" alt="Card image cap" style="max-width:70px; max-height:70px; border-radius:50%;">
                                  <h5 class="text-center">Nombre Estudiante</h5>
                               </div>
                               </div>

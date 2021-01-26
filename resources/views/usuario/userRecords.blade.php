@@ -38,10 +38,8 @@
 <div class="col-xs-12">
 	<div class="box">
 		<div class="box-body">
-			<a href="{{route('downloadred')}}" class="btn btn-info btn-block descargar">Descargar Red</a>
-			
-			<button data-toggle="modal" data-target="#editar" class="btn btn-info btn-block">Editar la contraseña de todos</button>
-			
+			<a href="{{route('downloadred')}}" class="btn btn-success btn-block descargar">Descargar Red</a>
+						
 			<br class="col-xs-12">
 			<table id="mytable" class="table">
 				<thead>
@@ -109,13 +107,13 @@
 						@endif
 						
 						<td class="text-center">
-							<a class="btn btn-info" href="{{ route('users.edit', $usuario->ID) }}">
+							<a class="btn btn-success" href="{{ route('users.edit', $usuario->ID) }}">
 								<i class="fa fa-edit"></i></a>
 
-							@if($usuario['ID'] != 1)
+							<!--@if($usuario['ID'] != 1)
 							<a class="btn btn-danger eliminar" href="{{ route('users.delete', $usuario->ID) }}" data-id="{{$usuario->ID}}" data-nombre="{{$usuario->display_name}}">
 								<i class="fa fa-trash"></i></a>
-							@endif
+							@endif-->
 						</td>
 					</tr>
 					@endforeach

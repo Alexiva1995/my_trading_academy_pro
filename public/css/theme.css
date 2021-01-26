@@ -580,14 +580,17 @@ h5.title-level {
         position: relative!important;
         top: 0px!important;
     }
+    .estiloacademia{
+        font-size: 60px!important;
+        line-height: 60px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+
+    }
 }
 
 @media (min-width: 576px) and (max-width: 576px) {
-    
-    .estilomytranding{
-        font-size: 40px!important;
-        margin-top: 20%!important;
-    }
+
     .estilomytrandingtwo{
         font-size: 30px!important;
         margin-top: 0px!important;
@@ -597,8 +600,8 @@ h5.title-level {
     }
 
     .estiloacademia{
-        font-size: 35px!important;
-        line-height: 35px!important;
+        font-size: 25px!important;
+        line-height: 25px!important;
         margin-top: 0px!important;
         margin-bottom: 0px!important;
     }
@@ -620,6 +623,16 @@ h5.title-level {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+        
+    .estilomytranding{
+        font-size: 40px!important;
+        margin-top: 10%!important;
+        line-height: 40px!important;
+    }
+    .estilomytrandingthree{
+        font-size: 20px!important;
+        line-height: 20px!important;
+    }
     .course-category-caption a {
         font-size: 12px;
         bottom: 0px;
@@ -699,6 +712,15 @@ h5.title-level {
     .caption-hidden {
         display: none;
     }
+    .estilomytranding{
+        font-size: 80px!important;
+        line-height: 80px!important;
+        margin-top: 20%!important;
+    }
+    .estilomytrandingtwo{
+        font-size: 50px!important;
+        line-height:50px!important;
+    }
 }
 
 @media (min-width: 1024px) and (max-width: 1024px) {
@@ -708,26 +730,13 @@ h5.title-level {
     .nivel-body {
         height: 230px!important;
     }
-    .estilomytranding{
-        font-size: 60px!important;
-        margin-top: 20%!important;
-    }
-    .estilomytrandingtwo{
-        font-size: 20px!important;
-        line-height: 30px!important;
-    }
+
     .text-title-miscursos{
         font-size: 12px!important;
     }
 
     .card-instructores{
         height: 600px!important;
-    }
-    .estiloacademia{
-        font-size: 70px!important;
-        line-height: 70px!important;
-        margin-top: 10%!important;
-        margin-bottom: 0px!important;
     }
     .lo-nuevo-text{
         top:30%!important;
@@ -757,6 +766,12 @@ h5.title-level {
 
     .lo-nuevo-text{
         top:50%;
+    }
+
+    .estiloacademia{
+        font-size: 80px!important;
+        line-height: 80px!important;
+        margin-top: 0px!important;
     }
 }
 
@@ -827,14 +842,9 @@ h5.title-level {
     .next-streaming-date {
         font-size: 20px!important;
     }
-    .estilomytranding{
-        font-size: 30px!important;
-
-        margin-top: 0px!important;
-    }
     .estilomytrandingtwo{
         font-size: 20px!important;
-        line-height:0px!important;
+        line-height:20px!important;
         margin-top: 0px!important;
     }
     .ftxlivestreming-text{
@@ -873,7 +883,7 @@ h5.title-level {
     }
 
     .estiloacademia{
-        font-size: 30px!important;
+        font-size: 14px!important;
         line-height: 30px!important;
         margin-top: 0px!important;
     }
@@ -890,6 +900,31 @@ h5.title-level {
     }
 }
 
+@media(min-width: 320px) and (max-width:575px){
+    .estilomytranding{
+        font-size: 30px!important;
+        line-height: 30px!important;
+        margin-top: 0px!important;
+    }
+    .estilomytrandingthree {
+        font-size: 18px!important;
+        line-height: 18px!important;
+        margin-top: 0px!important;
+    }
+    .estilomytrandingtwo{
+        font-size: 20px!important;
+        line-height:20px!important;
+        margin-top: 0px!important;
+    }
+}
+
+@media(max-width:574px){
+    .estiloacademia{
+        font-size: 20px!important;
+        line-height: 20px!important;
+        margin-top: 0px!important;
+    }
+}
 @media (min-width: 768px) and (max-width: 768px) {
     .icon-miscursos img {
         display: none;
@@ -2027,7 +2062,7 @@ p.card-text.font-weight-bold.mr-2 {
 
 .estilomytranding {
     text-align: left;
-    font-size: 80px;
+    font-size: 60px;
     line-height: 70px;
     color: #00C65B;
     font-weight: 900!important;
@@ -2044,16 +2079,15 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .estilomytrandingtwo{
-    font-size: 70px;
-    line-height: 80px;
+    font-size: 40px;
+    line-height: 40px;
     color: #fff;
-    margin: 10px;
 
 }
 
 .estilomytrandingthree{
     font-size: 40px;
-    line-height: 80px;
+    line-height: 40px;
     color: #fff;
     margin: 10px;
 }
@@ -2073,12 +2107,11 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .estiloacademia {
+    font-size: 60px;
+    line-height: 60px;
     text-align: left;
-    font-size: 80px;
-    line-height: 70px;
     color: #fff;
     font-weight: 900!important;
-    margin-top: 30%;
 }
 
 .tranding {
@@ -2583,7 +2616,16 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .img-background-suscribe{
-    background-image: url('../nosotros/afiliados/fondo.png');
+    background-image: url('../images/Home/email.jpg');
+}
+
+.img-background-herramientas{
+    background-image: url('../images/Home/03.jpg');
+}
+
+.img-background-quiero{
+    background-image: url('../images/Streaming/02.jpg');
+    background-size: cover;
 }
 
 .carousel-control-next-icon {
@@ -2618,8 +2660,12 @@ opacity: 1;
 }
 
 .bg-ecosistema{
-    background-image: url('../images/home1.png');
+    background-image: url('../images/nosotros/02.jpg');
 
+}
+.bg-trader{
+    background-image: url('../images/Trading/04.jpg');
+    background-size: cover;
 }
 
 .btn-more{
@@ -2699,3 +2745,5 @@ border-radius: 27px!important;
     margin-top:70px;
 
 }
+
+

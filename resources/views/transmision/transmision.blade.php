@@ -10,8 +10,16 @@
        font-weight: 700;
        font-size: 18px;
     }
+
+    .card{
+       background: none!important;
+       background-color: none!important;
+       border:none!important;
+    }
     </style>
 @endpush
+
+
 @section('content')
 @if (!Auth::guest())
 <div class="title-page-course col-md"><span class="text-white">
@@ -352,8 +360,8 @@
             @php $contador=0; @endphp
             @foreach($finalizados as $finalizado)
                @php $contador++; @endphp
-            <div class="containerscale col-md-3">
-                    <div class="card">
+            <div class="containerscale col-md-3 no-gutters">
+                    <div class="card" style="background-color: none!important;">
                               @if ($finalizado->miniatura == null)
                                  <img src="{{ asset('uploads/avatar/'.$finalizado->mentor->avatar) }}" class="card-img-top img-prox-events" alt="...">
                               @else
@@ -378,17 +386,15 @@
    <!--END RECIENTES-->
 
 <!--SER PARTE-->
-<div class="container-fluid img-background-suscribe py-5">
+<div class="container-fluid img-background-quiero py-5">
    <div class="row align-items-center justify-content-center">
-         <div class="col-md-6">
-               <h3 class="text-white font-weight-bold">APRENDE DE LOS MEJORES DEL MERCADO QUE PUEDEN AYUDARTE A TOMAR MEJORES DECISIONES DE INVERSIÓN</h3 class="text-center">
+         <div class="col-md-6 py-5">
+               <h2 class="text-white font-weight-bold">APRENDE DE LOS MEJORES DEL MERCADO QUE PUEDEN AYUDARTE A TOMAR MEJORES DECISIONES DE INVERSIÓN</h2>
             </div>
-      <div class="col-md-4 text-center">
+      <div class="col-md-4 text-center py-5">
        <a href="#" class="btn btn-danger btn-lg">QUIERO SER PARTE</a>
       </div>
    </div>
-
-      
 
 </div>
 <!--SER PARTE END-->
