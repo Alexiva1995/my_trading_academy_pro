@@ -606,12 +606,6 @@ h5.title-level {
         margin-bottom: 0px!important;
     }
 
-    .tranding{
-        font-size: 70px!important;
-        line-height: 70px!important;
-        margin-top: 25%!important;
-    }
-
     .btn-home{
         margin-top:20px!important;
     }
@@ -691,6 +685,11 @@ h5.title-level {
     .estilostreamingtwo{
         font-size: 20px!important;
         margin-top: 0px!important;
+    }
+    .tranding{
+        font-size: 70px!important;
+        line-height: 70px!important;
+        margin-top: 10%!important;
     }
 
 }
@@ -887,11 +886,6 @@ h5.title-level {
         line-height: 30px!important;
         margin-top: 0px!important;
     }
-    .tranding{
-        font-size:50px!important;
-        line-height:50px!important;
-        margin-top: 10%!important;
-    }
     .btn-home{
         margin-top:30px!important;
     }
@@ -923,6 +917,12 @@ h5.title-level {
         font-size: 20px!important;
         line-height: 20px!important;
         margin-top: 0px!important;
+    }
+
+    .tranding{
+        font-size: 30px!important;
+        line-height:30px!important;
+        margin-top: 10%!important;
     }
 }
 @media (min-width: 768px) and (max-width: 768px) {
@@ -2120,7 +2120,7 @@ p.card-text.font-weight-bold.mr-2 {
     line-height: 100px;
     color: #00C65B;
     font-weight: 900!important;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 
 @media (max-width: 450px) {
