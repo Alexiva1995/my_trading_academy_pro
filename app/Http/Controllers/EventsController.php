@@ -233,9 +233,9 @@ class EventsController extends Controller
         $meeting->meta = json_encode($info);
         $meeting->save();
 
-        return response()->json(
-            true
-        );
+        $statusLive =  'live';
+
+        return view('timelive.buttonsSection')->with(compact('evento', 'statusLive'));
     }
     
     public function timeliveEvent($event_id){
