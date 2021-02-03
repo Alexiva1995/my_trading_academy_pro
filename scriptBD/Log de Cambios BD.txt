@@ -263,3 +263,7 @@ Dev:Luisana Marín
 21/01/2021
 Dev: Crisleivys Gil
 * Nueva tabla suscriptions (correr el script suscriptions)
+
+02/02/2021
+Dev: Pietro
+* Nueva tabla senales (correr el script senales.sql)

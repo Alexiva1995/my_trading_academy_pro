@@ -42,6 +42,7 @@ Auth::routes();
 Route::post('recover-password', 'HomeController@recover_password')->name('recover-password');
 Route::post('contact-us', 'HomeController@contact_us')->name('contact-us');
 Route::post('subscription', 'HomeController@subscriptions')->name('subscriptions');
+
 // configuracion inicial
 Route::group(['prefix' => 'installer'], function (){
     Route::get('/step1', 'InstallController@index')->name('install-step1');
@@ -191,7 +192,7 @@ Route::group(['prefix' => 'installer'], function (){
   Route::get('/blog/{id}', 'NosotrosController@articulo')->name('blog.articulo');
   Route::get('/afiliados', 'NosotrosController@afiliados')->name('blog.afiliados');
   Route::get('/inversiones', 'NosotrosController@inversiones')->name('inversiones');
-  Route::get('/tranding', 'NosotrosController@tranding_social')->name('trading');
+  Route::get('/trading', 'NosotrosController@tranding_social')->name('trading');
 
   /* Rutas de la Landing */
   Route::get('load-more-courses-new/{ultimoId}/{accion}', 'CourseController@load_more_courses_new')->name('landing.load-more-courses-new');
@@ -1090,6 +1091,31 @@ Route::group(['prefix' => 'installer'], function (){
           Route::post('/cambioestado','ProspeccionController@cambioestado')->name('prospeccion-cambioestado');
 
       });
+      
+      
+        Route::group(['prefix' => 'senales'], function(){
+        
+        
+        Route::get('/senales','SenalesController@senales')->name('senales-senales');
+        
+        Route::post('/guardarsenales','SenalesController@guardarsenales')->name('senales-guardarsenales');
+        
+        Route::get('/historico','SenalesController@historico')->name('senales-historico');
+        
+        Route::get('/cancelar/{id}','SenalesController@cancelar')->name('senales-cancelar');
+        
+        Route::get('/cambiar/{id}','SenalesController@cambiar')->name('senales-cambiar');
+        
+        Route::get('/descargar/{id}','SenalesController@descargar')->name('senales-descargar');
+        
+        Route::post('/update','SenalesController@update')->name('senales-update');
+        
+        Route::get('/envio/{id}','SenalesController@envio')->name('senales-envio');
+        
+        
+        Route::post('/captura','SenalesController@captura')->name('senales-captura');
+    });
+    
     });
 
   Route::group(['prefix' => 'link','middleware' => ['menu']], function(){

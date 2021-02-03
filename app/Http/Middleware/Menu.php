@@ -181,6 +181,17 @@ class Menu
                 'permisoAdmin' => 1,
                 'activo' => 0,
             ],
+            
+            
+            'Historico de Señales' => [
+                'submenu' => 0,
+                'ruta' => 'senales-historico',
+                'black'=> '0',
+                'icono' => 'fas fa-align-justify',
+                'complementoruta' => '',
+                'permisoAdmin' => 1,
+                'activo' => 0,
+            ],
 
 
             'Informe de Comisiones' => [
@@ -326,6 +337,16 @@ class Menu
                         'oculto'=> 'activo',
                     ],
                 ]
+            ],
+            
+            'Historico de Señales' => [
+                'submenu' => 0,
+                'ruta' => 'senales-historico',
+                'black'=> '0',
+                'icono' => 'fas fa-align-justify',
+                'complementoruta' => '',
+                'permisoAdmin' => 1,
+                'activo' => 0,
             ],
 
             'Billetera' => [
@@ -939,6 +960,33 @@ class Menu
                 'activo' => 0,
             ],
             */
+            
+            'Señales' => [
+                'submenu' => 1,
+                'ruta' => 'javascript',
+                'icono' => 'fas fa-align-justify',
+                'complementoruta' => '',
+                'permisoAdmin' => 1,
+                'activo' => (request()->is('admin/senales*')) ? 'active' : '',
+                'visto' => 2,
+                'menus' => [
+                    'Crear Señales' => [
+                        'ruta' => 'senales-senales',
+                        'complementoruta' => '',
+                        'black'=> '0',
+                        'oculto'=> 'activo',
+                    ],
+                    'Historico de Señales' => [
+                        'ruta' => 'senales-historico',
+                        'complementoruta' => '',
+                        'black'=> '0',
+                        'oculto'=> 'activo',
+                    ],
+                    
+                    
+                ]
+            ],
+            
             'Lista de Usuarios' => [
                 'submenu' => 0,
                 'ruta' => 'users.records',

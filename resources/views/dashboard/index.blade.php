@@ -4,8 +4,10 @@
   <!-- Main content -->
   <section class="content">
       
+    {{-- seccion de cotizador de cripto activos --}}  
+    @include('dashboard.componenteIndex.cotizadorcripto')
+      
     {{-- seccion de slider --}}
-    <!--@include('dashboard.componenteIndex.slider')-->
     
     {{-- seccion de los cuadros informativos --}}
     @include('dashboard.componenteIndex.cuadros')
@@ -21,7 +23,7 @@
     
     {{-- seccion de noticias y materiales --}}
     {{--@include('dashboard.componenteIndex.herramientas')--}}
-
+    
 
   </section>
   <!-- /.content -->
@@ -43,6 +45,5 @@
       title:'Link copiado con exito'
     })
   }
-  
 </script>
 @endpush
