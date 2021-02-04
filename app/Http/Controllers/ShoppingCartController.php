@@ -329,11 +329,10 @@ class ShoppingCartController extends Controller
         }
         
         
-        $dataDescripcion = [
-            'Ser' => 'Accesos a todos los cursos de nivel Ser',
-            'Hacer' => 'Accesos a todos los cursos de nivel Hacer',
-            'Tener' => 'Accesos a todos los cursos de nivel Tener',
-            'Trascender' => 'Accesos a todos los cursos de nivel Trascender',
+         $dataDescripcion = [
+            'Find' => 'Acceso a un(1) evento streaming VIP',
+            'Buy' => 'Acceso a dos(2) eventos streaming VIP',
+            'Win' => 'Acceso a tres(3) eventos streaming VIP'
         ];
         $membresias = DB::table('memberships')->get();
 

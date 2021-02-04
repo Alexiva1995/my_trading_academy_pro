@@ -28,7 +28,9 @@ use App\Http\Controllers\WalletControler;
 
 class NosotrosController extends Controller
 {
-
+	public function gratis(){
+		return view('nosotros.gratis');
+	}
 	public function step1(){
 
 		return view('nosotros.step1');

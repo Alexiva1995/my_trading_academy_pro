@@ -29,6 +29,12 @@
                 <a class="nav-link items-header text-center" href="{{route('step1')}}">NOSOTROS</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link items-header text-center" href="{{route('blog.afiliados')}}">AFILIADOS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link items-header text-center" href="{{route('nosotros.gratis')}}">GRATIS</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('courses')}}">ACADEMIA</a>
             </li>
             <li class="nav-item">

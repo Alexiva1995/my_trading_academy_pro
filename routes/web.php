@@ -187,6 +187,7 @@ Route::group(['prefix' => 'installer'], function (){
 
   //vistas de step
   Route::get('/nosotrosblog', 'NosotrosController@step1')->name('step1');
+  Route::get('/gratis', 'NosotrosController@gratis')->name('nosotros.gratis');
   Route::get('/academia', 'NosotrosController@step2')->name('step2');
   Route::get('/blog', 'NosotrosController@step3')->name('step3');
   Route::get('/blog/{id}', 'NosotrosController@articulo')->name('blog.articulo');
