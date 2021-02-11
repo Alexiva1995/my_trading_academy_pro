@@ -29,7 +29,7 @@
 
 </style>
 
-<video src="{{asset('/fondovideo/video.mp4')}}" type="video/mp4" autoplay="" muted loop="" id="video_background"></video>
+<video src="{{asset('/fondovideo/video.mov')}}" type="video/mp4" autoplay="" muted loop="" id="video_background"></video>
 
 <center>
     <img src="{{asset('/images/logoverticalblanco.png')}}" style="width: 200px; margin-top: 80px; margin-bottom: 40px;">

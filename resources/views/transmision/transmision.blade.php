@@ -505,7 +505,7 @@
                <h2 class="text-white font-weight-bold">APRENDE DE LOS MEJORES DEL MERCADO QUE PUEDEN AYUDARTE A TOMAR MEJORES DECISIONES DE INVERSIÓN</h2>
             </div>
       <div class="col-md-4 text-center py-5">
-       <a href="#" class="btn btn-danger btn-lg">QUIERO SER PARTE</a>
+       <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg">QUIERO SER PARTE</a>
       </div>
    </div>
 

@@ -272,7 +272,7 @@ $tercero++;
                   <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap">
                   <div class="card-body text-center">
                      <h5 class="card-title text-center" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{$articulo->titulo}}</h5>
-                     <a href="#" class="text-danger font-weight-bold">Ver más</a>
+                     <a href="{{ route('blog.articulo', $articulo->id) }}" class="text-danger font-weight-bold">Ver más</a>
                   </div>
             </div>
     </div>

@@ -28,6 +28,9 @@
   background-color: none!important;
   border: none!important;
     border-radius: 0px !important;
+}
+    .ecosistema-img{
+          padding-top: 150px;
 
 }
 
@@ -150,49 +153,32 @@
 
 
 <div class="container-fluid bg-ecosistema py-5">
-<div class="new-courses-section-title mb-2" style="text-align: center;">
-                <h2 style="font-weight: 800; font-size: 40px; color:#ED254E;">NUESTRO ECOSISTEMA</h2>
-        </div>
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-3 containerscale">
-                    <div class="card">
-                            <img src="{{ asset('images/nosotros/e1.png') }}" alt="conexión" class="img-fluid">
-                            <div class="card-img-overlay d-flex flex-column">
-                            <img src="{{ asset('images/mba.png') }}" alt="My business academy pro" class="img-fluid text-white my-auto text-center">
-                            <!--<h6 class="text-white my-auto text-center">Logo</h6>-->
-                                <a href="" class="btn btn-danger btn-more">Saber más</a>
-                            </div>
-                    </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/e2.png') }}" alt="innovación" class="img-fluid">
-                        <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/no-work-1.png') }}" alt="No work money" class="img-fluid text-white my-auto text-center">
-                                <a href="" class="btn btn-danger btn-more">Saber más</a>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/fentix.jpg') }}" alt="crecimiento" class="img-fluid">
-                        <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/fentix-1.png') }}" alt="fenttix" class="img-fluid text-white my-auto text-center">
-                                <a href="" class="btn btn-danger btn-more">Saber más</a>
-                        </div>
-                </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                        <img src="{{ asset('images/nosotros/ftx.jpg') }}" alt="calidad" class="img-fluid">
-                        <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/FTXlive-logo.png') }}" alt="ftxlive" class="img-fluid text-white my-auto text-center">
-                                <a href="" class="btn btn-danger btn-more">Saber más</a>
-                        </div>
-                </div>
-            </div>
-        </div>
-
+   <div class="new-courses-section-title mb-2" style="text-align: center;">
+      <h2 style="font-weight: 800; font-size: 40px; color:#ED254E;">NUESTRO ECOSISTEMA</h2>
+   </div>
+   <div class="row">
+      <div class="row">
+         <div class="col-md-3 align-self-start mt-2 pt-4">
+            <img src="{{ asset('nosotros/nosotros/mba.png') }}" class="card-img img-fluid logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/fentix-1.png') }}" class="mt-2 card-img img-fluid ecosistema-img logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/mta-1.png') }}" class="card-img img-fluid ecosistema-img logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/no-work-1.png') }}" class="card-img img-fluid logo-scale ecosistema-img" alt="...">
+         </div>
+         <div class="col align-self-center mt-2">
+            <img src="{{ asset('nosotros/nosotros/tierra-1.png') }}" class="card-img img-fluid logo-rotate" alt="...">
+         </div>
+         <div class="col-md-3 mt-2">
+            <img src="{{ asset('nosotros/nosotros/revolutte.png') }}" class="card-img img-fluid logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/revolutte-insurance.png') }}" class="card-img img-fluid logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/revolutte-real-state.png') }}" class="card-img img-fluid logo-scale" alt="...">
+         </div>
+      </div>
+      <div class="row offset-sm-0 offset-md-2 mb-4">
+         <div class="col-md-3 mt-2"></div>
+         <div class="col-md-2 mt-2"></div>
+         <div class="col-md-3 mt-2"></div>
+      </div>
+    </div>
 </div>
 
 

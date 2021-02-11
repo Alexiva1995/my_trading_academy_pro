@@ -11,8 +11,8 @@
 
 
    <div class="col-md-12 afiliados-box" style="background-color: #F5F5F5;">
-      <div class="row">
-         <div class="col-lg-3 col-xs-12 offset-lg-1 mt-4">
+      <div class="row" style="padding-left: 150px; padding-right: 150px;">
+         <div class="col-lg-4 col-xs-12 mt-4">
             <div class="box">
                <img src="{{ asset('nosotros/afiliados/registrateblue.svg') }}" alt="" height="50px" width="50px">
                <div class="box-title mt-2">
@@ -23,7 +23,7 @@
                </div>
             </div><!--Box end-->
          </div>
-         <div class="col-lg-3 col-xs-12 mt-4">
+         <div class="col-lg-4 col-xs-12 mt-4">
             <div class="box">
                <img src="{{ asset('nosotros/afiliados/capacitateblue.svg') }}" alt="" height="50px" width="50px">
       			<div class="box-title mt-2">
@@ -34,7 +34,7 @@
       			</div>
       		</div><!--Box end-->
          </div>
-         <div class="col-lg-3 col-xs-12 mt-4">
+         <div class="col-lg-4 col-xs-12 mt-4">
             <div class="box">
                <img src="{{ asset('nosotros/afiliados/capacitateblue.svg') }}" alt="" height="50px" width="50px">
                <div class="box-title mt-2">
@@ -45,9 +45,7 @@
                </div>
             </div><!--Box end-->
          </div>
-      </div>
-      <div class="row">
-         <div class="col-lg-3 col-xs-12 offset-lg-6">
+         <div class="col-lg-4 col-xs-12">
             <div class="box">
                <img src="{{ asset('nosotros/afiliados/recomiendanosblue.svg') }}" alt="" height="50px" width="50px">
                <div class="box-title mt-2">
@@ -58,7 +56,7 @@
                </div>
             </div><!--Box end-->
          </div>
-         <div class="col-lg-3 col-xs-12">
+         <div class="col-lg-4 col-xs-12">
             <div class="box">
                <img src="{{ asset('nosotros/afiliados/dineroblue.svg') }}" alt="" height="50px" width="50px">
       			<div class="box-title mt-2">

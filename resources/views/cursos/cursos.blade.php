@@ -58,132 +58,106 @@
 
 <!--ULTIMAS LECCIONES-->
 @if(Auth::user())
-@if($cursosRecomendados->count() > 0)
-<div class="col-md-12 py-5" style="background-color: #FFFFFF;">
+  @if($cursosRecomendados->count() > 0)
+    <div class="col-md-12 py-5" style="background-color: #FFFFFF;">
       <h2 style="color:#ED254E">LECCIONES RECOMENDADAS</h2>
 
-@if($cursosRecomendados->count() > 0)
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      @if($cursosRecomendados->count() > 0)
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row align-items-center justify-content-center">
+                @php $contador=0; @endphp
+                @foreach($cursosRecomendados as $course)
+                  @php $contador++; @endphp
+                  @if($contador <= 3)
+                    <div class="col-md-3 mb-2">
+                      @if (!empty($course->thumbnail_cover))
+                        <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+                      @else
+                        <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+                      @endif
+                      <div class="card-img-overlay lesson-overlay h-100 d-table">
+                        <div class="d-table-cell align-middle font-weight-bold">
+                          <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                          <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                          <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  @endif
+                @endforeach
+              </div><!--END ROW-->
+            </div>
 
- <div class="carousel-inner">
+            @if($cursosRecomendados->count() >= 4)
+              <div class="carousel-item">
+                <div class="row align-items-center justify-content-center">
+                  @php $segundo =0; @endphp
+                  @foreach($cursosRecomendados as $course)
+                    @php $segundo++; @endphp
 
-  <div class="carousel-item active">
-    <div class="row align-items-center justify-content-center">
+                    @if($segundo >= 4 && $segundo <= 6)
+                      <div class="col-md-3 mb-2">
+                        @if (!empty($course->thumbnail_cover))
+                          <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+                        @else
+                          <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+                        @endif
+                        <div class="card-img-overlay lesson-overlay h-100 d-table">
+                          <div class="d-table-cell align-middle font-weight-bold">
+                            <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                            <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                            <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row align-items-center justify-content-center">
+                  @php $tercero =0; @endphp
+                  @foreach($cursosRecomendados as $course)
+                    @php $tercero++; @endphp
 
-         @php
-         $contador=0;
-         @endphp
-         @foreach($cursosRecomendados as $course)
-         @php
-         $contador++;
-         @endphp
-         @if($contador <= 3)
-         <div class="col-md-3 mb-2">
-               @if (!empty($course->thumbnail_cover))
-               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
-               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
-               @else
-               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
-               @endif
-               <div class="card-img-overlay lesson-overlay h-100 d-table">
-                     <div class="d-table-cell align-middle font-weight-bold">
-                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
-                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
-                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
-                     </div>
-               </div>
-         </div>
-         @endif
-         @endforeach
-      </div><!--END ROW-->
-</div>
+                    @if($tercero >= 7 && $tercero < 9)
+                      <div class="col-md-3 mb-2">
+                        @if (!empty($course->thumbnail_cover))
+                          <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
+                        @else
+                          <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
+                        @endif
+                        <div class="card-img-overlay lesson-overlay h-100 d-table">
+                          <div class="d-table-cell align-middle font-weight-bold">
+                            <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
+                            <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
+                            <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
+                          </div>
+                        </div>
+                      </div>
+                    @endif
+                  @endforeach
+                </div>
+              </div>
+            @endif
+          </div>
 
-@if($cursosRecomendados->count() >= 4)
-<div class="carousel-item">
-    <div class="row align-items-center justify-content-center">
-
-@php
-$segundo =0;
-@endphp
-@foreach($cursosRecomendados as $course)
-@php
-$segundo++;
-@endphp
-
-@if($segundo >= 4 && $segundo <= 6)
-<div class="col-md-3 mb-2">
-               @if (!empty($course->thumbnail_cover))
-               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
-               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
-               @else
-               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
-               @endif
-               <div class="card-img-overlay lesson-overlay h-100 d-table">
-                     <div class="d-table-cell align-middle font-weight-bold">
-                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
-                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
-                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
-                     </div>
-               </div>
-</div>
-@endif
-@endforeach
-</div>
-</div>
-<div class="carousel-item">
-    <div class="row align-items-center justify-content-center">
-
-@php
-$tercero =0;
-@endphp
-@foreach($cursosRecomendados as $course)
-@php
-$tercero++;
-@endphp
-
-@if($tercero >= 7 && $tercero < 9)
-<div class="col-md-3 mb-2">
-               @if (!empty($course->thumbnail_cover))
-               <img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">
-               <!--<img src="{{ asset('uploads/images/courses/covers/'.$course->thumbnail_cover) }}" class="card-img-top" alt="...">-->
-               @else
-               <img src="{{ asset('uploads/images/courses/covers/default.jpg') }}" class="card-img-top" alt="...">
-               @endif
-               <div class="card-img-overlay lesson-overlay h-100 d-table">
-                     <div class="d-table-cell align-middle font-weight-bold">
-                        <h3 class="card-title text-white font-weight-bold text-uppercase"><a href="{{ route('courses.show', [$course->slug, $course->id]) }}" class="text-white">{{$course->title}}</a></h3>
-                        <h6 class="text-white text-uppercase"><a href="{{ url('courses/mentor/'.$course->mentor->ID) }}" class="text-white"> {{$course->mentor->display_name}} </a></h6>
-                        <h5 class="text-white text-play-lesson"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$course->duration}}</h5>
-                     </div>
-               </div>
-</div>
-@endif
-@endforeach
-</div>
-</div>
-@endif
-
-</div>
-
-@if($cursosRecomendados->count() >= 3)
-<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-<i class="fas fa-chevron-left fa-2x" style="color:black; font-weight: bold"></i>
-<span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-<i class="fas fa-chevron-right fa-2x" style="color:black; font-weight: bold"></i>
-<span class="sr-only">Next</span>
-</a>
-@endif
-
-</div>
-
-@endif
-<!--Carrusel-->
-
-<!--CARRUSEL END-->
-</div>
-@endif
+          @if($cursosRecomendados->count() >= 3)
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <i class="fas fa-chevron-left fa-2x" style="color:black; font-weight: bold"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <i class="fas fa-chevron-right fa-2x" style="color:black; font-weight: bold"></i>
+              <span class="sr-only">Next</span>
+            </a>
+          @endif
+        </div>
+      @endif
+    </div>
+  @endif
 @endif
 
 
