@@ -712,14 +712,50 @@ h5.title-level {
         display: none;
     }
     .estilomytranding{
-        font-size: 80px!important;
-        line-height: 80px!important;
+        font-size: 100px!important;
+        line-height: 110px!important;
         margin-top: 20%!important;
     }
     .estilomytrandingtwo{
         font-size: 50px!important;
         line-height:50px!important;
     }
+}
+ /*pantallas mayores a 1700px */
+.estilomytrandingbig {
+    text-align: left;
+    font-size: 120px;
+    line-height: 110px;
+    color: #00C65B;
+    font-weight: 900!important;
+    margin-top: 20%;
+}
+.estilomytrandingtwobig{
+    font-size: 50px!important;
+    line-height:50px!important;
+    margin-top: 30px!important;
+}
+.estilomytrandingtext{
+    font-size: 40px!important;
+    line-height: 40px!important;
+    margin-top: 20px;
+}
+.btn-home-big{
+    padding:  35px 45px;
+    font-size: 30px;
+}
+.estiloacademiabig{
+    font-size: 120px!important;
+    line-height: 130px!important;
+    margin-top: 20px!important;
+    padding-bottom: 40px !important;
+}
+.category-title-big{
+    font-size: 40px;
+}
+.category-btn-show-more-big{
+    padding:  20px 30px;
+    font-size: 30px;
 }
 
 @media (min-width: 1024px) and (max-width: 1024px) {
@@ -2654,7 +2690,7 @@ opacity: 1;
 }
 
 .text-play-lesson{
-    position: absolute;
+    /*position: absolute;*/
     top:250px;
     z-index: 100;
 }

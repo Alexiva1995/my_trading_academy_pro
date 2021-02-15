@@ -1,35 +1,31 @@
 @extends('layouts.landing')
 @push('styles')
-    <style>
-    .containerscale:hover{
-        transform: scale(1.1);
-        z-index: 9;
-       }
-    
-    .aumento{
-       font-weight: 700;
-       font-size: 18px;
-    }
-
-    .card{
-       background: none!important;
-       background-color: none!important;
-       border:none!important;
-    }
-     .carousel-indicators li {
-    border-radius: 12px;
-    width: 12px;
-    height: 12px;
-    background-color: #696969!important;
-    border-radius: 50%;
-   }
-
-    .card-img-top {
-    border: none!important;
-}
-    </style>
+   <style>
+      .containerscale:hover{
+         transform: scale(1.1);
+         z-index: 9;
+      }
+      .aumento{
+         font-weight: 700;
+         font-size: 18px;
+      }
+      .card{
+         background: none!important;
+         background-color: none!important;
+         border:none!important;
+      }
+      .carousel-indicators li {
+         border-radius: 12px;
+         width: 12px;
+         height: 12px;
+         background-color: #696969!important;
+         border-radius: 50%;
+      }
+      .card-img-top {
+         border: none!important;
+      }
+   </style>
 @endpush
-
 
 @section('content')
 @if (!Auth::guest())
@@ -434,68 +430,44 @@
       @endif
    </div>
    @endif
-   <!--<div class="section-landing" style="background: #EFEFEF">
-      <div class="col">
-         <div class="section-title-landing" style="padding-bottom: 35px; text-align:center; color:#111329!important">TRANSMISIONES RECIENTES</div>
-      </div>
-      <div class="row">
-         @if($finalizados->isNotEmpty())
-            @foreach($finalizados as $fin)
-               <div class="col-md-3" style="margin-top: 20px;">
-                   @if($fin->miniatura == null)
-                    <img src="{{ asset('uploads/avatar/'.$fin->mentor->avatar) }}" class="card-img-top" alt="..." >
-                   @else
-                     <img src="{{ asset('uploads/images/miniatura/'.$fin->miniatura) }}" class="card-img-top" alt="..." >
-                   @endif
-                  <div class="card-img-overlay" style="margin-left: 10px; margin-right: 10px;">
-                     <h6 class="card-title">{{$fin->mentor->display_name}}</h6>
-                  </div>
-
-                  <div class="card-body" style="background-color: #2f343a;">
-                     <h6 class="card-title" style="margin-top: -15px;">  {{$fin->title}}</h6>
-                     <h6 style="font-size: 10px; margin-left: 20px; margin-top: -10px;">{{$fin->category->title}}</h6>
-                  </div>
-               </div>
-            @endforeach
-         @else
-            <div class="row"></div>
-         @endif
-      </div>
-   </div>-->
 
    <!--RECIENTES-->
    @if($finalizados->count() > 0)
-   <div class="col-md-12 py-5" style="background-color: #EFEFEF;">
-        <div class="section-title-landing new-courses-section-title mb-2" style="text-align: center;">
-                <h3 style="font-weight: 800; color:#111329;">TRANSMISIONES RECIENTES</h3>
-        </div>
-        <div class="row align-items-center justify-content-center no-gutters">
+      <div class="col-md-12 py-5" style="background-color: #EFEFEF;">
+         <div class="section-title-landing new-courses-section-title mb-2" style="text-align: center;">  
+            <h3 style="font-weight: 800; color:#111329;">TRANSMISIONES RECIENTES</h3>
+         </div>
+         <div class="row align-items-center justify-content-center no-gutters">
             @php $contador=0; @endphp
             @foreach($finalizados as $finalizado)
                @php $contador++; @endphp
-            <div class="containerscale col-md-3 no-gutters">
-                    <div class="card" style="background-color: none!important;">
-                              @if ($finalizado->miniatura == null)
-                                 <img src="{{ asset('uploads/avatar/'.$finalizado->mentor->avatar) }}" class="card-img-top img-prox-events" alt="...">
-                              @else
-                                 <img src="{{ asset('uploads/images/miniatura/'.$finalizado->miniatura) }}" class="card-img-top img-prox-events" alt="...">
-                              @endif
-                            <!--<img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">-->
-                            <div class="card-img-overlay d-flex flex-column" style="top:40%;">
-                                    <h5 class="text-white text-uppercase">{{$finalizado->title}}</h5>
-                                    <h6 class="text-white text-uppercase">{{$finalizado->mentor->display_name}}</h6>
-                                    <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$finalizado->duration}}</h6>
-                            </div>
-                    </div>
-            </div>
-            @if($contador == 3 || $contador == 6 || $contador == 9)
-            <div class="w-100"></div>
-            @endif
+               <div class="containerscale col-md-3 no-gutters">
+                  <div class="card" style="background-color: none!important;">
+                     @if ( (Auth::guest()) || (!in_array($finalizado->id, $misEventosArray)) )
+                        <a href="{{ route('show-event', $finalizado->id) }}">
+                     @else
+                        <a href="{{ route('timeliveEvent', $finalizado->id) }}">
+                     @endif
+                        @if ($finalizado->miniatura == null)
+                           <img src="{{ asset('uploads/avatar/'.$finalizado->mentor->avatar) }}" class="card-img-top img-prox-events" alt="...">
+                        @else
+                           <img src="{{ asset('uploads/images/miniatura/'.$finalizado->miniatura) }}" class="card-img-top img-prox-events" alt="...">
+                        @endif
+                        <div class="card-img-overlay d-flex flex-column" style="top:40%;">
+                           <h5 class="text-white text-uppercase">{{$finalizado->title}}</h5>
+                           <h6 class="text-white text-uppercase">{{$finalizado->mentor->display_name}}</h6>
+                           <h6 class="text-white my-auto aumento"><i class="fab fa-youtube text-success" style="font-size: 20px!important;"></i>&nbsp {{$finalizado->duration}}</h6>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+               @if($contador == 3 || $contador == 6 || $contador == 9)
+                  <div class="w-100"></div>
+               @endif
             @endforeach
-        </div>
-</div>
-@endif
-
+         </div>
+      </div>
+   @endif
    <!--END RECIENTES-->
 
 <!--SER PARTE-->

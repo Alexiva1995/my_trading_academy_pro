@@ -32,70 +32,52 @@ class TransmisionesController extends Controller
 
    public function transmisiones(){
       setlocale(LC_TIME, 'es_ES.UTF-8'); //Para el server
-     // setlocale(LC_TIME, 'es');//Local
+      // setlocale(LC_TIME, 'es');//Local
       Carbon::setLocale('es');
       $mytime = Carbon::now();
-      //return dd ($mytime->toDateTimeString());
 
       $evento_actual = Events::where('date', '>=', Carbon::now()->format('Y-m-d'))
-                        ->where('time', '>=', date('H:i:s'))
-                        ->where('status', '=',1)
-                        ->get()
-                        ->first();
-                        //dd(Empty($evento_actual));
-    if(Empty($evento_actual))
-    {
-        $proximos = null;
+                           ->where('time', '>=', date('H:i:s'))
+                           ->where('status', '=',1)
+                           ->get()
+                           ->first();
+
+      $misEventosArray = [];
+      if (!Auth::guest()){
+         $misEventos = DB::table('events_users')
+                        ->select('event_id')
+                        ->where('user_id', '=', Auth::user()->ID)
+                        ->get();
+
+         foreach ($misEventos as $miEvento){
+            array_push($misEventosArray, $miEvento->event_id);
+         }
+      }
+      
+      if(Empty($evento_actual)){
+         $proximos = null;
          $finalizados = Events::where('date', '<=',date('Y-m-d'))
-        ->where('time', '<', date('H:i:s'))
-        ->orwhere('date', '<',date('Y-m-d'))
-        ->get();
+                          ->where('time', '<', date('H:i:s'))
+                          ->orwhere('date', '<',date('Y-m-d'))
+                          ->get();
 
-      $misEventosArray = [];
-      if (!Auth::guest()){
-         $misEventos = DB::table('events_users')
-                        ->select('event_id')
-                        ->where('user_id', '=', Auth::user()->ID)
+         $total = 0;
+         return view('transmision.transmision',compact('evento_actual','proximos','total','finalizados', 'misEventosArray'));
+      }else{
+         $proximos = Events::where('date', '>', date('Y-m-d'))
+                        ->where('id', '!=', $evento_actual->id)
+                        ->orwhere('date', '=', date('Y-m-d'))
+                        ->where('time', '>=', date('H:i:s'))
                         ->get();
 
-         foreach ($misEventos as $miEvento){
-            array_push($misEventosArray, $miEvento->event_id);
-         }
+         $finalizados = Events::where('date', '<=',date('Y-m-d'))
+                          ->where('time', '<', date('H:i:s'))
+                          ->orwhere('date', '<',date('Y-m-d'))
+                          ->get();
+         $total = count($proximos);
+
+         return view('transmision.transmision',compact('evento_actual','proximos','total','finalizados', 'misEventosArray'));
       }
-      $total = 0;
-        return view('transmision.transmision',compact('evento_actual','proximos','total','finalizados', 'misEventosArray'));
-
-    }else{
-        $proximos = Events::where('date', '>', date('Y-m-d'))
-                      ->where('id', '!=', $evento_actual->id)
-                      ->orwhere('date', '=', date('Y-m-d'))
-                      ->where('time', '>=', date('H:i:s'))
-                      ->get();
-
-        //$finalizados = Events::where('status', '=',3)->get();
-        $finalizados = Events::where('date', '<=',date('Y-m-d'))
-        ->where('time', '<', date('H:i:s'))
-        ->orwhere('date', '<',date('Y-m-d'))
-        ->get();
-        $total = count($proximos);
-
-            $total = count($proximos);
-
-      $misEventosArray = [];
-      if (!Auth::guest()){
-         $misEventos = DB::table('events_users')
-                        ->select('event_id')
-                        ->where('user_id', '=', Auth::user()->ID)
-                        ->get();
-
-         foreach ($misEventos as $miEvento){
-            array_push($misEventosArray, $miEvento->event_id);
-         }
-      }
-
-      return view('transmision.transmision',compact('evento_actual','proximos','total','finalizados', 'misEventosArray'));
-    }
-
    }
 
 

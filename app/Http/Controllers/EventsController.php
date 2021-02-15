@@ -36,7 +36,7 @@ class EventsController extends Controller
         // TITLE
         view()->share('title', 'Eventos');
         Carbon::setLocale('es');
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => 'showEvent']);
 
     }
     /**
@@ -280,6 +280,12 @@ class EventsController extends Controller
         
 
         return view('timelive.timeliveEvent')->with(compact('evento', 'statusLive', 'checkPais', 'countdownLimit'));
+    }
+
+    public function showEvent($event_id){
+        $evento = Events::where('id', '=', $event_id)->with('countries')->first();
+
+        return view('transmision.showEvent')->with(compact('evento'));
     }
 
     public function edit($id){

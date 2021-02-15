@@ -1,60 +1,72 @@
 @extends('layouts.landing')
 
 @push('styles')
-    <style>
-    .containerscale:hover{
-        transform: scale(1.1);
-        z-index: 9;
-       }
+   <style>
+      .containerscale:hover{
+         transform: scale(1.1);
+         z-index: 9;
+      }
     
-    .aumento{
-       font-weight: 700;
-       font-size: 18px;
-    }
-    .carousel-indicators li {
-    border-radius: 12px;
-    width: 12px;
-    height: 12px;
-    background-color: #696969!important;
-    border-radius: 50%;
-   }
+      .aumento{
+         font-weight: 700;
+         font-size: 18px;
+      }
+      .carousel-indicators li {
+         border-radius: 12px;
+         width: 12px;
+         height: 12px;
+         background-color: #696969!important;
+         border-radius: 50%;
+      }
+   </style>
+@endpush
 
-    </style>
+@push('scripts')
+   <script>
+      window.onload = function() {
+         if(window.innerWidth >= 1800){
+            $('.estiloacademia').removeClass('estiloacademia').addClass("estiloacademiabig");
+            $('.category-title').addClass("category-title-big");
+            $('.category-btn-show-more').addClass("category-btn-show-more-big");
+            $('.btn-header-courses').addClass("btn-home-big");
+         }
+      };
+   </script>   
 @endpush
 
 @section('content')
 
-<div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
-    <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
-      <div id="mainSlider" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item  active ">
-              <div class="overlay"></div>
+   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
+      <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
+         <div id="mainSlider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item  active ">
+                  <div class="overlay"></div>
                   <img src="{{ asset('images/Academia/01.jpg') }}" class="d-block w-100" alt="...">
-                   <div class="carousel-caption">
-                        <div class="col-md-8">
-                          <h3 class="estiloacademia text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
-                          <div class="d-block d-sm-none d-md-none">
-                             @if(Auth::user())
-                            <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-sm">VER TODOS LOS CURSOS</a>
-                                @else
-                                <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-sm">REGISTRARSE</a>
-                            @endif
-                          </div>
-                          <div class="d-none d-sm-block">
-                             @if(Auth::user())
-                            <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg">VER TODOS LOS CURSOS</a>
-                                @else
-                                <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg">REGISTRARSE</a>
-                            @endif
-                          </div>
+                  <div class="carousel-caption">
+                     <div class="col-md-8">
+                        <h3 class="estiloacademia text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
+                        <div class="d-block d-sm-none d-md-none">
+                           @if(Auth::user())
+                              <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-sm btn-header-courses">VER TODOS LOS CURSOS</a>
+                           @else
+                              <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-sm btn-header-courses">REGISTRARSE</a>
+                           @endif
                         </div>
+                        <div class="d-none d-sm-block">
+                           @if(Auth::user())
+                              <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg btn-header-courses">VER TODOS LOS CURSOS</a>
+                           @else
+                              <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg btn-header-courses">REGISTRARSE</a>
+                           @endif
+                        </div>
+                     </div>
                   </div>
-              </div>
-          </div>
+               </div>
+            </div>
+         </div>
       </div>
-  </div>
-</div>
+   </div>
 
 <!--ULTIMAS LECCIONES-->
 @if(Auth::user())
@@ -201,34 +213,31 @@
 <!--END LOS MÁS NUEVO-->
 
 <!--CATEGORIAS-->
-@if($courses->count() > 0)
-<div class="container-fluid bg-ecosistema py-5" style="background:#EFEFEF;">
-<div class="new-courses-section-title mb-2">
-                <h3 class="font-weight-bold" style="color:#00C65B;">CATEGORÍAS</h3>
-        </div>
-        <div class="row align-items-center justify-content-center">
-        @foreach($courses as $course)
-            <div class="col-md-3 mb-2">
-                    <div class="card card-no-background">
-                    @if (!empty($course->cover))
-                            <img src="{{ asset('uploads/images/categories/covers/'.$course->cover) }}" class="img-fluid img-lo-nuevo categoria-card">
-                    @else
-                    <img src="{{ asset('uploads/images/categories/covers/default.png') }}" alt="conexión" class="img-fluid img-lo-nuevo categoria-card">
-                    @endif        
-                            <div class="card-img-overlay categoria-text text-center">
-                                 <h5 class="text-white">{{$course->title}}</h5>
-                                 <a href="{{ url('courses/category/'.$course->id) }}" class="btn btn-danger">VER MÁS</a>
-                            </div>
-                    </div>
-            </div>
-        @endforeach
-
-        </div>
-
-</div>
-@endif
-
-<!--END CATEGORIAS-->
+   @if($courses->count() > 0)
+      <div class="container-fluid bg-ecosistema py-5" style="background:#EFEFEF;">
+         <div class="new-courses-section-title mb-2">
+            <h3 class="font-weight-bold" style="color:#00C65B;">CATEGORÍAS</h3>
+         </div>
+         <div class="row align-items-center justify-content-center">
+            @foreach($courses as $course)
+               <div class="col-md-3 mb-2">
+                  <div class="card card-no-background">
+                     @if (!empty($course->cover))
+                        <img src="{{ asset('uploads/images/categories/covers/'.$course->cover) }}" class="img-fluid img-lo-nuevo categoria-card">
+                     @else
+                        <img src="{{ asset('uploads/images/categories/covers/default.png') }}" alt="conexión" class="img-fluid img-lo-nuevo categoria-card">
+                     @endif        
+                     <div class="card-img-overlay categoria-text text-center">
+                        <h5 class="text-white category-title">{{$course->title}}</h5>
+                        <a href="{{ url('courses/category/'.$course->id) }}" class="btn btn-danger category-btn-show-more">VER MÁS</a>
+                     </div>
+                  </div>
+               </div>
+            @endforeach
+         </div>
+      </div>
+   @endif
+   <!--END CATEGORIAS-->
 
 <!--TESTIMONIOS-->
 

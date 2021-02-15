@@ -266,6 +266,7 @@ Route::group(['prefix' => 'installer'], function (){
   //vista de transmisiones
   Route::get('/transmisiones', 'TransmisionesController@transmisiones')->name('transmisiones');
   Route::get('/agendar/{id}', 'TransmisionesController@agendar')->name('transmi-agendar');
+  Route::get('/show-event/{event}', 'EventsController@showEvent')->name('show-event');
 
   //Streaming
   Route::get('streaming', 'StreamingController@index')->name('streaming.index');
