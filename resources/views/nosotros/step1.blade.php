@@ -184,26 +184,40 @@
 
 
 
-<div class="col-md-12" style="background-color: #FFFFFF;">
-    <div class="card" style="max-width: 100%;">
-        <div class="row mt-4 no-gutters">
+   <div class="col-md-12" style="background-color: #FFFFFF;">
+      <div class="card" style="max-width: 100%;">
+         <div class="row mt-4 no-gutters">
             <div class="col-md-4 offset-md-2 no-gutters">
-              <img src="{{ asset('images/nosotros/josegordo.png') }}" class="img-fluid">
+               <img src="{{ asset('images/nosotros/josegordo.png') }}" class="img-fluid">
             </div>
             <div class="col-md-4 d-flex align-items-center" style="color: #fff;">
-            <div class="card-body">
-                <h4 style="color: #1A1A1A">Fundador</h4>
-                <h2  style="color: #ED254E; font-size: 45px; font-weight: bold;">
-                    JOSÉ GORDO
-                </h2>
-               <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
-               Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
-               </p>
+               <div class="card-body">
+                  <h4 style="color: #1A1A1A">Fundador</h4>
+                  <h2 style="color: #ED254E; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
+                  <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
+                  Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
+                  </p>
+               </div>
             </div>
-          </div>
-        </div>
-</div>
-</div>
+         </div>
+         <div class="card" style="max-width: 100%;">
+            <div class="row mt-4 no-gutters">
+               <div class="col-md-4 offset-md-2 d-flex align-items-center" style="color: #fff;">
+                  <div class="card-body">
+                     <h4 style="color: #1A1A1A">Fundadora</h4>
+                     <h2 style="color: #ED254E; font-size: 45px; font-weight: bold;">TANIA TOSTADO</h2>
+                     <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
+                        Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-4  no-gutters">
+                  <img src="{{ asset('images/nosotros/tania-tostado.jpg') }}" class="img-fluid">
+               </div>
+               
+            </div>
+         </div>
+      </div>
 
 
 
@@ -214,12 +228,12 @@
       
     <!--Carousel Wrapper-->
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-<!--Indicators-->
+<!--Indicators
 <ol class="carousel-indicators">
   <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
   <li data-target="#multi-item-example" data-slide-to="1"></li>
   
-</ol>
+</ol>-->
 <!--/.Indicators-->
 
 <!--Slides-->
@@ -235,17 +249,6 @@
         <div class="card-body">
           <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
           <p class="card-text text-center">Lic. en administración Financiera, apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3" style="float:left">
-      <div class="card mb-4 card-instructores">
-        <img class="mx-auto"
-          src="{{ asset('images/nosotros/instructor2.png') }}" alt="Card image cap" style="max-width:70px; border-radius:50%;" class="img-fluid">
-        <div class="card-body">
-          <h4 class="card-title text-center" style="color:#ED254E;">Tania Tostado</h4>
-          <p class="card-text text-center">Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.</p>
         </div>
       </div>
     </div>
@@ -277,7 +280,7 @@
   <!--/.First slide-->
 
   <!--Second slide-->
-  <div class="carousel-item">
+  <!--<div class="carousel-item">
 
   <div class="col-md-3" style="float:left">
      <div class="card mb-4 card-instructores">
@@ -290,16 +293,6 @@
       </div>
     </div>
 
-    <div class="col-md-3" style="float:left">
-      <div class="card mb-4 card-instructores">
-        <img class="mx-auto"
-          src="{{ asset('images/nosotros/instructor2.png') }}" alt="Card image cap" style="max-width:70px;">
-        <div class="card-body">
-          <h4 class="card-title text-center" style="color:#ED254E;">Tania Tostado</h4>
-          <p class="card-text text-center">Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.</p>
-        </div>
-      </div>
-    </div>
 
     <div class="col-md-3" style="float:left">
       <div class="card mb-4 card-instructores">
@@ -324,7 +317,7 @@
     </div>
 
 
-  </div>
+  </div>-->
   <!--/.Second slide-->
 
  

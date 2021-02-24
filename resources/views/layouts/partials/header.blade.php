@@ -25,6 +25,11 @@
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('index')}}">HOME</a>
             </li>
+            @if(Auth::user())
+                <li class="nav-item">
+                    <a class="nav-link items-header text-center" href="{{url('/admin')}}">BACKOFFICE</a>
+                </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('step1')}}">NOSOTROS</a>
             </li>
