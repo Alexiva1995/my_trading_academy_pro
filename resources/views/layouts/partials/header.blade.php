@@ -42,20 +42,32 @@
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('courses')}}">ACADEMIA</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link items-header text-center" href="{{route('transmisiones')}}">STREAMING</a>
-            </li>
-            @if(Auth::user())
-            <li class="nav-item">
-                <a class="nav-link items-header text-center" href="{{ route('schedule.calendar') }}">MIS EVENTOS</a>
-            </li>
+            @if (Auth::guest())
+                <li class="nav-item">
+                    <a class="nav-link items-header text-center" href="{{route('transmisiones')}}">STREAMING</a>
+                </li>
+            @else
+                <li class="nav-item dropdown">
+                    <a class="nav-link items-header text-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        STREAMING
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212529 !important;">
+                        <a class="dropdown-item items-header" href="{{route('transmisiones')}}">STREAMING</a>
+                        <a class="dropdown-item items-header" href="{{ route('schedule.calendar') }}">MIS EVENTOS</a>
+                    </div>
+                </li>
             @endif
-            <li class="nav-item">
-                
-                <a class="nav-link items-header text-center" href="{{route('inversiones')}}">INVERSIONES</a>
-            </li>
-           <li class="nav-item">
-                <a class="nav-link items-header text-center" href="{{route('trading')}}">TRANDING SOCIAL</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link items-header text-center dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    TRADING SOCIAL
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212529 !important;">
+                    <a class="dropdown-item items-header" href="{{route('trading')}}">TRADING SOCIAL</a>
+                    <a class="dropdown-item items-header" href="{{route('inversiones')}}">INVERSIONES</a>
+                    @if (!Auth::guest())
+                        <a class="dropdown-item items-header" href="{{route('senales-senales')}}">SEÑALES</a>
+                    @endif
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route ('shopping-cart.membership')}}">MEMBRESIAS</a>
