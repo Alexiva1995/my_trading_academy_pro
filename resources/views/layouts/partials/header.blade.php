@@ -1,25 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom py-5" style="height: 70px;flex-wrap: nowrap!important; background: #F5F5F5!important;">
-<button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
+<div class="row" style="background-color: #F5F5F5; height: 80px; width: 100%; position:fixed; z-index: 1000; margin-left: 0 !important; margin-right: 0 !important;">
+    <div class="d-none d-sm-none d-md-block col-12 col-sm-6 col-md-9">
+        <img src="{{ asset('images/logoverticalnegro.png') }}" class="img-fluid logo-header">
+    </div>
+    <div class="col-12 col-sm-12 col-md-3 pt-2 text-center">
+        <a href="https://www.facebook.com/mytradingacademypro" target="_blank" class="btn social-icons"><i class="fa fa-facebook-f fa-1x" style="color:#111329;"></i></a>
+        <a href="https://twitter.com/MyTradingAcade1" class="btn social-icons" target="_blank"><i class="fa fa-twitter fa-1x" style="color:#111329;"></i></a>
+        <a href="https://www.instagram.com/mytradingacademy.pro/?igshid=1autauadtj9sb" target="_blank" class="btn social-icons"><i class="fa fa-instagram fa-1x" style="color:#111329;"></i></a>
+        <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-youtube fa-1x" style="color:#111329;"></i></a>
+        <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-linkedin fa-1x" style="color:#111329;"></i></a>
+    </div>
+</div>
 
-<button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-        <div class="row">
-            <div class="d-none d-sm-none d-md-block col-12 col-sm-6 col-md-9">
-                <img src="{{ asset('images/logoverticalnegro.png') }}" class="img-fluid logo-header">
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 pt-2 text-center">
-                <a href="https://www.facebook.com/mytradingacademypro" target="_blank" class="btn social-icons"><i class="fa fa-facebook-f fa-1x" style="color:#111329;"></i></a>
-                <a href="https://twitter.com/MyTradingAcade1" class="btn social-icons" target="_blank"><i class="fa fa-twitter fa-1x" style="color:#111329;"></i></a>
-                <a href="https://www.instagram.com/mytradingacademy.pro/?igshid=1autauadtj9sb" target="_blank" class="btn social-icons"><i class="fa fa-instagram fa-1x" style="color:#111329;"></i></a>
-                <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-youtube fa-1x" style="color:#111329;"></i></a>
-                <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-linkedin fa-1x" style="color:#111329;"></i></a>
-            </div>
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom py-5" style="height: 70px; background: #F5F5F5!important; position: fixed; z-index: 1000; width: 100%;">
+    <button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
 
-        </div>
-</nav>
+    <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>-->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom navbar-redes" style="height: 70px; border-color:#00C65B!important;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom" style="margin-top: 80px; height: 70px; border-color:#00C65B !important; background-color: #212529 !important; position: fixed; z-index: 1000; width: 100%;">
+    <button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
+
+    <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="navbarItems" style="z-index: 1000;">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0 header-list">
             <li class="nav-item">
@@ -72,6 +78,11 @@
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route ('shopping-cart.membership')}}">MEMBRESIAS</a>
             </li>
+            @if(Auth::user())
+                <li class="nav-item">
+                    <a class="nav-link items-header text-center" href="{{ route ('soporte')}}">SOPORTE</a>
+                </li>
+            @endif
             @if (Auth::guest())
              <div class="ct-topbar">
                 <div class="container">
@@ -171,3 +182,5 @@
         </ul>
     </div>
 </nav>
+
+

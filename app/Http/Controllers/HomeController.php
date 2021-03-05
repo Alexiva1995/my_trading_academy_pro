@@ -78,7 +78,12 @@ class HomeController extends Controller{
    }
 
    public function index(){
-       
+      $modalVisitante = 0;
+      if (Auth::guest()){
+        if (redirect()->getUrlGenerator()->previous() == "https://mytradingacademypro.com/"){
+          $modalVisitante = 1;
+        }
+      }
       setlocale(LC_TIME, 'es_ES.UTF-8'); //Para el server
       // setlocale(LC_TIME, 'es');//Local
        Carbon::setLocale('es');
@@ -121,7 +126,7 @@ class HomeController extends Controller{
          $cursosArray = [];
 
         $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
-         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
+         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos', 'modalVisitante'));
  
      }else{
          $proximos = Events::where('date', '>', date('Y-m-d'))
@@ -157,7 +162,7 @@ class HomeController extends Controller{
         $articulos = Entradas::take(3)->get();
         $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
       //  dd($ultimos_cursos);
-       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
+       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos', 'modalVisitante'));
      }
    }
 

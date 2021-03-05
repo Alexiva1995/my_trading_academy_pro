@@ -19,29 +19,18 @@
 </div>
 
 
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col-md-10 mt-2">{!! $articulo->descripcion_completa !!}</div>
-    </div>
-    <div class="row featurette">
-            <div class="col-md-7 order-md-1">
-              <h3 class="featurette-heading text-primary"></h3>
-              <h6 class="featurette-heading text-white"></h6>
-              <p class="my-auto lead about-course-text"></p>
+   <div class="container">
+         <div class="row justify-content-md-center">
+            <div class="col-md-4 mt-3">
+               <div class="new-course-title pb-1 mb-3" style="background-color: #333; color: #2A91FF; float: left; font-size:30px;">
+                  {!! $articulo->autor !!}
+               </div>
+               <img src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" class="card-img" alt="...">
+               
             </div>
-            <div class="col-md-5 order-md-2">
-                    <img src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" class="card-img" alt="...">
-                    <div class="card-img-overlay d-flex flex-column" style="color: #fff; text-align: center;">
-                     <div class="mt-auto">
-                        <div class="new-course-title" style="background-color: #333; padding: 8px; color: #2A91FF; float: left; font-size:30px;">
-                                {!! $articulo->autor !!}
-                        </div>
-                      </div>
-                   </div>
-
-            </div>
-    </div>
-</div>
+            <div class="col-md-8 mt-2">{!! $articulo->descripcion_completa !!}</div>
+         </div>
+      </div>
 
 </div>
 

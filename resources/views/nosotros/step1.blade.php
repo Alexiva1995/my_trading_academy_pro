@@ -2,10 +2,10 @@
 
 @push('styles')
     <style>
-    .containerscale:hover{
+    /*.containerscale:hover{
         transform: scale(1.1);
         z-index: 9;
-       }
+       }*/
     
     .aumento{
        font-weight: 700;
@@ -95,8 +95,8 @@
                     <div class="card">
                             <img src="{{ asset('images/nosotros/09-285x300.png') }}" alt="conexión">
                             <div class="card-img-overlay d-flex flex-column">
-                                    <img src="{{ asset('images/nosotros/icon3.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center img-fluid " width="70px">
-                                    <h6 class="text-white my-auto text-center aumento">Conexión</h6>
+                              <img src="{{ asset('images/nosotros/icon3.png') }}" alt="conexión" class="text-white mx-auto my-auto text-center img-fluid " width="70px">
+                              <h6 class="text-white my-auto text-center aumento">Conexión</h6>
                             </div>
                     </div>
             </div>
@@ -154,29 +154,26 @@
 
 <div class="container-fluid bg-ecosistema py-5">
    <div class="new-courses-section-title mb-2" style="text-align: center;">
-      <h2 style="font-weight: 800; font-size: 40px; color:#ED254E;">NUESTRO ECOSISTEMA</h2>
+      <h2 style="font-weight: 800; font-size: 40px; color:#00C65B;">NUESTRO ECOSISTEMA</h2>
    </div>
    <div class="row">
       <div class="row">
          <div class="col-md-3 align-self-start mt-2 pt-4">
             <img src="{{ asset('nosotros/nosotros/mba.png') }}" class="card-img img-fluid logo-scale" alt="...">
-            <img src="{{ asset('nosotros/nosotros/fentix-1.png') }}" class="mt-2 card-img img-fluid ecosistema-img logo-scale" alt="...">
-            <img src="{{ asset('nosotros/nosotros/mta-1.png') }}" class="card-img img-fluid ecosistema-img logo-scale" alt="...">
-            <img src="{{ asset('nosotros/nosotros/no-work-1.png') }}" class="card-img img-fluid logo-scale ecosistema-img" alt="...">
+            <img src="{{ asset('nosotros/nosotros/fentix-1.png') }}" class="mt-5 pt-5 card-img img-fluid logo-scale" alt="...">
+            <img src="{{ asset('nosotros/nosotros/revolutte.png') }}" class="card-img img-fluid logo-scale mt-5 pt-5" alt="..." style="width: 200px;">
          </div>
          <div class="col align-self-center mt-2">
-            <img src="{{ asset('nosotros/nosotros/tierra-1.png') }}" class="card-img img-fluid logo-rotate" alt="...">
+            <img src="{{ asset('nosotros/nosotros/world-mta.png') }}" class="card-img img-fluid logo-rotate" alt="...">
          </div>
-         <div class="col-md-3 mt-2">
-            <img src="{{ asset('nosotros/nosotros/revolutte.png') }}" class="card-img img-fluid logo-scale" alt="...">
-            <img src="{{ asset('nosotros/nosotros/revolutte-insurance.png') }}" class="card-img img-fluid logo-scale" alt="...">
-            <img src="{{ asset('nosotros/nosotros/revolutte-real-state.png') }}" class="card-img img-fluid logo-scale" alt="...">
+         <div class="col-md-3 mt-2 pt-4">
+          <img src="{{ asset('nosotros/nosotros/FTXlive-logo.png') }}" class="card-img img-fluid logo-scale" alt="...">
+          <img src="{{ asset('nosotros/nosotros/no-work-1.png') }}" class="card-img img-fluid logo-scale mt-5 pt-5" alt="...">
+          <img src="{{ asset('nosotros/nosotros/revolutte-real-state.png') }}" class="card-img img-fluid logo-scale mt-5 pt-5" alt="..." style="width: 200px;">
          </div>
-      </div>
-      <div class="row offset-sm-0 offset-md-2 mb-4">
-         <div class="col-md-3 mt-2"></div>
-         <div class="col-md-2 mt-2"></div>
-         <div class="col-md-3 mt-2"></div>
+         <div class="col-md-12 text-center">
+           <img src="{{ asset('nosotros/nosotros/revolutte-insurance.png') }}" class="card-img img-fluid logo-scale mt-3" alt="..." style="width: 200px;">
+         </div>
       </div>
     </div>
 </div>
@@ -193,7 +190,7 @@
             <div class="col-md-4 d-flex align-items-center" style="color: #fff;">
                <div class="card-body">
                   <h4 style="color: #1A1A1A">Fundador</h4>
-                  <h2 style="color: #ED254E; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
+                  <h2 style="color: #1A1A1A; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
                   <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
                   Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
                   </p>
@@ -205,7 +202,7 @@
                <div class="col-md-4 offset-md-2 d-flex align-items-center" style="color: #fff;">
                   <div class="card-body">
                      <h4 style="color: #1A1A1A">Fundadora</h4>
-                     <h2 style="color: #ED254E; font-size: 45px; font-weight: bold;">TANIA TOSTADO</h2>
+                     <h2 style="color: #1A1A1A; font-size: 45px; font-weight: bold;">TANIA TOSTADO</h2>
                      <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
                         Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.
                      </p>
@@ -222,8 +219,8 @@
 
 
     <div class="col-md-12" style="background-color: #FFFFFF;">
-	     <div class="section-title-landing new-courses-section-title" style="text-align: center; padding: 30px;">
-	      <h2 class="font-weight-bold" style="color:#00C65B; margin-top:30px; ">INSTRUCTORES</h2>
+       <div class="section-title-landing new-courses-section-title" style="text-align: center; padding: 30px;">
+        <h2 class="font-weight-bold" style="color:#00C65B; margin-top:30px; ">INSTRUCTORES</h2>
       </div>
       
     <!--Carousel Wrapper-->
@@ -247,7 +244,7 @@
         <img class="mx-auto"
           src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
-          <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
+          <h4 class="card-title text-center" style="color:#1A1A1A;">Manuel Guerrero Aguilar</h4>
           <p class="card-text text-center">Lic. en administración Financiera, apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
         </div>
       </div>
@@ -258,7 +255,7 @@
         <img class="mx-auto"
           src="{{ asset('images/nosotros/instructor3.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
-          <h4 class="card-title text-center" style="color:#ED254E;">Erick Reynaga</h4>
+          <h4 class="card-title text-center" style="color:#1A1A1A;">Erick Reynaga</h4>
           <p class="card-text text-center">Especialista con 6 años de experiencia en el mundo del Trading, Forex y las Criptodivisas, así como de fondos de inversión con marcas de reconocimiento internacional. Cuenta con una maestría en administración y negocios, es líder de proyectos educativos financieros para diferentes cúpulas de negocios de jóvenes empresarios en México.</p>
         </div>
       </div>
@@ -269,7 +266,7 @@
         <img class="mx-auto"
           src="{{ asset('images/nosotros/instructor4.png') }}" alt="Card image cap" style="max-width:70px;">
         <div class="card-body">
-          <h4 class="card-title text-center" style="color:#ED254E;">Mirela Vuckovic</h4>
+          <h4 class="card-title text-center" style="color:#1A1A1A;">Mirela Vuckovic</h4>
           <p class="card-text text-center">Lic. en Economía por la University of Split de Croacia. Colaboró en Londres para importantes marcas de offshore banking. En México tiene 12 años como consultora directiva de reconocidas empresas Fintech en todo Latam.</p>
         </div>
       </div>

@@ -41,7 +41,7 @@
         </div>
     </div>
     
-    <div class="container-fluid bg-ecosistema py-5">
+    <!--<div class="container-fluid bg-ecosistema py-5">
         <div class="new-courses-section-title mb-2" style="text-align: center;">
             <div style="font-weight: bold; font-size: 24px; color:#ED254E; padding-left: 100px; padding-right: 100px;">
                 Formamos parte de un grupo de empresas digitales y de alcance global, dedicadas a la educación y el desarrollo de emprendedores y empresarios:
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     
     <div class="col-md-12" style="background-color: #FFFFFF;">
         <div class="card" style="max-width: 100%;">
@@ -96,7 +96,7 @@
                 <div class="col-md-4 d-flex align-items-center" style="color: #fff;">
                     <div class="card-body">
                         <h4 style="color: #1A1A1A">Fundador</h4>
-                        <h2  style="color: #ED254E; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
+                        <h2  style="color: black; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
                         <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
                              Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
                         </p>
@@ -109,7 +109,7 @@
                 <div class="col-md-4 d-flex align-items-center offset-md-2 no-gutters" style="color: #fff;">
                     <div class="card-body">
                         <h4 style="color: #1A1A1A">Fundadora</h4>
-                        <h2  style="color: #ED254E; font-size: 45px; font-weight: bold;">Tania Tostado</h2>
+                        <h2  style="color: black; font-size: 45px; font-weight: bold;">Tania Tostado</h2>
                         <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
                              Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.
                         </p>
@@ -143,7 +143,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
+                            <h4 class="card-title text-center" style="color: black;">Manuel Guerrero Aguilar</h4>
                             <p class="card-text text-center">Lic. en administración Financiera,   apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor3.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Erick Reynaga</h4>
+                            <h4 class="card-title text-center" style="color: black;">Erick Reynaga</h4>
                             <p class="card-text text-center">Especialista con 6 años de experiencia en el mundo del Trading, Forex y las Criptodivisas, así como de fondos de inversión con marcas de reconocimiento internacional. Cuenta con una maestría en administración y negocios, es líder de proyectos educativos financieros para diferentes cúpulas de negocios de jóvenes empresarios en México.</p>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor4.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Mirela Vuckovic</h4>
+                            <h4 class="card-title text-center" style="color: black;">Mirela Vuckovic</h4>
                             <p class="card-text text-center">Lic. en Economía por la University of Split de Croacia. Colaboró en Londres para importantes marcas de offshore banking. En México tiene 12 años como consultora directiva de reconocidas empresas Fintech en todo Latam.</p>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Manuel Guerrero Aguilar</h4>
+                            <h4 class="card-title text-center" style="color: black;">Manuel Guerrero Aguilar</h4>
                             <p class="card-text text-center">Lic. en administración Financiera, apasionado del conocimiento y la aplicación de la tecnología en los mercados financieros, desde muy joven se ha interesado por explorar y promover temas de inversiones, forex, trading, IA, entre otros.</p>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor3.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Erick Reynaga</h4>
+                            <h4 class="card-title text-center" style="color: black;">Erick Reynaga</h4>
                             <p class="card-text text-center">Especialista con 6 años de experiencia en el mundo del Trading, Forex y las Criptodivisas, así como de fondos de inversión con marcas de reconocimiento internacional. Cuenta con una maestría en administración y negocios, es líder de proyectos educativos financieros para diferentes cúpulas de negocios de jóvenes empresarios en México.</p>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                     <div class="card mb-4 card-instructores">
                         <img class="mx-auto" src="{{ asset('images/nosotros/instructor4.png') }}" alt="Card image cap" style="max-width:70px;">
                         <div class="card-body">
-                            <h4 class="card-title text-center" style="color:#ED254E;">Mirela Vuckovic</h4>
+                            <h4 class="card-title text-center" style="color: black;">Mirela Vuckovic</h4>
                             <p class="card-text text-center">Lic. en Economía por la University of Split de Croacia. Colaboró en Londres para importantes marcas de offshore banking. En México tiene 12 años como consultora directiva de reconocidas empresas Fintech en todo Latam.</p>
                         </div>
                     </div>

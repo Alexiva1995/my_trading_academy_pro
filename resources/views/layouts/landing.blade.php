@@ -108,7 +108,7 @@
         </script>
         <script>
             $(document).ready(function(){ //Hacia arriba
-              irArriba();
+                irArriba();
             });
 
             function irArriba(){
@@ -117,8 +117,7 @@
                 if($(this).scrollTop() > 0){ $('.ir-arriba').slideDown(600); }else{ $('.ir-arriba').slideUp(600); }
               });
               $('.ir-abajo').click(function(){ $('body,html').animate({ scrollTop:'1000px' },1000); });
-            }
-                        
+            }             
         </script>
     </head>
     <body>
@@ -138,17 +137,23 @@
                         <a href="#" class="btn btn-social-media-icon btn-rounded youtube" target="_blank"><i class="fa fa-youtube"></i></a>
                      </div>-->
 
-                <div class="section-paises">
+                <div class="section-paises" id="section-paises">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 py-5">
-                                <div class="mb-2 text-center">
-                                    <img src="{{ asset('images/icf.png')}}" alt="" height="32px" class="mr-md-2 mr-3">
-                                    <img src="{{ asset('images/no_work_no_money.png')}}" alt="" height="32px" class="mr-md-2 mr-3">
-                                    <img src="{{ asset('images/logo-fentix.png')}}" alt="" height="35px" class="mr-md-2 mr-3">
-                                    <img src="{{ asset('images/logo-fxtlive.png')}}" alt="" height="32px" class="mr-md-2 mr-3">
-                                    <img src="{{ asset('images/mytradinglogo.png')}}" alt="" height="35px" class="mr-md-2 mr-3">
-                                    <img src="{{ asset('images/logo-jose.png')}}" alt="" height="32px" class="mr-md-2 mr-3">
+                               <div class="mb-5 text-center">
+                                    <img src="{{ asset('images/mba.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/no_work_no_money.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/logo-fentix.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/logo-fxtlive.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/mytradinglogo.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                </div>
+                                <div class="mb-25 text-center">
+                                    <img src="{{ asset('images/icf.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/logo-jose.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/revolutte.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/revolutte-insurance.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
+                                    <img src="{{ asset('images/revolutte-real-state.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
                                 </div>
                                 <div class="mb-2 text-center text-white" style="margin:20px;">
                                     PAISES EN DONDE ESTAMOS PRESENTES
@@ -254,7 +259,7 @@
 
         <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage: jQuery('.goog-te-combo').val(), layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
     }
 
 	function triggerHtmlEvent(element, eventName) {
