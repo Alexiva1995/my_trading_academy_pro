@@ -28,11 +28,12 @@
 @endpush
 
 @section('content')
-@if (!Auth::guest())
-<div class="title-page-course col-md"><span class="text-white">
-    <h3 class="mb-4"><span class="text-white">Hola</span><span class="text-success"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
-</div>
-@endif
+<div style="margin-top: 150px;">
+  @if (!Auth::guest())
+  <div class="title-page-course col-md"><span class="text-white">
+      <h3 class="mb-4"><span class="text-white">Hola</span><span class="text-success"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
+  </div>
+  @endif
 
     <div class="col-md-12" style="background-color: #EDEDED;">
         <div class="col-md-8 offset-md-2" style="padding: 50px 50px; text-align: center;">
@@ -483,5 +484,5 @@
 
 </div>
 <!--SER PARTE END-->
-
+</div>
 @endsection

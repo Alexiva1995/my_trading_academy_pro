@@ -432,7 +432,7 @@
     <input type="hidden" id="event_id" value="{{ $event->id }}">
     <input type="hidden" id="type_user" value="{{ Auth::user()->rol_id }}">
 
-    <div class="bg-dark-gray">
+    <div class="bg-dark-gray" style="margin-top: 150px;">
         {{-- Encabezado o titulo --}}
         @include('live.components.cabezera')
         @include('live.components.avisos')

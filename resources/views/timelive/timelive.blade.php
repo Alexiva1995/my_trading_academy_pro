@@ -93,7 +93,7 @@
 @endpush
 
 @if(!empty($evento))
-<div>
+<div style="margin-top: 150px;">
 
    @if (Session::has('msj-exitoso'))
    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">

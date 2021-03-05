@@ -15,7 +15,7 @@
 @endpush
 
 @section('content')
-<div class="container-fluid py-5" style="background:#FFFFFF;">
+<div class="container-fluid py-5" style="background:#FFFFFF; margin-top: 150px;">
     <div class="row align-items-center justify-content-center">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item nav-inversiones">

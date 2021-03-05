@@ -83,6 +83,9 @@
                     <a class="nav-link items-header text-center" href="{{ route ('soporte')}}">SOPORTE</a>
                 </li>
             @endif
+            <li class="nav-item">
+                <a class="nav-link items-header" href="{{route('legal')}}">LEGAL</a>
+            </li>
             @if (Auth::guest())
              <div class="ct-topbar">
                 <div class="container">

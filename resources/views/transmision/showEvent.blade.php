@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="row">
+    <div class="row" style="margin-top: 150px;">
         <div class="col-md-12">
             @if (!is_null($evento->image))
                 <img src="{{ asset('uploads/images/banner/'.$evento->image) }}" class="card-img-top img-banner-live" alt="...">
