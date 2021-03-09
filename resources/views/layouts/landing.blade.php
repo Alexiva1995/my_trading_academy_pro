@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta property="og:title" content="MTA"/>
+        <meta property="og:site_name" content="My Trading Academy PRO"/>
+        <meta property="og:url" content="https://mytradingacademypro.com/office"/>
+        <meta property="og:description" content="Aprende las mejores estrategias y conviértete en un experto en operaciones en el mercado de divisas."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:locale" content="es"/>
+        <meta property="og:image" content="https://mytradingacademypro.com/office/images/logoverticalnegro.png"/>
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="180" />
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">

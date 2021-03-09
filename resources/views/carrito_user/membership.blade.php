@@ -56,9 +56,9 @@
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="text-white text-center">¡Esta membresía es para los buscadores del conocimiento, quienes quieren reforzar los principios de todo trader!</h5><br>
-                                                <h5 class="text-white text-center"><strong class="text-azul-claro">En este primer nivel podrás acceder a:</strong></h5><br>
-                                                <h5 class="text-white text-center">+ De 100 videos con increíbles especialistas en los diversos temas de Desarrollo Humano (Liderazgo, Comunicación, Inteligencia Emocional, Coaching, etc.) Y Contenido especial de Educación Financiera Finanzas.</h5><br>
-                                                <h4 class="text-azul-claro text-center">+ 1 LIVE STREAMING <br> AL MES</h4>
+                                                <h5 class="text-white text-center"><strong class="text-azul-claro">En este primer nivel podrás aprender y acceder a:</strong></h5><br>
+                                                <h5 class="text-white text-center">+ De 100 videos con increíbles especialistas en los diversos temas de Análisis Técnico y Financiero en Bolsa de Valores (Bolsa de Valores, Análisis Técnico, Criptomonedas, etc) e Intercambio de Divisas Forex y Análisis Econométrico (Análisis Econométrico, Riesgo, Estrategias de Operación, etc).</h5><br>
+                                                <h4 class="text-azul-claro text-center">+ 2 LIVE STREAMING <br> AL MES</h4>
                                         <h4 class="card-price text-azul-claro text-center mb-3"><del style="font-size: 30px; color: red;">${{$membresia->price_annual}}</del> ${{$membresia->discount_annual}}<span class="period">/Anual</span></h4>
                                                     
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Mensual'])}}" class="btn btn-color-green text-white btn-block">Comprar Plan Mensual</a>
@@ -89,10 +89,10 @@
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="text-white text-center"> ¡Esta membresía es para los que ya hace trading, aprende las mejores estrategias para mejorar continuamente a través de una cuenta demo!</h5>
-                                                <h5 class="p-2 text-orange text-center">Aquí encontrarás todo lo que necesitas saber para HACER y lograr.</h5><br>
-                                                <h5 class="text-white text-center">Disfrutarás de todo el contenido de este nivel y del anterior</h5><br>
-                                                <h5 class="text-white text-center">+ de 150 videos con increíbles especialistas en los diversos temas de Ventas, Emprendurismo, Desarrollo Humano y Finanzas</h5><br>
-                                                <h4 class="p-2 text-orange text-center">+ 2 LIVE STREAMING <br> AL MES</h4><br>
+                                                <h5 class="text-orange text-center">Aquí encontrarás todo lo que necesitas saber para Mejorar.</h5>
+                                                <h5 class="text-white text-center">Accederás a:</h5><br>
+                                                <h5 class="text-white text-center">+ de 150 videos con increíbles especialistas en los diversos temas de Análisis Avanzado y Gestión de Riesgo (Finanzas Conductuales, Efecto de Disposición, Derivados, etc) y Opi y Valuación (Oferta Inicial de las Acciones, Principales Métodos de Valoración, Estrategias de Valuación, etc).</h5><br>
+                                                <h4 class="p-2 text-orange text-center">+ 4 LIVE STREAMING <br> AL MES</h4><br>
                                         
                                         <h4 class="mb-3 card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price_annual}}</del> ${{$membresia->discount_annual}}<span class="period">/Anual</span></h4>
                                                 
@@ -124,9 +124,9 @@
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
                                                 <h5 class="text-white text-center">Esta membresía te permite además de aprender y hacer trading, ganar ya por operación</h5><br>
-                                                <h5 class="text-verde-claro text-center">Accederás:</h5>
-                                                <h5 class="text-white text-center">A todo el contenido de este nivel y los 2 anteriores</h5><br>
-                                                <h5 class="text-white text-center">+ de 200 videos con increíbles especialistas en los diversos temas de Fintech, Real Estate + Ventas, Emprendurismo, Desarrollo Humano y Finanzas</h5><br>
+                                                <h5 class="text-verde-claro text-center">En este tercer nivel encontrarás todo lo que necesitas saber para Lograr Ganar</h5>
+                                                <h5 class="text-white text-center">Accederás a:</h5><br>
+                                                <h5 class="text-white text-center">+ de 200 videos con increíbles especialistas en los diversos temas de Inteligencia Artificial (Blockchain, Machine Learning, Robots de Trading, etc) y Criptomonedas (Token y Wallet, Oferta Inicial de la Moneda, Futuros de Criptomonedas, etc).</h5><br>
                                                 <h4 class="text-verde-claro text-center">+ 6 LIVE STREAMING <br> AL MES</h4>
                                                 
                                                

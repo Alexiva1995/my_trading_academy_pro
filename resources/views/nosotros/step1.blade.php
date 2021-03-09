@@ -151,12 +151,12 @@
         </div>
 </div>
 
-
-<div class="container-fluid bg-ecosistema py-5" style="padding-left: 180px; padding-right: 180px;">
+<div style="background-color: #FFFFFF;">
+<div class="container-fluid py-5" style="background-color: #212529; padding-left: 100px; padding-right: 100px;">
    <div class="new-courses-section-title mb-2" style="text-align: center;">
       <h2 style="font-weight: 800; font-size: 40px; color:#00C65B;">NUESTRO ECOSISTEMA</h2>
    </div>
-   <div class="row">
+   <div class="row" style="margin-left: 150px; margin-right: 150px;">
       <div class="row">
          <div class="col-md-3 align-self-start mt-2 pt-4">
             <img src="{{ asset('nosotros/nosotros/mba.png') }}" class="card-img img-fluid logo-scale" alt="...">
@@ -177,6 +177,7 @@
       </div>
     </div>
 </div>
+</div>
 
 
 
@@ -192,9 +193,7 @@
                   <h4 style="color: #1A1A1A">Fundador</h4>
                   <h2 style="color: #1A1A1A; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
                   <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
-                    Especialista en desarrollo de negocios rentables, sostenibles y de expansión global.
-
-                    15 años de experiencia en el mundo financiero, eterno aprendiz y emprendedor, apasionado de las finanzas, la innovación y los proyectos de alto rendimiento. Es líder de una red de negocios con presencia en 80 países de Latinoamérica y Europa , tiene como compromiso personal y profesional, dejar huella en todo país que pise y persona que lo acompañe, siendo su prioridad, la educación de todo aquel que se sume a su equipo. Por ello es Escritor y autor de 4 libros de negocios, 2 de ellos best seller, en donde plasma la experiencia adquirida a través de su carrera como estratega y coach de negocios con valor agregado. Así también ha creado diferentes técnicas de entrenamientos altamente efectivos, que sumados a todo un ecosistema de servicios educativos, apoyan a la mejora continua de los emprendedores del mundo.  Fundador y Co-creador de My Trading Academy Pro, la mejor academia global para los amantes del emprendimiento financiero digital.
+                  Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
                   </p>
                </div>
             </div>
