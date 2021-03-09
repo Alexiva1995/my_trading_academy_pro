@@ -196,6 +196,8 @@ Route::group(['prefix' => 'installer'], function (){
   Route::get('/blog', 'NosotrosController@step3')->name('step3');
   Route::get('/blog/{id}', 'NosotrosController@articulo')->name('blog.articulo');
   Route::get('/afiliados', 'NosotrosController@afiliados')->name('blog.afiliados');
+  Route::get('comisiones', 'NosotrosController@comisiones')->name('blog.comisiones');
+  Route::get('/coaches', 'NosotrosController@coaches')->name('blog.coaches');
   Route::get('/inversiones', 'NosotrosController@inversiones')->name('inversiones');
   Route::get('/trading', 'NosotrosController@tranding_social')->name('trading');
 

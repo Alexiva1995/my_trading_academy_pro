@@ -71,4 +71,16 @@ class NosotrosController extends Controller
 
         return view('nosotros.step3');
     }
+
+    public function comisiones(){
+    
+
+        return view('nosotros.commissions');
+	}
+
+	public function coaches(){
+    
+
+        return view('nosotros.coaches');
+	}
 }

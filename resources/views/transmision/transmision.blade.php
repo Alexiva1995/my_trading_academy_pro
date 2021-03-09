@@ -42,88 +42,61 @@
         </div>
     </div>
     
-    <!--<div class="container-fluid bg-ecosistema py-5">
-        <div class="new-courses-section-title mb-2" style="text-align: center;">
-            <div style="font-weight: bold; font-size: 24px; color:#ED254E; padding-left: 100px; padding-right: 100px;">
-                Formamos parte de un grupo de empresas digitales y de alcance global, dedicadas a la educación y el desarrollo de emprendedores y empresarios:
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center" style="padding-left: 50px; padding-right: 50px;">
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                    <img src="{{ asset('images/nosotros/e1.png') }}" alt="conexión" class="img-fluid">
-                    <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/mba.png') }}" alt="My business academy pro" class="img-fluid text-white my-auto text-center">
-                        <a href="" class="btn btn-danger btn-more">Saber más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                    <img src="{{ asset('images/nosotros/e2.png') }}" alt="innovación" class="img-fluid">
-                    <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/no-work-1.png') }}" alt="No work money" class="img-fluid text-white my-auto text-center">
-                        <a href="" class="btn btn-danger btn-more">Saber más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                    <img src="{{ asset('images/nosotros/fentix.jpg') }}" alt="crecimiento" class="img-fluid">
-                    <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/fentix-1.png') }}" alt="fenttix" class="img-fluid text-white my-auto text-center">
-                        <a href="" class="btn btn-danger btn-more">Saber más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 containerscale">
-                <div class="card">
-                    <img src="{{ asset('images/nosotros/ftx.jpg') }}" alt="calidad" class="img-fluid">
-                    <div class="card-img-overlay d-flex flex-column">
-                        <img src="{{ asset('images/FTXlive-logo.png') }}" alt="ftxlive" class="img-fluid text-white my-auto text-center">
-                        <a href="" class="btn btn-danger btn-more">Saber más</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
     
-    <div class="col-md-12" style="background-color: #FFFFFF;">
-        <div class="card" style="max-width: 100%;">
-            <div class="row mt-4 no-gutters">
-                <div class="col-md-4 offset-md-2 no-gutters">
-                    <img src="{{ asset('images/nosotros/josegordo.png') }}" class="img-fluid">
-                </div>
-                <div class="col-md-4 d-flex align-items-center" style="color: #fff;">
-                    <div class="card-body">
-                        <h4 style="color: #1A1A1A">Fundador</h4>
-                        <h2  style="color: black; font-size: 45px; font-weight: bold;">JOSÉ GORDO</h2>
-                        <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
-                             Desde hace más de 15 años, millones de personas en todo el mundo han experimentado una transformación de sus vidas y de sus negocios gracias a la aguda y enfocada visión de Jose Gordo, quien es a día de hoy uno de los mayores mentores en liderazgo, desarrollo personal y estrategia de negocios.
-                        </p>
-                    </div>
-                </div>
-                
+   <div class="container-fluid" style="background-color: #1C1D21; padding-left: 100px; padding-right: 100px;">
+      <div class="col-md-12">
+         <div class="row mt-4">
+            <div class="col-md-6">
+               <img src="{{ asset('images/fxtfotohome.png') }}" class="img-fluid" alt="...">
             </div>
+            <div class="col-md-6" style="margin-top:10%;">
+               <h1 class="text-primary font-weight-bold ftxlivestreming-text" style="color: #00C65B !important;">MTA PRO STREAMING</h1>
+               <h5 class="text-white mt-4">
+                 El usuario podrá disfrutar, sin importar el lugar en donde se encuentre, con su ordenador o su cel, desde presentaciones de negocios, hasta capacitaciones de todo tipo en vivo, lanzamientos y más..
+               </h5>
+            </div>
+         </div>
+      </div> 
+   </div>
+
+   <hr style="height: 1px;background-color: #707070;">
+
+   <div class="container-fluid" style="background-color: #1C1D21; padding-left: 100px; padding-right: 100px;">
+      <div class="col-md-12">
+         <div class="row">
+            <div class="col-md-6" style="margin-top:10%;">
+               <h1 class="text-primary font-weight-bold ftxlivestreming-text" style="color: #00C65B !important;">MTA LIVESTREAMING</h1>
+               <h5 class="text-white mt-4">
+                  Un espacio de entrenamientos en vivo para emprendedores, su propuesta de valor se distingue por ofrecer: Información de primer nivel y en tiempo real, así como motivación para aprender de forma sencilla y herramientas precisas para que se ponga en practica el conocimiento adquirido en los streaming de forma inmediata."
+               </h5>
+            </div>
+            <div class="col-md-6">
+               <img src="{{ asset('images/fxtmodif.png') }}" class="img-fluid" alt="...">
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <hr style="height: 1px;background-color: #707070;">
+<div class="container-fluid" style="background-color: #1C1D21; padding-left: 100px; padding-right: 100px;">
+   <div class="col-md-12">
+   <div class="row">
+            <div class="col-md-6">
+            <img src="{{ asset('images/ftxliveacceso.png') }}" class="img-fluid" alt="...">
+            </div>
+            <div class="col-md-6" style="margin-top:5%;">
+               <h1 class="text-primary font-weight-bold" style="color: #00C65B !important;">ACCESO</h1>
+               <h5 class="text-white mt-4">
+                  El acceso será exclusivo para las personas que sean socios de Beyond y tengan un login de acceso. Dentro de las principales ventajas de este canal, es su fácil acceso, su increíble diseño, así como su chat interactivo, el cual permitirá tener vinculación inmediata y más cercana a la red, ya que la inmediatez y naturalidad en que son transmitidos los enlaces, permitirá a los espectadores participar, haciendo preguntas acerca del contenido que se este explorando, pudiendo aclarar sus dudas de manera inmediata.
+               </h5>
             
-            <div class="row mt-4 no-gutters">
-                <div class="col-md-4 d-flex align-items-center offset-md-2 no-gutters" style="color: #fff;">
-                    <div class="card-body">
-                        <h4 style="color: #1A1A1A">Fundadora</h4>
-                        <h2  style="color: black; font-size: 45px; font-weight: bold;">Tania Tostado</h2>
-                        <p class="card-text" style="font-weight: 500; font-size: 19px; line-height: 1.6em; color: #707070;">
-                             Licenciada en Administración financiera con especialidad en finanzas corporativas, ha colaborado con bancos de talla mundial como: UBS, Credit Suisse y Deutche Bank en Suiza, Bank Hapoalim en Israel, Baern Stearns Securities en EUA, entre muchos otros. En 2008, fue ganadora del premio Best Development, otorgado por la International Property Awards y CNBC.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-                    <img src="{{ asset('images/nosotros/tania-tostado.jpg') }}" class="img-fluid">
-                </div>
-                
             </div>
-        </div>
-    </div>
-    
+      </div>
+   </div>
+   
+</div>
+<hr style="height: 1px;background-color: #707070;">
+
     <div class="col-md-12" style="background-color: #FFFFFF;">
        <div class="section-title-landing new-courses-section-title" style="text-align: center; padding: 30px;">
           <h2 class="font-weight-bold" style="color:#00C65B; margin-top:30px; ">INSTRUCTORES</h2>
