@@ -11,14 +11,6 @@
     </div>
 </div>
 
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom py-5" style="height: 70px; background: #F5F5F5!important; position: fixed; z-index: 1000; width: 100%;">
-    <button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
-
-    <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>-->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom" style="margin-top: 80px; height: 70px; border-color:#00C65B !important; background-color: #212529 !important; position: fixed; z-index: 1000; width: 100%;">
     <button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
 

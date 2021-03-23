@@ -132,7 +132,7 @@
     </head>
     <body>
         <div class="d-flex" id="wrapper">
-        @include('layouts.partials.sidebar')
+            @include('layouts.partials.sidebar')
 
             <!-- Page Content -->
             <div class="bg-dark-gray" id="page-content-wrapper">

@@ -36,7 +36,7 @@
             //$("#formQuestion").submit();
             $("#store_survey_submit").css('display', 'none');
             $("#store_survey_loader").css('display', 'block');
-            var route = "https://mybusinessacademypro.com/academia/settings/event";
+            var route = "https://mytradingacademypro.com/office/settings/event";
             var parametros = $('#formQuestion').serialize();
             $.ajax({
                 url:route,
@@ -74,7 +74,7 @@
     
     function loadCharts() {
         $.ajax({
-            url: 'https://mybusinessacademypro.com/academia/survey/statistics',
+            url: 'https://mytradingacademypro.com/office/survey/statistics',
             method: 'POST',
             data: {
                 id: id,

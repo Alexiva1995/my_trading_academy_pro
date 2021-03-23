@@ -51,7 +51,8 @@
                                             <div class="card-body" style="position: relative; top:55px; z-index: 1;">
                                                 <div class="row" style="padding:20px;">
                                                     <div class="col-md-12">
-                                                        <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price}}/Mes</del> ${{$membresia->descuento}}<span class="period">/Mes</span></h4>
+                                                        <h5 class="text-center" style="color: red; font-size: 28px;"><del>{{$membresia->price}} USD/Mes</del></h5>
+                                                        <h4 class="card-price text-azul-claro text-center" style="font-weight: bold; font-size: 34px;">{{$membresia->descuento}} USD/Mes</h4>
                                                     </div>
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
@@ -59,7 +60,8 @@
                                                 <h5 class="text-white text-center"><strong class="text-azul-claro">En este primer nivel podrás aprender y acceder a:</strong></h5><br>
                                                 <h5 class="text-white text-center">+ De 100 videos con increíbles especialistas en los diversos temas de Análisis Técnico y Financiero en Bolsa de Valores (Bolsa de Valores, Análisis Técnico, Criptomonedas, etc) e Intercambio de Divisas Forex y Análisis Econométrico (Análisis Econométrico, Riesgo, Estrategias de Operación, etc).</h5><br>
                                                 <h4 class="text-azul-claro text-center">+ 2 LIVE STREAMING <br> AL MES</h4>
-                                        <h4 class="card-price text-azul-claro text-center mb-3"><del style="font-size: 30px; color: red;">${{$membresia->price_annual}}</del> ${{$membresia->discount_annual}}<span class="period">/Anual</span></h4>
+                                                
+                                                <h4 class="pb-4 card-price text-azul-claro text-center" style="font-size: 40px;"><del style="font-size: 28px; color: red;">{{$membresia->price_annual}} USD</del><br> {{$membresia->discount_annual}}<span style="font-size: 35px;"> USD/Anual</span></h4>
                                                     
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Mensual'])}}" class="btn btn-color-green text-white btn-block">Comprar Plan Mensual</a>
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Anual'])}}" class="btn btn-primary text-white btn-block">Comprar Plan Anual</a>
@@ -84,7 +86,8 @@
                                             <div class="card-body" style="position: relative; top:55px; z-index: 1;">
                                                 <div class="row" style="padding:20px;">
                                                     <div class="col-md-12">
-                                                        <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price}}/Mes</del> ${{$membresia->descuento}}<span class="period">/Mes</span></h4>
+                                                        <h5 class="text-center" style="color: red; font-size: 28px;"><del>{{$membresia->price}} USD/Mes</del></h5>
+                                                        <h4 class="card-price text-azul-claro text-center" style="font-weight: bold; font-size: 34px;">{{$membresia->descuento}} USD/Mes</h4>
                                                     </div>
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
@@ -94,7 +97,7 @@
                                                 <h5 class="text-white text-center">+ de 150 videos con increíbles especialistas en los diversos temas de Análisis Avanzado y Gestión de Riesgo (Finanzas Conductuales, Efecto de Disposición, Derivados, etc) y Opi y Valuación (Oferta Inicial de las Acciones, Principales Métodos de Valoración, Estrategias de Valuación, etc).</h5><br>
                                                 <h4 class="p-2 text-orange text-center">+ 4 LIVE STREAMING <br> AL MES</h4><br>
                                         
-                                        <h4 class="mb-3 card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price_annual}}</del> ${{$membresia->discount_annual}}<span class="period">/Anual</span></h4>
+                                                <h4 class="pb-4 card-price text-azul-claro text-center" style="font-size: 40px;"><del style="font-size: 28px; color: red;">{{$membresia->price_annual}} USD</del><br> {{$membresia->discount_annual}}<span style="font-size: 35px;"> USD/Anual</span></h4>
                                                 
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Mensual'])}}" class="btn btn-color-green text-white btn-block">Comprar Plan Mensual</a>
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Anual'])}}" class="btn btn-primary text-white btn-block">Comprar Plan Anual</a>
@@ -119,7 +122,8 @@
                                             <div class="card-body" style="position: relative; top:55px; z-index: 1;">
                                                 <div class="row" style="padding:20px;">
                                                     <div class="col-md-12">
-                                                    <h4 class="card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price}}/Mes</del> ${{$membresia->descuento}}<span class="period">/Mes</span></h4>
+                                                         <h5 class="text-center" style="color: red; font-size: 28px;"><del>{{$membresia->price}} USD/Mes</del></h5>
+                                                        <h4 class="card-price text-azul-claro text-center" style="font-weight: bold; font-size: 34px;">{{$membresia->descuento}} USD/Mes</h4>
                                                     </div>
                                                     <h1 class="text-center text-white">. . . . . . . . . . . . . . .</h1><br><br>
                                                 </div>
@@ -128,9 +132,8 @@
                                                 <h5 class="text-white text-center">Accederás a:</h5><br>
                                                 <h5 class="text-white text-center">+ de 200 videos con increíbles especialistas en los diversos temas de Inteligencia Artificial (Blockchain, Machine Learning, Robots de Trading, etc) y Criptomonedas (Token y Wallet, Oferta Inicial de la Moneda, Futuros de Criptomonedas, etc).</h5><br>
                                                 <h4 class="text-verde-claro text-center">+ 6 LIVE STREAMING <br> AL MES</h4>
-                                                
-                                               
-                                        <h4 class="mb-3 card-price text-azul-claro text-center"><del style="font-size: 30px; color: red;">${{$membresia->price_annual}}</del> ${{$membresia->discount_annual}}<span class="period">/Anual</span></h4>
+
+                                                <h4 class="pb-4 card-price text-azul-claro text-center" style="font-size: 40px;"><del style="font-size: 28px; color: red;">{{$membresia->price_annual}} USD</del><br> {{$membresia->discount_annual}}<span style="font-size: 35px;"> USD/Anual</span></h4>
                                                 
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Mensual'])}}" class="btn btn-color-green text-white btn-block">Comprar Plan Mensual</a>
                                                 <a href="{{route('shopping-cart.store', [$membresia->id, 'membresia', 'Anual'])}}" class="btn btn-primary text-white btn-block">Comprar Plan Anual</a>

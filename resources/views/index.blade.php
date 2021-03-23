@@ -265,7 +265,7 @@
    @foreach($articulos as $articulo)
     <div class="col-md-3 mt-4">
             <div class="card card-noticias">
-                  <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap">
+                  <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap" style="height: 300px;">
                   <div class="card-body text-center">
                      <h5 class="card-title text-center" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{$articulo->titulo}}</h5>
                      <a href="{{ route('blog.articulo', $articulo->id) }}" class="text-danger font-weight-bold">Ver más</a>
@@ -320,7 +320,8 @@
                     </button>
                 </div>
                 <div class="modal-body text-white pl-5 pr-5 text-center">
-                    Cierra esta ventana si deseas seguir explorando como visitante...
+                    Te encuentras en modo visitante.<br>
+                    Para disfrutar de nuestro contenido a precio preferencial ingresa en este botón.
                     <br><br>
                     <a type="button" class="btn btn-primary btn-register-header d-md-block m-2" href="{{ route('log').'?act=1' }}">REGISTRO</a>
                 </div>

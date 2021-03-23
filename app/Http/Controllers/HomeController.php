@@ -80,9 +80,7 @@ class HomeController extends Controller{
    public function index(){
       $modalVisitante = 0;
       if (Auth::guest()){
-        if (redirect()->getUrlGenerator()->previous() == "https://mytradingacademypro.com/"){
-          $modalVisitante = 1;
-        }
+        $modalVisitante = 1;
       }
       setlocale(LC_TIME, 'es_ES.UTF-8'); //Para el server
       // setlocale(LC_TIME, 'es');//Local
@@ -122,7 +120,7 @@ class HomeController extends Controller{
                         ->take(9)
                         ->get();
 
-         $articulos = Entradas::take(3)->get();
+         $articulos = Entradas::take(3)->orderBy('id', 'DESC')->get();
          $cursosArray = [];
 
         $ultimos_cursos = Course::orderBy('created_at','DESC')->get();

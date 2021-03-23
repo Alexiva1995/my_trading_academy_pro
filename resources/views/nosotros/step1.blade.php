@@ -240,7 +240,7 @@
   <!--First slide-->
   <div class="carousel-item active">
 
-    <div class="col-md-3" style="float:left">
+    <div class="col-md-3 offset-md-2" style="float:left">
      <div class="card mb-4 card-instructores">
         <img class="mx-auto"
           src="{{ asset('images/nosotros/instructor1.png') }}" alt="Card image cap" style="max-width:70px;">
