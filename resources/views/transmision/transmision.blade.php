@@ -28,7 +28,7 @@
 @endpush
 
 @section('content')
-<div style="margin-top: 150px;">
+<div style="margin-top: 230px;">
   @if (!Auth::guest())
   <div class="title-page-course col-md"><span class="text-white">
       <h3 class="mb-4"><span class="text-white">Hola</span><span class="text-success"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>

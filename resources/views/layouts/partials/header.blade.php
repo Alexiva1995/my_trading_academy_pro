@@ -9,9 +9,43 @@
         <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-youtube fa-1x" style="color:#111329;"></i></a>
         <a href="#" target="_blank" class="btn social-icons"><i class="fa fa-linkedin fa-1x" style="color:#111329;"></i></a>
     </div>
+    <div class="col-md-12 col-xs-12" style="background-color: #1e222d;">
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                    {
+                  "symbols": [
+                    {
+                      "proName": "BITSTAMP:LTCUSD",
+                      "title": "LTC/USD"
+                    },
+                    {
+                      "proName": "BITSTAMP:XRPUSD",
+                      "title": "XRP/USD"
+                    },
+                    {
+                      "proName": "BITSTAMP:BTCUSD",
+                      "title": "BTC/USD"
+                    },
+                    {
+                      "proName": "BITSTAMP:ETHUSD",
+                      "title": "ETH/USD"
+                    },
+                    {
+                      "proName": "FX_IDC:EURUSD",
+                      "title": "EUR/USD"
+                    }
+                  ],
+                  
+                  
+                  "colorTheme": "dark",
+                  "isTransparent": false,
+                  "showSymbolLogo": true,
+                  "locale": "es"
+                  }
+                 </script>
+                </div> 
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom" style="margin-top: 80px; height: 70px; border-color:#00C65B !important; background-color: #212529 !important; position: fixed; z-index: 1000; width: 100%;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom" style="margin-top: 140px; height: 70px; border-color:#00C65B !important; background-color: #212529 !important; position: fixed; z-index: 1000; width: 100%;">
     <button class="d-block d-sm-block d-md-none btn" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>
 
     <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

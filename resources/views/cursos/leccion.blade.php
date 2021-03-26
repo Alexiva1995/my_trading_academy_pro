@@ -26,7 +26,7 @@
       </div>
    @endif
     
-    <div class="container-fluid" style="margin-top: 150px;">
+    <div class="container-fluid" style="margin-top: 180px;">
         <div class="row justify-content-end">
          @if($first_lesson->id == $lesson->id)
             <div class="col-md-6 mt-2 d-flex align-items-center"><h5 class="text-success">@if ($progresoCurso->language == 'es') {{$lesson->title}} @else {{$lesson->english_title}} @endif</h5></div>

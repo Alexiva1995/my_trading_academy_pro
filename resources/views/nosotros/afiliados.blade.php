@@ -11,7 +11,7 @@
 @endpush
 
 @section('content')
-   <div class="col-md-12 py-5" style="background-color: #FFFFFF; margin-top:120px;">
+   <div class="col-md-12 py-5" style="background-color: #FFFFFF; margin-top:150px;">
       <div class="col-md-8 offset-md-2" style="padding: 50px 50px; text-align: center;">
          <h3>El programa de <b style="color: #00C65B;">My Trading Academy Pro</b> tiene un modelo que se basa en el marketing de recomendación. .</h3>
          <h5>Nuestro posicionamiento es a través del marketing de recomendación, ganamos solo si tu ganas y haces ganar a tus clientes.</h5>

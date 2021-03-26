@@ -92,7 +92,7 @@
 </script>
 @endpush
 @section('content')
-<div style="margin-top: 160px;">
+<div style="margin-top: 230px;">
   @if(!empty($agendado))
   <div class="alert alert-success"> {{ $agendado }}</div>
   @endif

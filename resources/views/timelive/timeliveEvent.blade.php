@@ -98,7 +98,7 @@
         </div>
     @endif
 
-    <div class="row" style="margin-top: 150px;">
+    <div class="row" style="margin-top: 180px;">
         <input type="hidden" id="countdown_limit" value="{{ $countdownLimit }}">
         <input type="hidden" id="statusLive" value="{{ $statusLive }}">
         <input type="hidden" id="checkCountdown" value="0">

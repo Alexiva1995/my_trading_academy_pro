@@ -23,7 +23,7 @@
 
 @section('content')
 
-<div class="container-fluid courses-slider" style="background-color: #1C1D21;">
+<div class="container-fluid courses-slider" style="background-color: #1C1D21; margin-top: 200px;">
     <div class="container-fluid courses-slider">
       <div id="mainSlider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">

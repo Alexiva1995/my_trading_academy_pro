@@ -38,7 +38,7 @@
       </div>
    @endif
 
-   <div class="title-page-one_course col-md border-bottom-2" style="margin-top: 150px;"><span>
+   <div class="title-page-one_course col-md border-bottom-2" style="margin-top: 180px;"><span>
       <h6 class=""><span>Cursos > </span><span> {{ $curso->category->title }} ></span><span>{{ $curso->title }}</span></h6>
       <hr style="border: 1px solid #707070;opacity: 1;" />
    </div>

@@ -66,7 +66,7 @@
     </script>
 @endpush
 @section('content')
-    <div class="panel with-nav-tabs panel-primary" style="margin-top: 170px;">
+    <div class="panel with-nav-tabs panel-primary" style="margin-top: 230px;">
         <div class="panel-heading">
             <ul class="nav nav-pills nav-fill m-3">
                 <li class="nav-item item-li"><a class="nav-link active" href="#codigo-etico" data-toggle="tab"><b>Código Ético</b></a></li>
