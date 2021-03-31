@@ -86,17 +86,41 @@
                             </div>-->
             </form>
         </div>
-        <!--<a href="{{ route('courses.show.all') }}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fas fa-graduation-cap"></i> Todos los cursos</a>-->
-        <!--<a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv" style="color: white;"><i class="far fa-list-alt"></i> Contenidos <i class="fas fa-angle-down"></i></a>-->
-       <!-- <div class="collapse" id="categoriesDiv" style="padding-left: 15px;">
-            @foreach ($categoriasSidebar as $categoria)
-            @if (!is_null($categoria->course))
-            <a class="list-group-item bg-dark-gray" href="{{ url ('courses/show/'.$categoria->course->slug.'/'.$categoria->course->id)}}" style="color: white;"><i class="{{ $categoria->icon }}"></i> {{ $categoria->title }} </a>
-            @else
-            <a class="list-group-item bg-dark-gray" href="{{ url ('courses/category/'.$categoria->id)}}" style="color: white;"><i class="{{ $categoria->icon }}"></i> {{ $categoria->title }} </a>
-            @endif
-            @endforeach
-        </div>-->
+                <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv1" style="color: white;"><i class="fas fa-graduation-cap"></i> Grabaciones<i class="fas fa-angle-down"></i></a>
+        <div class="collapse" id="categoriesDiv1" style="padding-left: 15px;">
+
+            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv2" style="color: white;"><i class="fa fa-star"></i>  FIND <i class="fas fa-angle-down"></i> </a>
+
+            <div class="collapse" id="categoriesDiv2" style="padding-left: 15px;">
+                @foreach($cursos as $curs)
+                 @if($curs->membership_id == 1)
+                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
+                 @endif
+                @endforeach
+            </div> 
+            
+            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv3" style="color: white;"><i class="fa fa-star"></i>  BUY <i class="fas fa-angle-down"></i> </a>
+
+            <div class="collapse" id="categoriesDiv3" style="padding-left: 15px;">
+                @foreach($cursos as $curs)
+                 @if($curs->membership_id == 2)
+                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
+                 @endif
+                @endforeach
+            </div> 
+            
+            
+            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv4" style="color: white;"><i class="fa fa-star"></i>  WINDS <i class="fas fa-angle-down"></i> </a>
+
+            <div class="collapse" id="categoriesDiv4" style="padding-left: 15px;">
+                @foreach($cursos as $curs)
+                 @if($curs->membership_id == 3) 
+                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
+                 @endif
+                @endforeach
+            </div>
+            
+        </div> 
 
         @if(Auth::user())
             @if(Auth::user()->rol_id == 0)
