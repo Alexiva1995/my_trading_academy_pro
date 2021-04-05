@@ -57,7 +57,7 @@ class TransmisionesController extends Controller
       if(Empty($evento_actual)){
          $proximos = null;
          $finalizados = Events::where('date', '<=',date('Y-m-d'))
-                          ->where('status', '=', 0))
+                          ->where('status', '=', 0)
                           ->get();
 
          $total = 0;
