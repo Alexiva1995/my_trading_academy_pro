@@ -22,7 +22,7 @@
    <div class="container">
          <div class="row justify-content-md-center">
             <div class="col-md-4 mt-3">
-               <div class="new-course-title pb-1 mb-3" style="background-color: #333; color: #2A91FF; float: left; font-size:30px;">
+               <div class="new-course-title pb-1 mb-3" style="background-color: #333; color: #00C65B; float: left; font-size:30px;">
                   {!! $articulo->autor !!}
                </div>
                <img src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" class="card-img" alt="...">

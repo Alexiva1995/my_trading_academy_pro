@@ -65,6 +65,9 @@
             <li class="nav-item">
                 <a class="nav-link items-header text-center" href="{{route('step1')}}">NOSOTROS</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link items-header text-center" href="{{route('step3')}}">BLOG</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link items-header dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">AFILIADOS</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #212529 !important;">

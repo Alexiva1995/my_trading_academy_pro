@@ -41,7 +41,7 @@
                         <div class="estilomytrandingtwo" id="estilomytrandingtwo">Academy Pro</div>
                         <div class="mt-2 m d-none d-sm-none d-md-block"><h5 id="estilomytrandingtext">Aprende las mejores estrategias y conviértete en un experto en operaciones en el mercado de divisas.</h5></div>
                      </div>
-                     <div class="text-center btn-home"> <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg font-weight-bold" id="btn-home">QUIERO SER PARTE</a></div>
+                     <!--<div class="text-center btn-home"> <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg font-weight-bold" id="btn-home">QUIERO SER PARTE</a></div>-->
                   </div>
                </div>
             </div>
