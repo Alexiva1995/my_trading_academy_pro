@@ -13,6 +13,11 @@ class Membership extends Model
     public function upgrade_message(){
         return $this->hasOne('App\Models\UpgradeMessage');
     }
+
+    public function categories(){
+        return $this->hasMany('App\Models\Category');
+    }
+
     public function users(){
         return $this->hasMany('App\Models\User');
     }

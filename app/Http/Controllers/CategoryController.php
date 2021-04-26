@@ -17,11 +17,16 @@ class CategoryController extends Controller{
        // TITLE
         view()->share('title', 'Listado de Categorías');
 
-        $categorias = Category::with('course')
+        $categorias = Category::withCount('courses')
                         ->orderBy('title', 'ASC')
                         ->get();
 
-        return view('admin.courses.categories')->with(compact('categorias'));
+        $memberships = DB::table('memberships')
+                        ->select('id', 'name')
+                        ->orderBy('id', 'ASC')
+                        ->get();
+
+        return view('admin.courses.categories')->with(compact('categorias', 'memberships'));
     }
 
     /**

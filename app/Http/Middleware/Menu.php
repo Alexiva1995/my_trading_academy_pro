@@ -674,6 +674,12 @@ class Menu
                 'permisoAdmin' => (!empty($permiso)) ? $permiso->usuarios : 0,
                 'activo' => 0,
                 'menus' => [
+                    'Lista de Usuarios' => [
+                        'ruta' => 'users.records',
+                        'complementoruta' => '',
+                        'black'=> '0',
+                        'oculto'=> 'activo',
+                    ],
                     'Administradores' => [
                         'ruta' => 'admin-users-administrador',
                         'complementoruta' => '?tip=0',
@@ -1000,17 +1006,6 @@ class Menu
                     
                 ]
             ],
-            
-            'Lista de Usuarios' => [
-                'submenu' => 0,
-                'ruta' => 'users.records',
-                'black'=> '0',
-                'icono' => 'fa fa-user-circle',
-                'complementoruta' => '',
-                'permisoAdmin' => (!empty($permiso)) ? $permiso->usuario : 0,
-                'activo' => 0,
-            ],
-            
             
             'Envio de correos' => [
                 'submenu' => 1,

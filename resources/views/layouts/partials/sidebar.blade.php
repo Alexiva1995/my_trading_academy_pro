@@ -1,9 +1,7 @@
 @php
-    $categoriasSidebar = \App\Models\Category::orderBy('id', 'ASC')->with('course')->get();
-
-    $subcategoriasSidebar = \App\Models\Subcategory::orderBy('id', 'ASC')->get();
-    $cursos = \App\Models\Course::orderBy('id', 'ASC')->get();
-
+    $membershipsSidebar = \App\Models\Membership::with('categories')
+                            ->orderBy('id', 'ASC')
+                            ->get();
     $banner = NULL;
     if (request()->is('/')){
         $banner = \App\Models\Banner::where('status', '=', 1)
@@ -80,48 +78,22 @@
             <form action="{{ route('search') }}" method="GET" class="form-inline d-flex justify-content-center md-form form-sm active-pink-2 mt-2">
                 <input class="form-control form-control-sm w-75 border-0" type="text" placeholder="Buscar" aria-label="Buscar" id="search" name="q">
                 <button class="btn btn-none border-0" type="submit"><i class="fas fa-search text-white" aria-hidden="true"></i></button>
-                <!--<div class="input-group">
-                                <input type="text" class="form-control" id="search" name="q" placeholder="Buscar...">
-                                <button class="btn btn-light ml-auto"><i class="fas fa-search text-primary"></i></button>
-                            </div>-->
             </form>
         </div>
-                <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv1" style="color: white;"><i class="fas fa-graduation-cap"></i> Grabaciones<i class="fas fa-angle-down"></i></a>
+        
+        <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv1" style="color: white;"><i class="fas fa-graduation-cap"></i> Todos los cursos <i class="fas fa-angle-down"></i></a>
         <div class="collapse" id="categoriesDiv1" style="padding-left: 15px;">
 
-            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv2" style="color: white;"><i class="fa fa-star"></i>  FIND <i class="fas fa-angle-down"></i> </a>
+            @foreach ($membershipsSidebar as $membershipSidebar)
+                <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#membershipDiv{{$membershipSidebar->id}}" style="color: white;"><i class="fa fa-star"></i>  {{ strtoupper($membershipSidebar->name) }} <i class="fas fa-angle-down"></i> </a>
 
-            <div class="collapse" id="categoriesDiv2" style="padding-left: 15px;">
-                @foreach($cursos as $curs)
-                 @if($curs->membership_id == 1)
-                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
-                 @endif
-                @endforeach
-            </div> 
-            
-            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv3" style="color: white;"><i class="fa fa-star"></i>  BUY <i class="fas fa-angle-down"></i> </a>
-
-            <div class="collapse" id="categoriesDiv3" style="padding-left: 15px;">
-                @foreach($cursos as $curs)
-                 @if($curs->membership_id == 2)
-                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
-                 @endif
-                @endforeach
-            </div> 
-            
-            
-            <a class="list-group-item bg-dark-gray" data-toggle="collapse" href="#categoriesDiv4" style="color: white;"><i class="fa fa-star"></i>  WINDS <i class="fas fa-angle-down"></i> </a>
-
-            <div class="collapse" id="categoriesDiv4" style="padding-left: 15px;">
-                @foreach($cursos as $curs)
-                 @if($curs->membership_id == 3) 
-                  <a class="list-group-item bg-dark-gray" href="{{ route('courses.show', [$curs->slug, $curs->id]) }}" style="color: white;"><i class="{{ $curs->category->icon }}"></i> {{$curs->title}}</a>
-                 @endif
-                @endforeach
-            </div>
-            
+                <div class="collapse" id="membershipDiv{{$membershipSidebar->id}}" style="padding-left: 15px;">
+                    @foreach($membershipSidebar->categories as $catSidebar)
+                        <a class="list-group-item bg-dark-gray" href="{{ url('courses/category/'.$catSidebar->id) }}" style="color: white;"><i class="{{ $catSidebar->icon }}"></i> {{$catSidebar->title}}</a>
+                    @endforeach
+                </div>
+            @endforeach
         </div> 
-
         @if(Auth::user())
             @if(Auth::user()->rol_id == 0)
                 <a href="{{route('setting-logo')}}" class="list-group-item bg-dark-gray" style="color: white;"><i class="fa fa-gear"></i> Ajustes</a>
