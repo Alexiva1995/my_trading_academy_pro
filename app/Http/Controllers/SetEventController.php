@@ -247,15 +247,6 @@ class SetEventController extends Controller
         }
     }
     
-    public function refresh_menu($user_id, $event_id){
-        $user = User::find($user_id);
-        $event = Events::find($event_id);
-        $menuResource = $event->getResource();
-        
-        return view('live.components.sections.menuSection')->with(compact('user', 'menuResource'));
-        
-    }
-    
      public function refresh_video_section($event_id){
         $resources_video = SetEvent::where('event_id', $event_id)
                                 ->where('type', 'video')
@@ -325,6 +316,26 @@ class SetEventController extends Controller
         event(new \App\Events\Notificacion('survey', Auth::user()->ID));
         
         return response()->json(true);
+    }
+
+    public function download_survey_report($survey_id){
+        $survey = SetEvent::where('id', $survey_id)->with('pregunta', 'pregunta.responses')->first();
+        
+        $question = $survey->pregunta->question;
+        
+        $answers = [];
+        $answers_count = [];
+        foreach ($survey->pregunta->responses as $response){
+            if ($response->selected == 0){
+                array_push($answers, $response->response);
+                array_push($answers_count, 0);
+            }else{
+                $index = array_search($response->response, array_keys($answers));
+                $answers_count[$index] = $answers_count[$index]+1;
+            }
+        }
+
+        return view('live.components.sections.surveyReport')->with(compact('question', 'answers', 'answers_count'));
     }
 
 
