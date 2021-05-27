@@ -21,7 +21,7 @@
 
 
 @section('content')
-    <div class="col-md-12" style="margin-top: 240px;">
+    <div class="col-md-12">
         <span>
           <h6 class="mt-3" style="color:#707070; ">
             <span>Cursos > </span>

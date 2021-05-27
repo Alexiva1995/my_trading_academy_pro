@@ -67,7 +67,7 @@
 @endpush
 @section('content')
     
-    <div class="panel with-nav-tabs panel-primary" style="margin-top: 230px;">
+    <div class="panel with-nav-tabs panel-primary">
         <div class="panel-heading">
             <ul class="nav nav-pills nav-fill m-3">
                 @php $cont = 0; @endphp

@@ -21,7 +21,7 @@
 
 
 @section('content')
-    <div class="section-landing" style="background: linear-gradient(to bottom, #222326 50%, #1C1D21 50.1%); margin-top: 180px;">
+    <div class="section-landing" style="background: linear-gradient(to bottom, #222326 50%, #1C1D21 50.1%);">
         <div class="col mb-4 mt-2">
             <div class="title-page-course col-md-12"><span class="text-white">
             <h2>Todos los Cursos</h2>

@@ -30,10 +30,6 @@ Route::get('terms-and-conditions', function(){
 
 Route::get('legal', 'LegalController@index')->name('legal');
 
-Route::get('legal2', function(){
-  return view('legal2');
-})->name('legal2');
-
 Route::get('certificado', 'HomeController@certificado');
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/certificado', "HomeController@certificado");

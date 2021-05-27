@@ -36,7 +36,7 @@
 
 @section('content')
 
-   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px; margin-top: 200px;">
+   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
       <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
          <div id="mainSlider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -48,16 +48,16 @@
                         <h3 class="estiloacademia text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
                         <div class="d-block d-sm-none d-md-none">
                            @if(Auth::user())
-                              <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-sm btn-header-courses">VER TODOS LOS CURSOS</a>
+                              <a href="{{route('courses.show.all')}}" class="btn btn-success btn-sm btn-header-courses">VER TODOS LOS CURSOS</a>
                            @else
-                              <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-sm btn-header-courses">REGISTRARSE</a>
+                              <a href="{{ route('log').'?act=1' }}" class="btn btn-success btn-sm btn-header-courses">REGISTRARSE</a>
                            @endif
                         </div>
                         <div class="d-none d-sm-block">
                            @if(Auth::user())
-                              <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg btn-header-courses">VER TODOS LOS CURSOS</a>
+                              <a href="{{route('courses.show.all')}}" class="btn btn-success btn-lg btn-header-courses">VER TODOS LOS CURSOS</a>
                            @else
-                              <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg btn-header-courses">REGISTRARSE</a>
+                              <a href="{{ route('log').'?act=1' }}" class="btn btn-success btn-lg btn-header-courses">REGISTRARSE</a>
                            @endif
                         </div>
                      </div>
@@ -200,11 +200,6 @@
         </div>
 
         <div class="col-md-3 offset-md-5 mt-4 mb-4">
-        @if(Auth::user())
-           <a href="{{route('courses.show.all')}}" class="btn btn-danger btn-lg">VER TODOS LOS CURSOS</a>
-        @else
-        <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg">REGISTRARSE</a>
-        @endif
         </div>
 
 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('content')
-   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px; margin-top: 200px;">
+   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
       <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
          <div id="mainSlider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">

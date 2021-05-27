@@ -804,8 +804,8 @@ h5.title-level {
     }
 
     .estiloacademia{
-        font-size: 80px!important;
-        line-height: 80px!important;
+        font-size: 60px!important;
+        line-height: 70px!important;
         margin-top: 0px!important;
     }
 }
@@ -2399,7 +2399,7 @@ p.card-text.font-weight-bold.mr-2 {
 .btn.btn-social-media-icon {
     width: 40px;
     height: 40px;
-    padding: 0;
+    /*padding: 0;*/
 }
 
 .btn-footer-redes {

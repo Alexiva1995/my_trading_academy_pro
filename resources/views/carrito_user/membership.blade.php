@@ -23,7 +23,7 @@
 @endpush
 
 @section('content')
-    <div class="title-page-one_course col-md border-bottom-2" style="margin-top: 230px;">
+    <div class="title-page-one_course col-md border-bottom-2">
         <h6>Membresias</h6>
         <hr style="border: 1px solid #707070;opacity: 1;" />
     </div>

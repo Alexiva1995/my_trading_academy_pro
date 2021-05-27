@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('content')
-    <div style="padding: 15px 25px; margin-top: 180px;">
+    <div style="padding: 15px 25px;">
         <div class="accordion border_circle">
             <div class="bs-example">
                 <form action="{{ route('client.courses.submit-evaluation') }}" method="POST">

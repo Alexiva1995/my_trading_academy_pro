@@ -1,7 +1,7 @@
 @extends('layouts.landing')
 
 @section('content')
-<div class="container-fluid p-2" style="margin-top: 230px;">
+<div class="container-fluid p-2">
 <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h5 class="featurette-heading text-white">Perfil</h5>
