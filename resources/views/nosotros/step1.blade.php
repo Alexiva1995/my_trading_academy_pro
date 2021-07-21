@@ -48,7 +48,7 @@
                   <img src="{{ asset('images/nosotros/01.jpg') }}" class="d-block w-100" alt="...">
                    <div class="carousel-caption">
                         <div class="col-md-8 offset-md-2">
-                          <h3 class="estilomytranding text-center font-weight-bold" style="color: #00C65B;">Academia de Trading Online</h3 class="text-center">
+                          <h3 class="estilomytrandingN text-center font-weight-bold" style="color: #00C65B;">Academia de Trading Online</h3 class="text-center">
                           <h2 class="estilomytrandingthree text-center">Para emprendedores de Fintech</h2>
                         </div>
                   </div>
@@ -182,7 +182,7 @@
 
 
 
-   <div class="col-md-12" style="background-color: #FFFFFF;">
+   <div class="" style="background-color: #FFFFFF;">
       <div class="card" style="max-width: 100%;">
          <div class="row mt-4 no-gutters">
             <div class="col-md-4 offset-md-2 no-gutters">

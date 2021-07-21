@@ -28,16 +28,17 @@
    <div class="container-fluid pb-5" style="background-color: #F5F5F5;">
    	<div class="row">
    		<div class="col-md-12">
-   			<div class="row ml-4 mr-4">
-   				<div class="col-md-2 pl-0 pr-0">
-                  <div class="card card-comisiones" style="background-color:  #00C65B !important;">
-                     <div class="card-body text-center">
-                       <h5 class="card-title text-white comisiones-card-title nivel-body">Nivel</h5>
-                     </div>
-                  </div>
-   				</div>
+   			<div class="af row ">
+   				
    				<div class="col-md-10">
    					<div class="row">
+                     <div class="col-md-3 pl-0 pr-0">
+                        <div class="card card-comisiones" style="background-color:  #00C65B !important;">
+                           <div class="card-body text-center">
+                             <h5 class="card-title text-white comisiones-card-title nivel-body">Nivel</h5>
+                           </div>
+                        </div>
+                     </div>
    						<div class="col-md-3 pl-0 pr-0">
                         <div class="card card-comisiones" style="background-color: #FFF!important;">
                            <div class="card-body text-center">
@@ -90,7 +91,7 @@
             <b>COMISIONES DE NUESTROS TALENTOS</b>
          </h5>
 
-         <table class="table table-bordered">
+         <table class="table table-responsive table-bordered">
             <thead>
                <th>* Nivel</th>
                <th>Membresía del Find</th>

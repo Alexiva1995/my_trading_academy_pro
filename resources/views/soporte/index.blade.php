@@ -24,7 +24,7 @@
 
     <div class="col-md-offset-2">
                 <div class="row">
-                        <div class="col-md-3 cajita centroc"><a href="{{route('admin.soporte.search.frecuent_questions')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="far fa-comments text-success"></i>Preguntas frecuentes</h3></a></div>
+                        <div class="col-md-3 cajita centroc"><a href="{{route('admin.soporte.search.frecuent_questions')}}" class="white"><h3 class="text-center" style="font-size:18px!important; font-weight:bold;"><i class="far fa-comments text-success"></i>Preguntas frecuentes</h3></a></div>
                 <div class="col-md-3 cajita centroc"><a href="{{route('soporte.academy')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-graduation-cap text-success"></i>Academia</h3></a></div>
                         <div class="col-md-3 cajita centroc"><a href="{{ route ('admin.soporte.affiliates')}}" class="white"><h3 style="font-size:18px!important; font-weight:bold;"><i class="fas fa-user-plus text-success"></i>Afiliados</h3></a></div>
 

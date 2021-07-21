@@ -45,7 +45,7 @@
                   <img src="{{ asset('images/Academia/01.jpg') }}" class="d-block w-100" alt="...">
                   <div class="carousel-caption">
                      <div class="col-md-8">
-                        <h3 class="estiloacademia text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
+                        <h3 class="estiloacademiaC text-left font-weight-bold">ESTAS MÁS CERCA DE CONVERTIRTE EN TRADER PROFESIONAL</h3>
                         <div class="d-block d-sm-none d-md-none">
                            @if(Auth::user())
                               <a href="{{route('courses.show.all')}}" class="btn btn-success btn-sm btn-header-courses">VER TODOS LOS CURSOS</a>

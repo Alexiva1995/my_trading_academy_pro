@@ -586,6 +586,14 @@ h5.title-level {
         margin-top: 0px!important;
         margin-bottom: 0px!important;
 
+
+    }
+
+    .estiloacademiaC{
+        font-size: 60px!important;
+        line-height: 60px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
     }
 }
 
@@ -600,6 +608,13 @@ h5.title-level {
     }
 
     .estiloacademia{
+        font-size: 25px!important;
+        line-height: 25px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+    }
+
+    .estiloacademiaC{
         font-size: 25px!important;
         line-height: 25px!important;
         margin-top: 0px!important;
@@ -623,10 +638,16 @@ h5.title-level {
         margin-top: 10%!important;
         line-height: 40px!important;
     }
+    .estilomytrandingN{
+        font-size: 40px!important;
+        margin-top: 10%!important;
+        line-height: 40px!important;
+    }
     .estilomytrandingthree{
         font-size: 20px!important;
         line-height: 20px!important;
     }
+
     .course-category-caption a {
         font-size: 12px;
         bottom: 0px;
@@ -712,6 +733,11 @@ h5.title-level {
         display: none;
     }
     .estilomytranding{
+        font-size: 100px!important;
+        line-height: 110px!important;
+        margin-top: 20%!important;
+    }
+    .estilomytrandingN{
         font-size: 100px!important;
         line-height: 110px!important;
         margin-top: 20%!important;
@@ -808,6 +834,12 @@ h5.title-level {
         line-height: 70px!important;
         margin-top: 0px!important;
     }
+
+    .estiloacademiaC{
+        font-size: 60px!important;
+        line-height: 70px!important;
+        margin-top: 0px!important;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -828,6 +860,7 @@ h5.title-level {
     .course-banner-caption {
         display: none;
     }
+    
     .body-miscursos {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -922,12 +955,22 @@ h5.title-level {
         line-height: 30px!important;
         margin-top: 0px!important;
     }
+
+    .estiloacademiaC{
+        font-size: 14px!important;
+        line-height: 30px!important;
+        margin-top: 0px!important;
+    }
+
     .btn-home{
         margin-top:30px!important;
     }
     .text-nuestra-academia{
         font-size: 16px!important;
     }
+}
+.af{
+    margin-left: 10rem;
 }
 
 @media(min-width: 320px) and (max-width:575px){
@@ -936,6 +979,17 @@ h5.title-level {
         line-height: 30px!important;
         margin-top: 32px!important;
     }
+
+    .af{
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .estilomytrandingN{
+        font-size: 35px!important;
+        line-height: 30px!important;
+        margin-top: 30px!important;
+    }
+
     .estilomytrandingthree {
         font-size: 18px!important;
         line-height: 18px!important;
@@ -957,6 +1011,16 @@ h5.title-level {
         margin-top: -9px;
     }
 
+    .carousel-caption {
+        width: auto;
+        left: 5% !important;
+        right: 0px !important;
+        top: -19% !important;
+        bottom: 0px !important;
+        text-align: left;
+        
+    }
+
 }
 
 @media(max-width:574px){
@@ -964,6 +1028,12 @@ h5.title-level {
         font-size: 20px!important;
         line-height: 20px!important;
         margin-top: 0px!important;
+    }
+
+    .estiloacademiaC{
+        font-size: 20px!important;
+        line-height: 20px!important;
+        margin-top: 25px!important;
     }
 
     .tranding{
@@ -990,6 +1060,12 @@ h5.title-level {
         font-size: 50px!important;
         margin-top: 20%!important;
     }
+
+    .estilomytrandingN{
+        font-size: 50px!important;
+        margin-top: 20%!important;
+    }
+
     .estilomytrandingtwo{
         font-size: 18px!important;
         line-height: 20px!important;
@@ -1007,6 +1083,13 @@ h5.title-level {
         margin-top: 0px!important;
         margin-bottom: 0px!important;
     }
+    .estiloacademiaC{
+        font-size: 50px!important;
+        line-height: 50px!important;
+        margin-top: 0px!important;
+        margin-bottom: 0px!important;
+    }
+
     .lo-nuevo-text{
         top:0%!important;
     }
@@ -2153,6 +2236,14 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 .estiloacademia {
+    font-size: 60px;
+    line-height: 60px;
+    text-align: left;
+    color: #fff;
+    font-weight: 900!important;
+}
+
+.estiloacademiaC {
     font-size: 60px;
     line-height: 60px;
     text-align: left;

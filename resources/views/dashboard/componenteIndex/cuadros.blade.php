@@ -346,7 +346,7 @@
                     Link de Referido
                 </div>
 
-                <div class="col-md-9 col-xs-12 white" style="font-size: 22px; margin-top: 15px; color:#dc3545;">
+                <div class="col-md-9 col-xs-12 white" style="font-size: 20px; margin-top: 15px; color:#dc3545;">
                     {{route('autenticacion.new-register').'?ref='.Auth::user()->ID}}
 
                     <i class="far fa-copy" style="margin-right: 20px;"></i>
