@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark-gray border-bottom" style="height: 70px; position: fixed; z-index: 1000; width: 100%;">
-    <div class="sidebar-heading pr-3 pt-3" style="height: 70px">
+    <div class="sidebar-heading pr-3 pt-md-3" style="height: 70px">
         <img src="{{ asset('images/logoverticalblanco.png') }}" width="200" height="45">
     </div>
     <button class="btn ml-3" id="menu-toggle" style="background-color: #28a745 !important; color: #fff"><i class="fas fa-bars"></i></button>

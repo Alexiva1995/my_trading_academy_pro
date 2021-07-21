@@ -238,7 +238,7 @@
 		@endif
 <div class="row">
         <div class="col-md-6">
-            <h3 class="text-white">DESCUBRE LAS MEJORES <br> ESTRATEGIAS DE TRADING PARA <br> REALIZAR OPERACIONES EXITOSAS</h3>
+            <h3 class="text-white text-center">DESCUBRE LAS MEJORES <br> ESTRATEGIAS DE TRADING PARA <br> REALIZAR OPERACIONES EXITOSAS</h3>
          </div>
          <div class="col-md-6">
             <form action="{{ route ('subscriptions') }}" method="POST">
@@ -246,7 +246,7 @@
                <div class="form-group">
                   <input class="form-control input-sm" id="email" type="email" name="email" placeholder="Tu Email" required>
                </div>
-               <button type="submit" href="" class="btn btn-lg btn-danger float-right font-weight-bold">SUSCRIBIRME</button>
+               <button type="submit" href="" class="btn-sms btn btn-lg btn-danger float-right font-weight-bold">SUSCRIBIRME</button>
             </form>
          </div>
 
@@ -261,9 +261,9 @@
 @if($articulos->count() > 0)
 <div class="container-fluid py-5"  style="background-color: #FFFFFF;">
 <h2 class="text-center">NOTICIAS</h2>
-<div class="row offset-md-2">
+<div class="row">
    @foreach($articulos as $articulo)
-    <div class="col-md-3 mt-4">
+    <div class="col-md-6 mt-4">
             <div class="card card-noticias">
                   <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap" style="height: 300px;">
                   <div class="card-body text-center">

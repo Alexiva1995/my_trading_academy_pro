@@ -24,7 +24,8 @@
 
         <link rel="stylesheet" href="{{ asset('bootstrap-4.5.1/css/bootstrap.min.css') }}">
         <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/joel.css') }}">
+       <!-- <link rel="stylesheet" href="{{ asset('css/theme.css') }}">-->
         <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
         <link rel="shortcut icon" href="{{ asset('icon.png') }}" />
 
@@ -142,7 +143,7 @@
                         @include('layouts.partials.sidebar')
                     </div>
                     <div class="col-md-10 col-xs-10 col-sm-12" id="content-div">
-                        <div class="container">     
+                        <div>     
                             @yield('content') 
                             <!--<div class="icon-bar">
                                 <a href="#" class="btn btn-social-media-icon btn-rounded facebook mt-2 mb-2" target="_blank"><i class="text-center fa fa-facebook"></i></a>
@@ -156,12 +157,12 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-12 py-5">
-                                        <div class="mb-5 text-center">
-                                                <img src="{{ asset('images/mba.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
-                                                <img src="{{ asset('images/no_work_no_money.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
-                                                <img src="{{ asset('images/logo-fentix.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
-                                                <img src="{{ asset('images/logo-fxtlive.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
-                                                <img src="{{ asset('images/mytradinglogo.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4">
+                                        <div class="mb-3 text-center">
+                                                <img src="{{ asset('images/mba.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4 mb-2">
+                                                <img src="{{ asset('images/no_work_no_money.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4 mb-2">
+                                                <img src="{{ asset('images/logo-fentix.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4 mb-2">
+                                                <img src="{{ asset('images/logo-fxtlive.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4 mb-2">
+                                                <img src="{{ asset('images/mytradinglogo.png')}}" alt="" height="40px" class="mr-md-2 mr-4 ml-4 mb-2">
                                             </div>
                                             <div class="mb-25 text-center">
                                                 <img src="{{ asset('images/icf.png')}}" alt="" height="50px" class="mr-md-2 mr-4 ml-4">
