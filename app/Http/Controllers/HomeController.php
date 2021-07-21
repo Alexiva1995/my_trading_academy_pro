@@ -78,7 +78,10 @@ class HomeController extends Controller{
    }
 
    public function index(){
-       
+      $modalVisitante = 0;
+      if (Auth::guest()){
+        $modalVisitante = 1;
+      }
       setlocale(LC_TIME, 'es_ES.UTF-8'); //Para el server
       // setlocale(LC_TIME, 'es');//Local
        Carbon::setLocale('es');
@@ -95,8 +98,7 @@ class HomeController extends Controller{
      {
          $proximos = null;
           $finalizados = Events::where('date', '<=',date('Y-m-d'))
-         ->where('time', '<', date('H:i:s'))
-         ->orwhere('date', '<',date('Y-m-d'))
+         ->where('status', '=', 0)
          ->get();
  
        $misEventosArray = [];
@@ -117,23 +119,21 @@ class HomeController extends Controller{
                         ->take(9)
                         ->get();
 
-         $articulos = Entradas::take(3)->get();
+         $articulos = Entradas::take(3)->orderBy('id', 'DESC')->get();
          $cursosArray = [];
 
         $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
-         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
+         return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos', 'modalVisitante'));
  
      }else{
-         $proximos = Events::where('date', '>', date('Y-m-d'))
+         $proximos = Events::where('date', '>=', date('Y-m-d'))
                        ->where('id', '!=', $evento_actual->id)
-                       ->orwhere('date', '=', date('Y-m-d'))
-                       ->where('time', '>=', date('H:i:s'))
+                       ->where('status', '=', 1)
                        ->get();
  
          //$finalizados = Events::where('status', '=',3)->get();
          $finalizados = Events::where('date', '<=',date('Y-m-d'))
-         ->where('time', '<', date('H:i:s'))
-         ->orwhere('date', '<',date('Y-m-d'))
+         ->where('status', '=', 0)
          ->get();
          $total = count($proximos);
  
@@ -157,7 +157,7 @@ class HomeController extends Controller{
         $articulos = Entradas::take(3)->get();
         $ultimos_cursos = Course::orderBy('created_at','DESC')->get();
       //  dd($ultimos_cursos);
-       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos'));
+       return view('index',compact('evento_actual','proximos','total','finalizados', 'misEventosArray', 'events_category', 'articulos', 'ultimos_cursos', 'modalVisitante'));
      }
    }
 

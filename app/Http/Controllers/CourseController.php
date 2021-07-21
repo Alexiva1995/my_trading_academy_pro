@@ -213,8 +213,7 @@ class CourseController extends Controller{
         }
 
         /*Cursos por categoria con el numero de cursos asociados*/
-        $courses = Category::withCount('course')
-                        ->take(4)
+        $courses = Category::withCount('courses')
                         ->get();
 
         if (!Auth::guest()){

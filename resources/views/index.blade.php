@@ -15,6 +15,10 @@
          }
          //alert(window.innerWidth); 
       };
+
+      if ({{$modalVisitante}} == 1){
+         $('#visitante-modal').modal();
+      }
    </script>   
 @endpush
 
@@ -24,7 +28,7 @@
          <h3 class="mb-4"><span class="text-white">Hola</span><span class="text-success"> {{Auth::user()->display_name}}</span><span class="text-white"> ¡Nos alegra verte hoy!</span></h3>
       </div>
    @endif
-   <div class="container-fluid courses-slider" style="background-color: #1C1D21;margin-bottom: 0px; padding-bottom: 0px;">
+   <div class="container-fluid courses-slider" style="background-color: #1C1D21; margin-bottom: 0px; padding-bottom: 0px;">
       <div class="container-fluid courses-slider" style="padding-bottom: 0px;">
          <div id="mainSlider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -37,7 +41,7 @@
                         <div class="estilomytrandingtwo" id="estilomytrandingtwo">Academy Pro</div>
                         <div class="mt-2 m d-none d-sm-none d-md-block"><h5 id="estilomytrandingtext">Aprende las mejores estrategias y conviértete en un experto en operaciones en el mercado de divisas.</h5></div>
                      </div>
-                     <div class="text-center btn-home"> <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg font-weight-bold" id="btn-home">QUIERO SER PARTE</a></div>
+                     <!--<div class="text-center btn-home"> <a href="{{ route('log').'?act=1' }}" class="btn btn-danger btn-lg font-weight-bold" id="btn-home">QUIERO SER PARTE</a></div>-->
                   </div>
                </div>
             </div>
@@ -261,7 +265,7 @@
    @foreach($articulos as $articulo)
     <div class="col-md-3 mt-4">
             <div class="card card-noticias">
-                  <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap">
+                  <img class="card-img-top" src="{{ asset('uploads/entradas/'.$articulo->imagen_destacada) }}" alt="Card image cap" style="height: 300px;">
                   <div class="card-body text-center">
                      <h5 class="card-title text-center" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">{{$articulo->titulo}}</h5>
                      <a href="{{ route('blog.articulo', $articulo->id) }}" class="text-danger font-weight-bold">Ver más</a>
@@ -306,5 +310,22 @@
       </div>
    @endif
 
-
+   <div class="modal fade" id="visitante-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel" style="color:white;">REGÍSTRATE AHORA</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-white pl-5 pr-5 text-center">
+                    Te encuentras en modo visitante.<br>
+                    Para disfrutar de nuestro contenido a precio preferencial ingresa en este botón.
+                    <br><br>
+                    <a type="button" class="btn btn-primary btn-register-header d-md-block m-2" href="{{ route('log').'?act=1' }}">REGISTRO</a>
+                </div>
+            </div>
+        </div>
+    </div> 
 @endsection

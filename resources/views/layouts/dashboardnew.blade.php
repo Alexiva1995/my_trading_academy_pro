@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 
-<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
 
     {{-- traductor de google  --}}
     
@@ -20,6 +19,7 @@ cb=googleTranslateElementInit"></script>
 {{-- fin traductor --}}
 
 <head>
+    <link rel="shortcut icon" href="{{ asset('icon.png') }}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +28,8 @@ cb=googleTranslateElementInit"></script>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Expires" content="0" />
-<meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  
 
  {{-- Mostramos el modo oscuro o el badner del home --}}
  @include('layouts.include.oscuro')

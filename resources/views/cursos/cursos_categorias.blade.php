@@ -21,7 +21,8 @@
 
 
 @section('content')
-<div class="col-md-12 "><span>
+    <div class="col-md-12">
+        <span>
           <h6 class="mt-3" style="color:#707070; ">
             <span>Cursos > </span>
             @if (!is_null ($category_name)) <span> {{ $category_name->title }} @else Búsqueda @endif</span>

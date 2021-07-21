@@ -31,6 +31,7 @@ class NosotrosController extends Controller
 	public function gratis(){
 		return view('nosotros.gratis');
 	}
+
 	public function step1(){
 
 		return view('nosotros.step1');
@@ -44,7 +45,8 @@ class NosotrosController extends Controller
 	public function step3(){
 
         $entradas = Entradas::all();
-		return view('nosotros.step3', compact('entradas'));
+
+		return view('nosotros.blog', compact('entradas'));
 	}
 
     public function articulo($entrada_id){
@@ -71,4 +73,16 @@ class NosotrosController extends Controller
 
         return view('nosotros.step3');
     }
+
+    public function comisiones(){
+    
+
+        return view('nosotros.commissions');
+	}
+
+	public function coaches(){
+    
+
+        return view('nosotros.coaches');
+	}
 }

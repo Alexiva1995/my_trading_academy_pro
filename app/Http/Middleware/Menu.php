@@ -674,6 +674,12 @@ class Menu
                 'permisoAdmin' => (!empty($permiso)) ? $permiso->usuarios : 0,
                 'activo' => 0,
                 'menus' => [
+                    'Lista de Usuarios' => [
+                        'ruta' => 'users.records',
+                        'complementoruta' => '',
+                        'black'=> '0',
+                        'oculto'=> 'activo',
+                    ],
                     'Administradores' => [
                         'ruta' => 'admin-users-administrador',
                         'complementoruta' => '?tip=0',
@@ -817,7 +823,12 @@ class Menu
                         'black'=> '0',
                         'oculto'=> 'activo',
                     ],
-                   
+                    'Eventos Eliminados' => [
+                        'ruta' => 'admin.events.record',
+                        'complementoruta' => '',
+                        'black'=> '0',
+                        'oculto'=> 'activo',
+                    ],
                 ]
             ],
             'Banners' => [
@@ -855,6 +866,15 @@ class Menu
                 'ruta' => 'admin.purchases-record',
                 'black'=> '0',
                 'icono' => 'fa fa-shopping-cart',
+                'complementoruta' => '',
+                'permisoAdmin' => (!empty($permiso)) ? $permiso->cursos : 0,
+                'activo' => 0,
+            ],
+            'Legal' => [
+                'submenu' => 0,
+                'ruta' => 'admin.legal.tabs.index',
+                'black'=> '0',
+                'icono' => 'fas fa-balance-scale',
                 'complementoruta' => '',
                 'permisoAdmin' => (!empty($permiso)) ? $permiso->cursos : 0,
                 'activo' => 0,
@@ -986,17 +1006,6 @@ class Menu
                     
                 ]
             ],
-            
-            'Lista de Usuarios' => [
-                'submenu' => 0,
-                'ruta' => 'users.records',
-                'black'=> '0',
-                'icono' => 'fa fa-user-circle',
-                'complementoruta' => '',
-                'permisoAdmin' => (!empty($permiso)) ? $permiso->usuario : 0,
-                'activo' => 0,
-            ],
-            
             
             'Envio de correos' => [
                 'submenu' => 1,

@@ -28,6 +28,8 @@ Route::get('terms-and-conditions', function(){
   return view('auth.termsAndConditions');
 })->name('terms-and-conditions');
 
+Route::get('legal', 'LegalController@index')->name('legal');
+
 Route::get('certificado', 'HomeController@certificado');
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/certificado', "HomeController@certificado");
@@ -192,6 +194,8 @@ Route::group(['prefix' => 'installer'], function (){
   Route::get('/blog', 'NosotrosController@step3')->name('step3');
   Route::get('/blog/{id}', 'NosotrosController@articulo')->name('blog.articulo');
   Route::get('/afiliados', 'NosotrosController@afiliados')->name('blog.afiliados');
+  Route::get('comisiones', 'NosotrosController@comisiones')->name('blog.comisiones');
+  Route::get('/coaches', 'NosotrosController@coaches')->name('blog.coaches');
   Route::get('/inversiones', 'NosotrosController@inversiones')->name('inversiones');
   Route::get('/trading', 'NosotrosController@tranding_social')->name('trading');
 
@@ -306,12 +310,12 @@ Route::group(['prefix' => 'installer'], function (){
   //Configurar eventos
   Route::post('/settings/event/delete', 'SetEventController@delete')->name('set.event.delete');
   Route::post('/settings/event/{event_id?}', 'SetEventController@store')->name('set.event.store');
-  Route::get('refresh-menu/{user}/{event}', 'SetEventController@refresh_menu');
   Route::get('refresh-video-section/{event}', 'SetEventController@refresh_video_section');
   Route::get('refresh-presentation-section/{event}', 'SetEventController@refresh_presentation_section');
   Route::get('refresh-file-section/{event}', 'SetEventController@refresh_file_section');
   Route::get('refresh-offer-section/{event}', 'SetEventController@refresh_offer_section');
   Route::get('refresh-survey-section/{event}', 'SetEventController@refresh_survey_section');
+  Route::get('download-survey-report/{survey_id}', 'SetEventController@download_survey_report');
   //Guardar respuesta de encuesta
   Route::post('/survey', 'SetEventController@save_student_response')->name('save.survey.student');
   Route::get('/download/file/{event_id}/{file_id}', 'SetEventController@download_file')->name('download_resource_file');
@@ -458,6 +462,24 @@ Route::group(['prefix' => 'installer'], function (){
       Route::post('update-message', 'MembershipController@update_message')->name('admin.memberships.update-message');
     });
 
+     Route::group(['prefix' => 'legal'], function(){
+        Route::group(['prefix' => 'tabs'], function(){
+          Route::get('/', 'LegalController@tabs')->name('admin.legal.tabs.index');
+          Route::post('store', 'LegalController@store_tab')->name('admin.legal.tabs.store');
+          Route::get('show/{id}', 'LegalController@show_tab')->name('admin.legal.tabs.show');
+          Route::post('update', 'LegalController@update_tab')->name('admin.legal.tabs.update');
+          Route::get('change-status/{id}/{status}', 'LegalController@change_status_tab')->name('admin.legal.tabs.change-status');
+
+          Route::group(['prefix' => 'clauses'], function(){
+            Route::get('/{tab_id}', 'LegalController@clauses')->name('admin.legal.clauses.index');
+            Route::post('store', 'LegalController@store_clause')->name('admin.legal.clauses.store');
+            Route::get('show/{id}', 'LegalController@show_clause')->name('admin.legal.clauses.show');
+            Route::post('update', 'LegalController@update_clause')->name('admin.legal.clauses.update');
+            Route::get('change-status/{id}/{status}', 'LegalController@change_status_clause')->name('admin.legal.clauses.change-status');
+          });
+        });
+     });
+
     Route::group(['prefix' => 'promotions'], function(){
       Route::get('/', 'PromotionController@index')->name('admin.promotions.index');
       Route::post('store', 'PromotionController@store')->name('admin.promotions.store');
@@ -468,11 +490,12 @@ Route::group(['prefix' => 'installer'], function (){
      Route::group(['prefix' => 'events'], function(){
        Route::get('prueba', 'EventsController@prueba');
       Route::get('/', 'EventsController@index')->name('admin.events.index');
+      Route::get('record', 'EventsController@record')->name('admin.events.record');
       Route::get('show/{id}', 'EventsController@show')->name('admin.events.show');
       Route::post('store', 'EventsController@store')->name('admin.events.store');
       Route::get('edit/{id}', 'EventsController@edit')->name('admin.events.edit');
       Route::post('update', 'EventsController@update')->name('admin.events.update');
-      Route::delete('delete/{id}', 'EventsController@delete')->name('admin.events.delete');
+      Route::get('delete/{id}', 'EventsController@delete')->name('admin.events.delete');
       Route::get('change-status/{id}/{status}', 'EventsController@change_status')->name('admin.events.change-status');
 
     });

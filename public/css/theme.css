@@ -804,8 +804,8 @@ h5.title-level {
     }
 
     .estiloacademia{
-        font-size: 80px!important;
-        line-height: 80px!important;
+        font-size: 60px!important;
+        line-height: 70px!important;
         margin-top: 0px!important;
     }
 }
@@ -2399,7 +2399,7 @@ p.card-text.font-weight-bold.mr-2 {
 .btn.btn-social-media-icon {
     width: 40px;
     height: 40px;
-    padding: 0;
+    /*padding: 0;*/
 }
 
 .btn-footer-redes {
@@ -2783,3 +2783,24 @@ border-radius: 27px!important;
 }
 
 
+.logo-scale:hover{
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+}
+
+.logo-rotate:hover{
+    transition: 0.90s;
+    -webkit-transition: 0.90s;
+    -moz-transition: 0.90s;
+    -ms-transition: 0.90s;
+    -o-transition: 0.90s;
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+
+}

@@ -57,22 +57,19 @@ class TransmisionesController extends Controller
       if(Empty($evento_actual)){
          $proximos = null;
          $finalizados = Events::where('date', '<=',date('Y-m-d'))
-                          ->where('time', '<', date('H:i:s'))
-                          ->orwhere('date', '<',date('Y-m-d'))
+                          ->where('status', '=', 0)
                           ->get();
 
          $total = 0;
          return view('transmision.transmision',compact('evento_actual','proximos','total','finalizados', 'misEventosArray'));
       }else{
-         $proximos = Events::where('date', '>', date('Y-m-d'))
+         $proximos = Events::where('date', '>=', date('Y-m-d'))
                         ->where('id', '!=', $evento_actual->id)
-                        ->orwhere('date', '=', date('Y-m-d'))
-                        ->where('time', '>=', date('H:i:s'))
+                        ->where('status', '=', 1)
                         ->get();
 
          $finalizados = Events::where('date', '<=',date('Y-m-d'))
-                          ->where('time', '<', date('H:i:s'))
-                          ->orwhere('date', '<',date('Y-m-d'))
+                          ->where('status', '=', 0)
                           ->get();
          $total = count($proximos);
 

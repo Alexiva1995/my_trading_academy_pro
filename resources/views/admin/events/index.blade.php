@@ -108,7 +108,7 @@
 									@if ($event->status == '0')
 									<a class="btn btn-success" href="{{ route('admin.events.change-status', [$event->id, 1]) }}" title="Habilitar"><i class="fa fa-check"></i></a>
 									@endif
-
+									<a class="btn btn-danger" href="{{ route('admin.events.delete', $event->id) }}" title="Eliminar"><i class="fa fa-trash"></i></a>
 								</td>
 							</tr>
 						@endforeach
@@ -142,7 +142,7 @@
 						                <select class="form-control" name="user_id" required>
 						                	<option value="" selected disabled>Seleccione un mentor..</option>
 						                	@foreach ($mentores as $mentor)
-						                		<option value="{{ $mentor->ID }}">{{ $mentor->user_email }}</option>
+						                		<option value="{{ $mentor->ID }}">{{ (!is_null($mentor->display_name)) ? $mentor->display_name : $mentor->user_email }}</option>
 						                	@endforeach
 						                </select>
 						            </div>
@@ -251,7 +251,7 @@
 									<label>Mentor</label>
 									<select class="form-control" name="user_id" id="user_id" required>
 										@foreach ($mentores as $mentor)
-											<option value="{{ $mentor->ID }}">{{ $mentor->user_email }}</option>
+											<option value="{{ $mentor->ID }}">{{ (!is_null($mentor->display_name)) ? $mentor->display_name : $mentor->user_email }}</option>
 										@endforeach
 									</select>
 								</div>
