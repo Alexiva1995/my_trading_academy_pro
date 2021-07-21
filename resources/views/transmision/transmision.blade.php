@@ -384,7 +384,7 @@
 
    <!--RECIENTES-->
    @if($finalizados->count() > 0)
-      <div class="col-md-12 py-5" style="background-color: #EFEFEF;">
+      <div class="col-md-12 pt-5" style="background-color: #EFEFEF;padding-bottom: 10rem;">
          <div class="section-title-landing new-courses-section-title mb-2" style="text-align: center;">  
             <h3 style="font-weight: 800; color:#111329;">TRANSMISIONES RECIENTES</h3>
          </div>
