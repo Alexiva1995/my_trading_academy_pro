@@ -152,7 +152,7 @@
 </div>
 
 <div style="background-color: #FFFFFF;">
-<div class="container-fluid py-5" style="background-color: #212529; padding-left: 100px; padding-right: 100px;">
+<div class="container-fluid py-5 d-none d-sm-block" style="background-color: #212529; padding-left: 100px; padding-right: 100px;">
    <div class="new-courses-section-title mb-2" style="text-align: center;">
       <h2 style="font-weight: 800; font-size: 40px; color:#00C65B;">NUESTRO ECOSISTEMA</h2>
    </div>

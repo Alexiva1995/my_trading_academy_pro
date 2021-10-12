@@ -365,14 +365,14 @@
             <h3 class="text-white mb-2 mt-2">Este curso no posee lecciones...</h3>
             @endif
             <div class="row">
-               <div class="col-6 text-left">
+               <div class="col-xl-6 col-lg-6 col-md-6 col-12 text-left">
                   @if (!Auth::guest())
-                     <a href="{{route('client.my-courses')}}" class="btn btn-success play-course-button mt-2" ><i class="fas fa-user-circle" aria-hidden="true"></i> IR A MIS CURSOS</a>
+                     <a href="{{route('client.my-courses')}}" class="btn btn-success btn-block play-course-button mt-2" ><i class="fas fa-user-circle" aria-hidden="true"></i> IR A MIS CURSOS</a>
                   @endif
-                  <a href="{{route('courses.show.all')}}" class="btn btn-primary play-course-button mt-2" ><i class="fa fa-search" aria-hidden="true"></i> EXPLORAR MÁS CURSOS</a>
+                  <a href="{{route('courses.show.all')}}" class="btn btn-primary btn-block play-course-button mt-2" ><i class="fa fa-search" aria-hidden="true"></i> EXPLORAR MÁS CURSOS</a>
                </div>
             
-               <div class="col-6 text-right">
+               <div class="col-xl-6 col-lg-6 col-md-6 col-12 text-right mt-2">
                   @if (Auth::guest())
                      <a href="{{route('shopping-cart.membership')}}" class="btn btn-success play-course-button btn-block" ><i class="fa fa-shopping-cart" aria-hidden="true"></i> ADQUIRIR MEMBRESIA</a>
                   @else

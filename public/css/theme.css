@@ -373,6 +373,35 @@ h5.title-level {
     padding-left: 10px;
     margin-top: 5px;
 }
+/*AFILIADOS*/
+.afiliados-box{
+    background-color: #F5F5F5;
+    padding-left: 150px; 
+    padding-right: 150px;
+}
+.afiliados-box .box {
+    background: #FFF;
+    border-radius: 10px;
+    padding: 40px 10px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.afiliados-box .box:hover {
+    box-shadow: 0 0 6px #00C65B;
+}
+
+.afiliados-box .box .box-text {
+    margin: 20px 0px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.afiliados-box .box .box-btn a {
+    text-decoration: none;
+    color: #00C65B;
+    font-size: 16px;
+}
 
 @media (max-width: 1350px) {
     .items-header {
@@ -528,6 +557,18 @@ h5.title-level {
 }
 
 @media (max-width: 450px) {
+    .blog-title-two {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .afiliados-box{
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
+
+    .text-nuestra-academia{
+        font-size: 16px!important;
+    }
     .course-category-caption a {
         font-size: 23px;
     }
@@ -609,11 +650,6 @@ h5.title-level {
     .btn-home{
         margin-top:20px!important;
     }
-
-    .text-nuestra-academia{
-        font-size: 20px!important;
-    }
-
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -714,7 +750,7 @@ h5.title-level {
     .estilomytranding{
         font-size: 100px!important;
         line-height: 110px!important;
-        margin-top: 20%!important;
+        /*margin-top: 20%!important;*/
     }
     .estilomytrandingtwo{
         font-size: 50px!important;
@@ -1993,6 +2029,10 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 @media only screen and (max-width: 450px) {
+    .afiliados-box{
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
     .section-title-landing {
         font-weight: bold;
         color: #00C65B;
@@ -2102,7 +2142,7 @@ p.card-text.font-weight-bold.mr-2 {
     line-height: 70px;
     color: #00C65B;
     font-weight: 900!important;
-    margin-top: 30%;
+    /*margin-top: 30%;*/
 }
 
 .estilomytrandingblanco {
@@ -2160,6 +2200,10 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 @media (max-width: 450px) {
+    .afiliados-box{
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
     .blog-title {
         font-size: 25px;
         line-height: 25px;
@@ -2548,31 +2592,7 @@ p.card-text.font-weight-bold.mr-2 {
 }
 
 
-/*AFILIADOS*/
 
-.afiliados-box .box {
-    background: #FFF;
-    border-radius: 10px;
-    padding: 40px 10px;
-    cursor: pointer;
-    transition: all 0.5s ease-out;
-}
-
-.afiliados-box .box:hover {
-    box-shadow: 0 0 6px #00C65B;
-}
-
-.afiliados-box .box .box-text {
-    margin: 20px 0px;
-    font-size: 15px;
-    line-height: 30px;
-}
-
-.afiliados-box .box .box-btn a {
-    text-decoration: none;
-    color: #00C65B;
-    font-size: 16px;
-}
 
 .card-comisiones {
     border-radius: 15px!important;
